@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C1FA06D64D554297A58F9044 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1256C4568AC4A6E8E53AF04 /* libPods.a */; };
+		D23265E519E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
+		D23265E619E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
+		D23265E719E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23BED3D19E32823000FF210 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED3C19E32823000FF210 /* main.m */; };
 		D23BED4019E32823000FF210 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED3F19E32823000FF210 /* AppDelegate.m */; };
-		D23BED4319E32823000FF210 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED4219E32823000FF210 /* ViewController.m */; };
 		D23BED4619E32823000FF210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4419E32823000FF210 /* Main.storyboard */; };
 		D23BED4819E32823000FF210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4719E32823000FF210 /* Images.xcassets */; };
 		D23BED4B19E32823000FF210 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4919E32823000FF210 /* LaunchScreen.xib */; };
@@ -19,13 +21,17 @@
 		D23BED6D19E328C7000FF210 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED6C19E328C7000FF210 /* TodayViewController.m */; };
 		D23BED6F19E328C7000FF210 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23BED6E19E328C7000FF210 /* MainInterface.storyboard */; };
 		D23BED7219E328C7000FF210 /* EpiTime-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D23BED6419E328C7000FF210 /* EpiTime-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D23BED7F19E328DA000FF210 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED4219E32823000FF210 /* ViewController.m */; };
 		D23BED8019E328DA000FF210 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED3F19E32823000FF210 /* AppDelegate.m */; };
 		D23BED8119E328DA000FF210 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BED3C19E32823000FF210 /* main.m */; };
 		D23BED8419E328DA000FF210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4419E32823000FF210 /* Main.storyboard */; };
 		D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4919E32823000FF210 /* LaunchScreen.xib */; };
 		D23BED8619E328DA000FF210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4719E32823000FF210 /* Images.xcassets */; };
-		D23BED8819E328DA000FF210 /* EpiTime-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D23BED6419E328C7000FF210 /* EpiTime-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
+		D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
+		D2EF16F119E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */; };
+		D2EF16F219E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */; };
+		D2EF16F419EA031000D95789 /* Day.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EF16F319EA031000D95789 /* Day.xcassets */; };
+		D2EF16F519EA031000D95789 /* Day.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EF16F319EA031000D95789 /* Day.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +50,6 @@
 			remoteInfo = "EpiTime-Widget";
 		};
 		D23BED7319E328C7000FF210 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D23BED6319E328C7000FF210;
-			remoteInfo = "EpiTime-Widget";
-		};
-		D23BED7B19E328DA000FF210 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
 			proxyType = 1;
@@ -78,28 +77,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D23BED8719E328DA000FF210 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				D23BED8819E328DA000FF210 /* EpiTime-Widget.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		268AD16458FF430988D127AA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C1256C4568AC4A6E8E53AF04 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D23265E319E991A50009334B /* ETTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETTools.h; path = Other/ETTools.h; sourceTree = "<group>"; };
+		D23265E419E991A50009334B /* ETTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETTools.m; path = Other/ETTools.m; sourceTree = "<group>"; };
 		D23BED3719E32823000FF210 /* EpiTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23BED3C19E32823000FF210 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D23BED3E19E32823000FF210 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D23BED3F19E32823000FF210 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D23BED4119E32823000FF210 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D23BED4219E32823000FF210 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D23BED4519E32823000FF210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D23BED4719E32823000FF210 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D23BED4A19E32823000FF210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,6 +103,11 @@
 		D23BED8C19E328DA000FF210 /* EpiTime Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EpiTime Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23BED8E19E32A86000FF210 /* EpiTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime-Info.plist"; sourceTree = "<group>"; };
 		D23BED8F19E32AA0000FF210 /* EpiTime Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime Staging-Info.plist"; sourceTree = "<group>"; };
+		D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETDayTableViewController.h; path = Day/ETDayTableViewController.h; sourceTree = "<group>"; };
+		D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETDayTableViewController.m; path = Day/ETDayTableViewController.m; sourceTree = "<group>"; };
+		D2EF16EF19E9FDAD00D95789 /* ETClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETClassTableViewCell.h; path = Day/ETClassTableViewCell.h; sourceTree = "<group>"; };
+		D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETClassTableViewCell.m; path = Day/ETClassTableViewCell.m; sourceTree = "<group>"; };
+		D2EF16F319EA031000D95789 /* Day.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Day.xcassets; path = Resources/Day.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D23265E919E991A80009334B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D23265E319E991A50009334B /* ETTools.h */,
+				D23265E419E991A50009334B /* ETTools.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		D23BED2E19E32823000FF210 = {
 			isa = PBXGroup;
 			children = (
@@ -179,10 +181,10 @@
 			children = (
 				D23BED3E19E32823000FF210 /* AppDelegate.h */,
 				D23BED3F19E32823000FF210 /* AppDelegate.m */,
-				D23BED4119E32823000FF210 /* ViewController.h */,
-				D23BED4219E32823000FF210 /* ViewController.m */,
 				D23BED4419E32823000FF210 /* Main.storyboard */,
 				D23BED4919E32823000FF210 /* LaunchScreen.xib */,
+				D2EF16EE19E9F82900D95789 /* Day */,
+				D23265E919E991A80009334B /* Other */,
 				D23BED9019E32AB1000FF210 /* Resources */,
 				D23BED3A19E32823000FF210 /* Supporting Files */,
 			);
@@ -248,8 +250,20 @@
 			isa = PBXGroup;
 			children = (
 				D23BED4719E32823000FF210 /* Images.xcassets */,
+				D2EF16F319EA031000D95789 /* Day.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		D2EF16EE19E9F82900D95789 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */,
+				D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */,
+				D2EF16EF19E9FDAD00D95789 /* ETClassTableViewCell.h */,
+				D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */,
+			);
+			name = Day;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,13 +332,11 @@
 				D23BED7E19E328DA000FF210 /* Sources */,
 				D23BED8219E328DA000FF210 /* Frameworks */,
 				D23BED8319E328DA000FF210 /* Resources */,
-				D23BED8719E328DA000FF210 /* Embed App Extensions */,
 				76787493055F4107ABE1E363 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D23BED7A19E328DA000FF210 /* PBXTargetDependency */,
 				D23BED7C19E328DA000FF210 /* PBXTargetDependency */,
 			);
 			name = "EpiTime Staging";
@@ -386,6 +398,7 @@
 			files = (
 				D23BED4619E32823000FF210 /* Main.storyboard in Resources */,
 				D23BED4B19E32823000FF210 /* LaunchScreen.xib in Resources */,
+				D2EF16F519EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED4819E32823000FF210 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +424,7 @@
 			files = (
 				D23BED8419E328DA000FF210 /* Main.storyboard in Resources */,
 				D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */,
+				D2EF16F419EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED8619E328DA000FF210 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,9 +469,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D23BED4319E32823000FF210 /* ViewController.m in Sources */,
 				D23BED4019E32823000FF210 /* AppDelegate.m in Sources */,
+				D23265E619E991A50009334B /* ETTools.m in Sources */,
 				D23BED3D19E32823000FF210 /* main.m in Sources */,
+				D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
+				D2EF16F219E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23265E719E991A50009334B /* ETTools.m in Sources */,
 				D23BED5719E32823000FF210 /* EpiTimeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,9 +498,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D23BED7F19E328DA000FF210 /* ViewController.m in Sources */,
 				D23BED8019E328DA000FF210 /* AppDelegate.m in Sources */,
+				D23265E519E991A50009334B /* ETTools.m in Sources */,
 				D23BED8119E328DA000FF210 /* main.m in Sources */,
+				D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
+				D2EF16F119E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,11 +523,6 @@
 			isa = PBXTargetDependency;
 			target = D23BED6319E328C7000FF210 /* EpiTime-Widget */;
 			targetProxy = D23BED7319E328C7000FF210 /* PBXContainerItemProxy */;
-		};
-		D23BED7A19E328DA000FF210 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D23BED6319E328C7000FF210 /* EpiTime-Widget */;
-			targetProxy = D23BED7B19E328DA000FF210 /* PBXContainerItemProxy */;
 		};
 		D23BED7C19E328DA000FF210 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
