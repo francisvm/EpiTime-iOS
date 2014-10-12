@@ -20,6 +20,8 @@
 
 @implementation ETDayTableViewController {
     ETDayItem *day;
+    NSUInteger dayNumber;
+    NSDictionary *recievedData;
 }
 
 - (void)viewDidLoad {
@@ -31,6 +33,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self fetchData:nil];
+}
+
+- (void)fetchData:(void (^)(void))onCompletion {
     NSURL *url = [NSURL URLWithString:@"http://webservices.chronos.epita.net/GetWeeks.aspx?num=1&week=-1&group=ING1/GRA2&auth=3piko"];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -38,15 +44,29 @@
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                // Do something with the `data` unless you have `error`.
-                               NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
-                               day = [[ETDayItem alloc] initWithDictionary:recievedData[@"week"][@"day"][4]];
+                               recievedData = [NSDictionary dictionaryWithXMLData:data];
+                               day = [[ETDayItem alloc] initWithDictionary:recievedData[@"week"][@"day"][dayNumber]];
+                               self.dateLabel.text = [ETTools humanDateFromDate:day.date];
+                               self.dayLabel.text = [ETTools weekDayFromDate:day.date];
                                [self.tableView reloadData];
+                               if (onCompletion)
+                                   onCompletion();
                            }];
-
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [refreshControl endRefreshing];
+    [self fetchData:^{
+        [refreshControl endRefreshing];
+    }];
+}
+
+- (IBAction)refreshPressed:(id)sender {
+    [self fetchData:nil];
+}
+
+- (IBAction)next:(id)sender {
+    dayNumber = (dayNumber + 1) % 5;
+    [self fetchData:nil];
 }
 
 #pragma mark - Table view data source

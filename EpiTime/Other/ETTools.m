@@ -29,4 +29,16 @@
     return [NSString stringWithFormat:@"%2.2dh%2.2d", hrs, mins];
 }
 
++ (NSString *)humanDateFromDate:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterLongStyle;
+    return [formatter stringFromDate:date];
+}
+
++ (NSString *)weekDayFromDate:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterFullStyle;
+    return [[formatter stringFromDate:date] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"' "]][0];
+}
+
 @end

@@ -71,6 +71,9 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08h30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmP-cm-zmc">
                                                     <rect key="frame" x="10" y="10" width="37" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="37" id="c5L-JG-sh1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -97,6 +100,7 @@
                                             <constraints>
                                                 <constraint firstItem="TmP-cm-zmc" firstAttribute="top" secondItem="wtD-fT-VBN" secondAttribute="top" constant="10" id="7bP-bZ-o3Z"/>
                                                 <constraint firstItem="mKm-2D-zqV" firstAttribute="centerY" secondItem="yGq-dq-nKC" secondAttribute="centerY" id="Bdc-Pl-I6A"/>
+                                                <constraint firstItem="yGq-dq-nKC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TmP-cm-zmc" secondAttribute="trailing" constant="10" id="GgG-vo-AEs"/>
                                                 <constraint firstAttribute="bottom" secondItem="yba-q7-5lR" secondAttribute="bottom" constant="10" id="KGF-ic-Aw5"/>
                                                 <constraint firstAttribute="centerX" secondItem="yGq-dq-nKC" secondAttribute="centerX" id="L06-fB-orv"/>
                                                 <constraint firstItem="TmP-cm-zmc" firstAttribute="leading" secondItem="wtD-fT-VBN" secondAttribute="leading" constant="10" id="P9S-eF-jJP"/>
@@ -134,11 +138,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ING1/GRA2" id="fe3-Jp-xMw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Okk-Tq-92g">
+                            <color key="tintColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="next:" destination="F2x-Rc-brw" id="mHd-dV-D7b"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MeO-Al-o0R">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refreshPressed:" destination="F2x-Rc-brw" id="DXA-TQ-vhx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateLabel" destination="uCY-ha-pwr" id="07U-1s-rQN"/>
+                        <outlet property="dayLabel" destination="Ceh-kL-I5W" id="Cez-E5-Yoa"/>
                         <outlet property="tableView" destination="LzE-nF-aO3" id="wLk-Pq-jiR"/>
                     </connections>
                 </viewController>

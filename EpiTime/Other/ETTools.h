@@ -16,4 +16,8 @@
 
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes;
 
++ (NSString *)humanDateFromDate:(NSDate *)date;
+
++ (NSString *)weekDayFromDate:(NSDate *)date;
+
 @end
