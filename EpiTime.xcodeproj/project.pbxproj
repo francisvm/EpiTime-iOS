@@ -28,10 +28,16 @@
 		D23BED8619E328DA000FF210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4719E32823000FF210 /* Images.xcassets */; };
 		D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
 		D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
-		D2EF16F119E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */; };
-		D2EF16F219E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */; };
+		D2EF16F119E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
+		D2EF16F219E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
 		D2EF16F419EA031000D95789 /* Day.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EF16F319EA031000D95789 /* Day.xcassets */; };
 		D2EF16F519EA031000D95789 /* Day.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EF16F319EA031000D95789 /* Day.xcassets */; };
+		D2EF16F819EA05D200D95789 /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
+		D2EF16F919EA05D200D95789 /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
+		D2EF16FC19EA065D00D95789 /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
+		D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
+		D2EF170019EA067300D95789 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
+		D2EF170119EA067300D95789 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +111,15 @@
 		D23BED8F19E32AA0000FF210 /* EpiTime Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime Staging-Info.plist"; sourceTree = "<group>"; };
 		D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETDayTableViewController.h; path = Day/ETDayTableViewController.h; sourceTree = "<group>"; };
 		D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETDayTableViewController.m; path = Day/ETDayTableViewController.m; sourceTree = "<group>"; };
-		D2EF16EF19E9FDAD00D95789 /* ETClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETClassTableViewCell.h; path = Day/ETClassTableViewCell.h; sourceTree = "<group>"; };
-		D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETClassTableViewCell.m; path = Day/ETClassTableViewCell.m; sourceTree = "<group>"; };
+		D2EF16EF19E9FDAD00D95789 /* ETCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCourseTableViewCell.h; path = Day/ETCourseTableViewCell.h; sourceTree = "<group>"; };
+		D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETCourseTableViewCell.m; path = Day/ETCourseTableViewCell.m; sourceTree = "<group>"; };
 		D2EF16F319EA031000D95789 /* Day.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Day.xcassets; path = Resources/Day.xcassets; sourceTree = "<group>"; };
+		D2EF16F619EA05D200D95789 /* ETDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETDayItem.h; path = Day/ETDayItem.h; sourceTree = "<group>"; };
+		D2EF16F719EA05D200D95789 /* ETDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETDayItem.m; path = Day/ETDayItem.m; sourceTree = "<group>"; };
+		D2EF16FA19EA065D00D95789 /* ETCourseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCourseItem.h; path = Day/ETCourseItem.h; sourceTree = "<group>"; };
+		D2EF16FB19EA065D00D95789 /* ETCourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETCourseItem.m; path = Day/ETCourseItem.m; sourceTree = "<group>"; };
+		D2EF16FE19EA067300D95789 /* ETWeekItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETWeekItem.h; path = Day/ETWeekItem.h; sourceTree = "<group>"; };
+		D2EF16FF19EA067300D95789 /* ETWeekItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETWeekItem.m; path = Day/ETWeekItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,8 +272,14 @@
 			children = (
 				D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */,
 				D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */,
-				D2EF16EF19E9FDAD00D95789 /* ETClassTableViewCell.h */,
-				D2EF16F019E9FDAD00D95789 /* ETClassTableViewCell.m */,
+				D2EF16EF19E9FDAD00D95789 /* ETCourseTableViewCell.h */,
+				D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */,
+				D2EF16FE19EA067300D95789 /* ETWeekItem.h */,
+				D2EF16FF19EA067300D95789 /* ETWeekItem.m */,
+				D2EF16F619EA05D200D95789 /* ETDayItem.h */,
+				D2EF16F719EA05D200D95789 /* ETDayItem.m */,
+				D2EF16FA19EA065D00D95789 /* ETCourseItem.h */,
+				D2EF16FB19EA065D00D95789 /* ETCourseItem.m */,
 			);
 			name = Day;
 			sourceTree = "<group>";
@@ -471,9 +489,12 @@
 			files = (
 				D23BED4019E32823000FF210 /* AppDelegate.m in Sources */,
 				D23265E619E991A50009334B /* ETTools.m in Sources */,
+				D2EF16F919EA05D200D95789 /* ETDayItem.m in Sources */,
+				D2EF170119EA067300D95789 /* ETWeekItem.m in Sources */,
 				D23BED3D19E32823000FF210 /* main.m in Sources */,
+				D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
-				D2EF16F219E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */,
+				D2EF16F219E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,9 +521,12 @@
 			files = (
 				D23BED8019E328DA000FF210 /* AppDelegate.m in Sources */,
 				D23265E519E991A50009334B /* ETTools.m in Sources */,
+				D2EF16F819EA05D200D95789 /* ETDayItem.m in Sources */,
+				D2EF170019EA067300D95789 /* ETWeekItem.m in Sources */,
 				D23BED8119E328DA000FF210 /* main.m in Sources */,
+				D2EF16FC19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
-				D2EF16F119E9FDAD00D95789 /* ETClassTableViewCell.m in Sources */,
+				D2EF16F119E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

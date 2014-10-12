@@ -12,4 +12,8 @@
 
 + (void)setupAppearance;
 
++ (NSDate *)dateFromString:(NSString *)string;
+
++ (NSString *)timeStringFromMinutes:(NSUInteger)minutes;
+
 @end

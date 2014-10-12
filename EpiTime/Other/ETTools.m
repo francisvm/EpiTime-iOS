@@ -16,4 +16,17 @@
     [[UINavigationBar appearance] setTranslucent:YES];
 }
 
++ (NSDate *)dateFromString:(NSString *)string {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
+    return [formatter dateFromString:string];
+}
+
++ (NSString *)timeStringFromMinutes:(NSUInteger)minutes {
+    NSUInteger hrs = minutes / 60;
+    NSUInteger mins = minutes % 60;
+
+    return [NSString stringWithFormat:@"%2.2dh%2.2d", hrs, mins];
+}
+
 @end

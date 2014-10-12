@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETClassTableViewCell : UITableViewCell
+@interface ETCourseTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
