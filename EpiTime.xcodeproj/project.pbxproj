@@ -226,7 +226,7 @@
 				D23BED3F19E32823000FF210 /* ETAppDelegate.m */,
 				D23BED4419E32823000FF210 /* Main.storyboard */,
 				D23BED4919E32823000FF210 /* LaunchScreen.xib */,
-				D2EF16EE19E9F82900D95789 /* Day */,
+				D2EF16EE19E9F82900D95789 /* Schedule */,
 				D2045FA519EB1EA000F4CEFA /* API */,
 				D23265E919E991A80009334B /* Other */,
 				D23BED9019E32AB1000FF210 /* Resources */,
@@ -300,7 +300,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		D2EF16EE19E9F82900D95789 /* Day */ = {
+		D2EF16EE19E9F82900D95789 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */,
@@ -316,7 +316,7 @@
 				D2EF16FA19EA065D00D95789 /* ETCourseItem.h */,
 				D2EF16FB19EA065D00D95789 /* ETCourseItem.m */,
 			);
-			name = Day;
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

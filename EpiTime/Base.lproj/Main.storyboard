@@ -203,4 +203,5 @@
     <resources>
         <image name="icon_calendar" width="24" height="24"/>
     </resources>
+    <color key="tintColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
 </document>

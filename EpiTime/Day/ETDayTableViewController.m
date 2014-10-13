@@ -33,6 +33,7 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
+    // FIXME: REFRESH
     [refreshControl endRefreshing];
 
 }

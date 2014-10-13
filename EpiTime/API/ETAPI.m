@@ -27,7 +27,7 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
                                ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
-                               if (onCompletion)
+                               if (onCompletion && recievedData)
                                    onCompletion(recievedData, week);
                            }];
 }
