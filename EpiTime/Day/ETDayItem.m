@@ -31,4 +31,15 @@
     return day;
 }
 
++ (NSArray *)dumpDaysFromArray:(NSArray *)days {
+    NSMutableArray *dumpedDays = [NSMutableArray array];
+
+    for (NSDictionary *dicDay in days) {
+        if ([dicDay[@"course"] isKindOfClass:[NSArray class]])
+            [dumpedDays addObject:[[ETDayItem alloc] initWithDictionary:dicDay]];
+    }
+
+    return dumpedDays;
+}
+
 @end

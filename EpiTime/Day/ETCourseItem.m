@@ -15,7 +15,7 @@
                       hour:(NSUInteger)hour
                   duration:(NSUInteger)duration
                 instructor:(NSString *)instructor
-                      room:(NSString *)room
+                     rooms:(NSArray *)rooms
                   trainees:(NSArray *)trainees
 {
     if ((self = [super init])) {
@@ -24,7 +24,9 @@
         self.hour = hour;
         self.duration = duration;
         self.instructor = instructor;
-        self.room = room;
+        if ([rooms isKindOfClass:[NSString class]])
+            rooms = [NSArray arrayWithObject:rooms];
+        self.rooms = rooms;
         self.trainees = trainees;
     }
 
@@ -37,7 +39,7 @@
                                                        hour:[dicCourse[@"hour"] integerValue]
                                                    duration:[dicCourse[@"duration"] integerValue]
                                                  instructor:dicCourse[@"instructor"]
-                                                       room:dicCourse[@"room"]
+                                                      rooms:dicCourse[@"room"]
                                                    trainees:dicCourse[@"trainee"]];
 
     return course;

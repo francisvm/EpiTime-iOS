@@ -16,8 +16,10 @@
 
 @property (strong, nonatomic) NSArray *courses;
 
--  (instancetype)initWithid:(NSUInteger)id stringDate:(NSString *)date xmlCourses:(NSArray *)xmlCourses;
+- (instancetype)initWithid:(NSUInteger)id stringDate:(NSString *)date xmlCourses:(NSArray *)xmlCourses;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
+
++ (NSArray *)dumpDaysFromArray:(NSArray *)days;
 
 @end

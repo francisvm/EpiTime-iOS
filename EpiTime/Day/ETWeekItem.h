@@ -12,6 +12,10 @@
 
 @property (assign, nonatomic) NSUInteger id;
 
-@property (strong, nonatomic) NSMutableArray *days;
+@property (strong, nonatomic) NSArray *days;
+
+- (instancetype)initWithid:(NSUInteger)id daysArray:(NSArray *)days;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end

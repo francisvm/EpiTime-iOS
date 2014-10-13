@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 EpiTime. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ETAppDelegate.h"
 #import "ETTools.h"
 
-@interface AppDelegate ()
+@interface ETAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ETAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

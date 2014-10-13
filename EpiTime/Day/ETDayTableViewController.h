@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETDayItem.h"
 
 @interface ETDayTableViewController : UIViewController
 
@@ -15,5 +16,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *dayLabel;
+
+@property (strong, nonatomic) ETDayItem *day;
+
+@property NSUInteger index;
 
 @end

@@ -20,9 +20,19 @@
 
 @property (strong, nonatomic) NSString *instructor;
 
-@property (strong, nonatomic) NSString *room;
+@property (strong, nonatomic) NSArray *rooms;
 
 @property (strong, nonatomic) NSArray *trainees;
+
+- (instancetype)initWithid:(NSUInteger)id
+                    title:(NSString *)title
+                     hour:(NSUInteger)hour
+                 duration:(NSUInteger)duration
+               instructor:(NSString *)instructor
+                    rooms:(NSArray *)rooms
+                 trainees:(NSArray *)trainees;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dicCourse;
 
 + (NSArray *)dumpCoursesFromArray:(NSArray *)courses;
 

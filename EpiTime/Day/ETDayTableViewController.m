@@ -8,7 +8,6 @@
 
 #import "ETDayTableViewController.h"
 #import "ETCourseTableViewCell.h"
-#import "ETDayItem.h"
 #import "ETCourseItem.h"
 #import "ETTools.h"
 
@@ -18,11 +17,7 @@
 
 @end
 
-@implementation ETDayTableViewController {
-    ETDayItem *day;
-    NSUInteger dayNumber;
-    NSDictionary *recievedData;
-}
+@implementation ETDayTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,40 +28,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self fetchData:nil];
-}
-
-- (void)fetchData:(void (^)(void))onCompletion {
-    NSURL *url = [NSURL URLWithString:@"http://webservices.chronos.epita.net/GetWeeks.aspx?num=1&week=-1&group=ING1/GRA2&auth=3piko"];
-
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               // Do something with the `data` unless you have `error`.
-                               recievedData = [NSDictionary dictionaryWithXMLData:data];
-                               day = [[ETDayItem alloc] initWithDictionary:recievedData[@"week"][@"day"][dayNumber]];
-                               self.dateLabel.text = [ETTools humanDateFromDate:day.date];
-                               self.dayLabel.text = [ETTools weekDayFromDate:day.date];
-                               [self.tableView reloadData];
-                               if (onCompletion)
-                                   onCompletion();
-                           }];
+    self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
+    self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [self fetchData:^{
-        [refreshControl endRefreshing];
-    }];
-}
+    [refreshControl endRefreshing];
 
-- (IBAction)refreshPressed:(id)sender {
-    [self fetchData:nil];
-}
-
-- (IBAction)next:(id)sender {
-    dayNumber = (dayNumber + 1) % 5;
-    [self fetchData:nil];
 }
 
 #pragma mark - Table view data source
@@ -76,16 +44,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return day.courses.count;
+    return self.day.courses.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      ETCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseIdentifier" forIndexPath:indexPath];
 
-    ETCourseItem *course = day.courses[indexPath.row];
+    ETCourseItem *course = self.day.courses[indexPath.row];
     cell.nameLabel.text = course.title;
-    cell.roomLabel.text = course.room;
+    cell.roomLabel.text = course.rooms[0];
     cell.startingLabel.text = [ETTools timeStringFromMinutes:course.hour * 15];
     cell.endingLabel.text = [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15];
 
