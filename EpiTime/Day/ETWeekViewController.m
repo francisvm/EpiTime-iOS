@@ -49,7 +49,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
-    NSUInteger index = current.index == 0 ? 4 : current.index - 1;
+    NSUInteger index = current.index == 0 ? 6 : current.index - 1;
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     new.index = index;
     new.day = weekItem.days[index];
@@ -58,7 +58,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
-    NSUInteger index = current.index == 4 ? 0 : current.index + 1;
+    NSUInteger index = current.index == 6 ? 0 : current.index + 1;
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     new.index = index;
     new.day = weekItem.days[index];
