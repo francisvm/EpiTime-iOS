@@ -7,6 +7,7 @@
 //
 
 #import "ETTools.h"
+#import "ETConstants.h"
 
 @implementation ETTools
 
@@ -16,17 +17,33 @@
     [[UINavigationBar appearance] setTranslucent:YES];
 }
 
++ (void)setupData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *recieved = [userDefaults objectForKey:RECIEVED_DATA];
+    if (!recieved.count)
+    {
+        NSDictionary *data = [NSDictionary dictionary];
+        [userDefaults setObject:data forKey:RECIEVED_DATA];
+    }
+}
+
 + (NSDate *)dateFromString:(NSString *)string {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
     return [formatter dateFromString:string];
 }
 
++ (NSString *)stringFromDate:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
+    return [formatter stringFromDate:date];
+}
+
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes {
     NSUInteger hrs = minutes / 60;
     NSUInteger mins = minutes % 60;
 
-    return [NSString stringWithFormat:@"%2.2dh%2.2d", hrs, mins];
+    return [NSString stringWithFormat:@"%2.2luh%2.2lu", (unsigned long)hrs, (unsigned long)mins];
 }
 
 + (NSString *)humanDateFromDate:(NSDate *)date {

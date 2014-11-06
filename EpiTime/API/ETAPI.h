@@ -18,4 +18,6 @@
 + (void)fetchCurrentWeek:(NSString *)group
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
 
++ (NSInteger)currentWeek;
+
 @end

@@ -27,6 +27,7 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
                                ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
+                               [week save]; // Save to cache
                                if (onCompletion && recievedData)
                                    onCompletion(recievedData, week);
                            }];
@@ -38,12 +39,19 @@
     return [self fetchWeek:-1 ofGroup:group completion:onCompletion];
 }
 
++ (NSInteger)currentWeek
+{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
+    NSDateComponents *firstComponents = [[NSDateComponents alloc] init];
+    firstComponents.year = 2014;
+    firstComponents.month = 9;
+    firstComponents.day = 1;
+    NSDate *firstDate = [calendar dateFromComponents:firstComponents];
+    firstComponents = [calendar components:NSWeekOfYearCalendarUnit fromDate:firstDate];
 
-+ (void)setRecievedData:(NSDictionary *)recievedData {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:recievedData forKey:RECIEVED_DATA];
-    NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.TodayExtensionSharingDefaults"];
-    [sharedUserDefaults setObject:recievedData forKey:RECIEVED_DATA];
-    [sharedUserDefaults synchronize];
+    NSInteger currentWeek = [calendar component:NSWeekOfYearCalendarUnit fromDate:[NSDate date]];
+
+    return currentWeek - firstComponents.weekOfYear + 1;
 }
+
 @end

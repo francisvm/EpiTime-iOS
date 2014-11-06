@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ETTools setupAppearance];
+    [ETTools setupData]; // Setup the data containing all weeks
     
     return YES;
 }

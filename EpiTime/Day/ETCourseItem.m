@@ -55,4 +55,18 @@
     return dumpedCourses;
 }
 
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[NSNumber numberWithInteger:self.id] forKey:@"id"];
+    [dict setObject:self.title forKey:@"title"];
+    [dict setObject:[NSNumber numberWithInteger:self.hour] forKey:@"hour"];
+    [dict setObject:[NSNumber numberWithInteger:self.duration] forKey:@"duration"];
+    if (self.instructor)
+        [dict setObject:self.instructor forKey:@"instructor"];
+    [dict setObject:self.rooms forKey:@"room"];
+    [dict setObject:self.trainees forKey:@"trainee"];
+
+    return dict;
+}
+
 @end

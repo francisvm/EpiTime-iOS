@@ -24,9 +24,13 @@
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict {
+    NSArray *courses = dict[@"course"];
+    if ([courses isKindOfClass:[NSDictionary class]])
+        courses = [NSArray arrayWithObject:courses];
+
     ETDayItem *day = [[ETDayItem alloc] initWithid:[dict[@"id"] integerValue]
                                         stringDate:dict[@"date"]
-                                        xmlCourses:dict[@"course"]];
+                                        xmlCourses:courses];
 
     return day;
 }
@@ -35,11 +39,23 @@
     NSMutableArray *dumpedDays = [NSMutableArray array];
 
     for (NSDictionary *dicDay in days) {
-        if ([dicDay[@"course"] isKindOfClass:[NSArray class]])
-            [dumpedDays addObject:[[ETDayItem alloc] initWithDictionary:dicDay]];
+        [dumpedDays addObject:[[ETDayItem alloc] initWithDictionary:dicDay]];
     }
 
     return dumpedDays;
 }
+
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[NSNumber numberWithInteger:self.id] forKey:@"id"];
+    [dict setObject:[ETTools stringFromDate:self.date] forKey:@"date"];
+    NSMutableArray *courses = [NSMutableArray array];
+    for (ETCourseItem *course in self.courses) {
+        [courses addObject:[course toDictionary]];
+    }
+    [dict setObject:courses forKey:@"course"];
+    return dict;
+}
+
 
 @end

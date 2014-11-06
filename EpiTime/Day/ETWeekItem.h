@@ -18,4 +18,8 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 
+- (NSDictionary *)toDictionary;
+
+- (void)save;
+
 @end

@@ -22,4 +22,6 @@
 
 + (NSArray *)dumpDaysFromArray:(NSArray *)days;
 
+- (NSDictionary *)toDictionary;
+
 @end

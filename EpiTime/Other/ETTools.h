@@ -12,7 +12,11 @@
 
 + (void)setupAppearance;
 
++ (void)setupData;
+
 + (NSDate *)dateFromString:(NSString *)string;
+
++ (NSString *)stringFromDate:(NSDate *)date;
 
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes;
 
