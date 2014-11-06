@@ -39,8 +39,7 @@
     return [self fetchWeek:-1 ofGroup:group completion:onCompletion];
 }
 
-+ (NSInteger)currentWeek
-{
++ (NSInteger)currentWeek {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     NSDateComponents *firstComponents = [[NSDateComponents alloc] init];
     firstComponents.year = 2014;
@@ -52,6 +51,13 @@
     NSInteger currentWeek = [calendar component:NSWeekOfYearCalendarUnit fromDate:[NSDate date]];
 
     return currentWeek - firstComponents.weekOfYear + 1;
+}
+
++ (ETWeekItem *)cachedWeek:(NSInteger)weekNumber {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *weeks = [userDefaults objectForKey:RECIEVED_DATA];
+    ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:weeks[[NSString stringWithFormat:@"%ld", (long)weekNumber]]];
+    return week;
 }
 
 @end

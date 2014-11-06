@@ -20,4 +20,6 @@
 
 + (NSInteger)currentWeek;
 
++ (ETWeekItem *)cachedWeek:(NSInteger)weekNumber;
+
 @end
