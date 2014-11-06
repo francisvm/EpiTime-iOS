@@ -78,7 +78,7 @@
                                 <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseIdentifier" rowHeight="85" id="J5a-Cp-4d0" customClass="ETCourseTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseIdentifierOdd" rowHeight="85" id="J5a-Cp-4d0" customClass="ETCourseTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J5a-Cp-4d0" id="bS4-TF-ihm">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -137,6 +137,67 @@
                                             <outlet property="nameLabel" destination="qt3-eF-Sxt" id="yQ0-x8-cJL"/>
                                             <outlet property="roomLabel" destination="VUh-jl-jT0" id="oMh-l9-grb"/>
                                             <outlet property="startingLabel" destination="bdS-B8-L1s" id="t8W-eB-nS7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseIdentifierEven" rowHeight="85" id="23n-EQ-13H" customClass="ETCourseTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="23n-EQ-13H" id="zWB-VK-gFz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algorithmique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtX-XQ-ibf">
+                                                    <rect key="frame" x="257" y="35" width="86" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08h30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG9-5c-tMm">
+                                                    <rect key="frame" x="10" y="10" width="37" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="37" id="mGf-gX-XId"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gES-O7-f7c">
+                                                    <rect key="frame" x="26" y="35" width="6" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10h00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We2-bg-IBS">
+                                                    <rect key="frame" x="10" y="59" width="37" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VA 311" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-Lb-8aG">
+                                                    <rect key="frame" x="548" y="10" width="42" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="We2-bg-IBS" firstAttribute="leading" secondItem="zWB-VK-gFz" secondAttribute="leading" constant="10" id="766-f1-SXS"/>
+                                                <constraint firstAttribute="trailing" secondItem="A0e-Lb-8aG" secondAttribute="trailing" constant="10" id="7tq-s6-Acy"/>
+                                                <constraint firstItem="A0e-Lb-8aG" firstAttribute="top" secondItem="zWB-VK-gFz" secondAttribute="top" constant="10" id="Bel-XL-djK"/>
+                                                <constraint firstAttribute="centerX" secondItem="MtX-XQ-ibf" secondAttribute="centerX" id="Ryq-OY-xN3"/>
+                                                <constraint firstItem="GG9-5c-tMm" firstAttribute="leading" secondItem="zWB-VK-gFz" secondAttribute="leading" constant="10" id="S3x-38-h20"/>
+                                                <constraint firstItem="gES-O7-f7c" firstAttribute="centerY" secondItem="MtX-XQ-ibf" secondAttribute="centerY" id="bVF-aw-OTv"/>
+                                                <constraint firstItem="GG9-5c-tMm" firstAttribute="top" secondItem="zWB-VK-gFz" secondAttribute="top" constant="10" id="h6v-Fp-6O7"/>
+                                                <constraint firstAttribute="centerY" secondItem="MtX-XQ-ibf" secondAttribute="centerY" id="id0-51-y3Y"/>
+                                                <constraint firstItem="gES-O7-f7c" firstAttribute="centerX" secondItem="GG9-5c-tMm" secondAttribute="centerX" id="kqW-gn-bAo"/>
+                                                <constraint firstItem="MtX-XQ-ibf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GG9-5c-tMm" secondAttribute="trailing" constant="10" id="pDP-7h-BgV"/>
+                                                <constraint firstAttribute="bottom" secondItem="We2-bg-IBS" secondAttribute="bottom" constant="10" id="ujZ-V3-tmB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.14748170847474074" green="0.17548635571943055" blue="0.21467141544117652" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="endingLabel" destination="We2-bg-IBS" id="WJT-gf-TFb"/>
+                                            <outlet property="nameLabel" destination="MtX-XQ-ibf" id="3Nc-Rp-DTc"/>
+                                            <outlet property="roomLabel" destination="A0e-Lb-8aG" id="hUU-kE-8Pv"/>
+                                            <outlet property="startingLabel" destination="GG9-5c-tMm" id="ZC3-Et-07a"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

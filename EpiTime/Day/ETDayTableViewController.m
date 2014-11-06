@@ -50,7 +50,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-     ETCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseIdentifier" forIndexPath:indexPath];
+    NSString *identifier = !(indexPath.row % 2) ? @"CourseIdentifierEven" : @"CourseIdentifierOdd";
+    ETCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 
     ETCourseItem *course = self.day.courses[indexPath.row];
     cell.nameLabel.text = course.title;
