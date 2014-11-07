@@ -10,6 +10,7 @@
 #import "ETDayTableViewController.h"
 #import "ETConstants.h"
 #import "ETAPI.h"
+#import "ETTools.h"
 
 @interface ETWeekViewController () {
     ETWeekItem *weekItem;
@@ -30,21 +31,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [ETAPI fetchCurrentWeek:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week)
-    {
-        ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
-        initialViewController.index = 0;
-        initialViewController.day = week.days[0];
+    ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
+    
+    NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
+    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
-        NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
-        [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-
-        [self addChildViewController:self.pageController];
-        [[self view] addSubview:[self.pageController view]];
-        [self.pageController didMoveToParentViewController:self];
-
-        weekItem = week;
-    }];
+    [self addChildViewController:self.pageController];
+    [[self view] addSubview:[self.pageController view]];
+    [self.pageController didMoveToParentViewController:self];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {

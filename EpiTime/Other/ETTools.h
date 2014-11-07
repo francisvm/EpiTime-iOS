@@ -24,4 +24,6 @@
 
 + (NSString *)weekDayFromDate:(NSDate *)date;
 
++ (NSUInteger)weekDayIndexFromDate:(NSDate *)date;
+
 @end

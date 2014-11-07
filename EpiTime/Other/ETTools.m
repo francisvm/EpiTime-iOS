@@ -58,4 +58,11 @@
     return [[formatter stringFromDate:date] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"' "]][0];
 }
 
++ (NSUInteger)weekDayIndexFromDate:(NSDate *)date {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
+    NSDateComponents *weekdayComponents =[gregorian components:NSCalendarUnitWeekday fromDate:date];
+    NSInteger weekday = [weekdayComponents weekday];
+    return weekday;
+}
+
 @end
