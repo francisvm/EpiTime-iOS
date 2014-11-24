@@ -33,6 +33,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     
+    initialViewController.index = [ETTools weekDayIndexFromDate:[NSDate date]];
+
+
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 

@@ -36,8 +36,11 @@
     self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
 
     [ETAPI fetchCurrentWeek:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
-         self.day = week.days[self.index];
-         [self.tableView reloadData];
+        self.day = week.days[self.index];
+        self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
+        self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
+
+        [self.tableView reloadData];
      }];
 }
 
