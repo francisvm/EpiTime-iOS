@@ -59,10 +59,11 @@
 }
 
 + (NSUInteger)weekDayIndexFromDate:(NSDate *)date {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
-    NSDateComponents *weekdayComponents =[gregorian components:NSCalendarUnitWeekday fromDate:date];
-    NSInteger weekday = [weekdayComponents weekday];
-    return weekday;
+    // https://stackoverflow.com/questions/11019761/nsdatecomponents-weekday-doesnt-show-correct-weekday
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [gregorian setFirstWeekday:2]; // Sunday == 1, Saturday == 7
+    NSUInteger adjustedWeekdayOrdinal = [gregorian ordinalityOfUnit:NSCalendarUnitWeekday inUnit:NSCalendarUnitWeekOfMonth forDate:date];
+    return adjustedWeekdayOrdinal - 1;
 }
 
 @end
