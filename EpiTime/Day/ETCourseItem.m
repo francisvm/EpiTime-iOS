@@ -63,8 +63,10 @@
     [dict setObject:[NSNumber numberWithInteger:self.duration] forKey:@"duration"];
     if (self.instructor)
         [dict setObject:self.instructor forKey:@"instructor"];
-    [dict setObject:self.rooms forKey:@"room"];
-    [dict setObject:self.trainees forKey:@"trainee"];
+    if (self.rooms)
+        [dict setObject:self.rooms forKey:@"room"];
+    if (self.trainees)
+        [dict setObject:self.trainees forKey:@"trainee"];
 
     return dict;
 }

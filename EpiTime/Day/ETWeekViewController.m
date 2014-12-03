@@ -12,9 +12,7 @@
 #import "ETAPI.h"
 #import "ETTools.h"
 
-@interface ETWeekViewController () {
-    ETWeekItem *weekItem;
-}
+@interface ETWeekViewController ();
 
 @end
 
@@ -28,12 +26,14 @@
 
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
+    self.weekIndex = [ETAPI currentWeek];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     
     initialViewController.index = [ETTools weekDayIndexFromDate:[NSDate date]];
+    initialViewController.weekIndex = self.weekIndex;
 
 
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
@@ -46,19 +46,25 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
+    if (current.index == 0)
+        self.weekIndex--;
     NSUInteger index = current.index == 0 ? 6 : current.index - 1;
+
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     new.index = index;
-    new.day = weekItem.days[index];
+    new.weekIndex = self.weekIndex;
     return new;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
+    if (current.index == 6)
+        self.weekIndex++;
     NSUInteger index = current.index == 6 ? 0 : current.index + 1;
+
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     new.index = index;
-    new.day = weekItem.days[index];
+    new.weekIndex = self.weekIndex;
     return new;
 }
 

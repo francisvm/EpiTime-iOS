@@ -21,4 +21,6 @@
 
 @property NSUInteger index;
 
+@property NSUInteger weekIndex;
+
 @end

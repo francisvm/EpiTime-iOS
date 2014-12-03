@@ -29,13 +29,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSArray *cachedWeekDays = [ETAPI cachedWeek:[ETAPI currentWeek]].days;
+    NSArray *cachedWeekDays = [ETAPI cachedWeek:self.weekIndex].days;
     if (cachedWeekDays.count)
         self.day = cachedWeekDays[self.index];
     self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
     self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
 
-    [ETAPI fetchCurrentWeek:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];

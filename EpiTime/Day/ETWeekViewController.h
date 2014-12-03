@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 
+@property NSInteger weekIndex;
+
 @end
