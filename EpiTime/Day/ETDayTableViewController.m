@@ -39,7 +39,7 @@
     if (!self.dayLabel.text)
         self.dayLabel.text = @"...";
 
-    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
@@ -49,7 +49,7 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];

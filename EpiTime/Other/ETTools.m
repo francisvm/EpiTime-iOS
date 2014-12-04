@@ -9,6 +9,8 @@
 #import "ETTools.h"
 #import "ETConstants.h"
 
+#import "UIImageView+Animation.h"
+
 @implementation ETTools
 
 +(void)setupAppearance {
@@ -64,6 +66,15 @@
     [gregorian setFirstWeekday:2]; // Sunday == 1, Saturday == 7
     NSUInteger adjustedWeekdayOrdinal = [gregorian ordinalityOfUnit:NSCalendarUnitWeekday inUnit:NSCalendarUnitWeekOfMonth forDate:date];
     return adjustedWeekdayOrdinal - 1;
+}
+
++ (void)startLoadingActivity:(UIViewController *)vc {
+    UIBarButtonItem *refreshing = [[UIBarButtonItem alloc] initWithCustomView:[UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)]];
+    vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[refreshing];
+}
+
++ (void)stopLoadingActivity:(UIViewController *)vc {
+    vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[];
 }
 
 @end

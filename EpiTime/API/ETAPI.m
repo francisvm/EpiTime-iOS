@@ -16,12 +16,14 @@
 
 + (void)fetchWeek:(NSInteger)week
           ofGroup:(NSString *)group
+   viewController:(UIViewController *)viewController
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
 {
     NSString *urlString = [NSString stringWithFormat:BASE_URL_WEEKS, 1, week, group];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
+    if (viewController)
+        [ETTools startLoadingActivity:viewController];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
@@ -29,14 +31,19 @@
                                ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
                                [week save]; // Save to cache
                                if (onCompletion && recievedData)
+                               {
                                    onCompletion(recievedData, week);
+                                   if (viewController)
+                                       [ETTools stopLoadingActivity:viewController];
+                               }
                            }];
 }
 
 + (void)fetchCurrentWeek:(NSString *)group
+   viewController:(UIViewController *)viewController
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
 {
-    return [self fetchWeek:-1 ofGroup:group completion:onCompletion];
+    return [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion];
 }
 
 + (NSInteger)currentWeek {

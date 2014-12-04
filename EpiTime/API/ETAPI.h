@@ -7,16 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ETWeekItem.h"
 
 @interface ETAPI : NSObject
 
 + (void)fetchWeek:(NSInteger)week
                   ofGroup:(NSString *)group
+           viewController:(UIViewController *)viewController
                completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
 
 + (void)fetchCurrentWeek:(NSString *)group
-       completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
+          viewController:(UIViewController *)viewController
+              completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
 
 + (NSInteger)currentWeek;
 

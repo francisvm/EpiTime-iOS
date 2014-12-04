@@ -20,6 +20,10 @@
 		D2045FB219EB517000F4CEFA /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
 		D2045FB319EB517C00F4CEFA /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
 		D2045FB419EB517C00F4CEFA /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
+		D215B37D1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */; };
+		D215B37E1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */; };
+		D215B3801A307076007ED4F0 /* Loading.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D215B37F1A307076007ED4F0 /* Loading.xcassets */; };
+		D215B3811A307076007ED4F0 /* Loading.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D215B37F1A307076007ED4F0 /* Loading.xcassets */; };
 		D23265E519E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E619E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E719E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
@@ -107,6 +111,9 @@
 		D2045FA619EB200000F4CEFA /* ETConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETConstants.h; path = Other/ETConstants.h; sourceTree = "<group>"; };
 		D2045FA719EB200000F4CEFA /* ETConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETConstants.m; path = Other/ETConstants.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2045FAE19EB4CBB00F4CEFA /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		D215B37B1A306CAF007ED4F0 /* UIImageView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Animation.h"; sourceTree = "<group>"; };
+		D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Animation.m"; sourceTree = "<group>"; };
+		D215B37F1A307076007ED4F0 /* Loading.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Loading.xcassets; path = Resources/Loading.xcassets; sourceTree = "<group>"; };
 		D23265E319E991A50009334B /* ETTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETTools.h; path = Other/ETTools.h; sourceTree = "<group>"; };
 		D23265E419E991A50009334B /* ETTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETTools.m; path = Other/ETTools.m; sourceTree = "<group>"; };
 		D23BED3719E32823000FF210 /* EpiTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +192,15 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		D215B37A1A306CAF007ED4F0 /* UIImageView+Animation */ = {
+			isa = PBXGroup;
+			children = (
+				D215B37B1A306CAF007ED4F0 /* UIImageView+Animation.h */,
+				D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */,
+			);
+			path = "UIImageView+Animation";
+			sourceTree = "<group>";
+		};
 		D23265E919E991A80009334B /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +245,7 @@
 				D2EF16EE19E9F82900D95789 /* Schedule */,
 				D2045FA519EB1EA000F4CEFA /* API */,
 				D23265E919E991A80009334B /* Other */,
+				D215B37A1A306CAF007ED4F0 /* UIImageView+Animation */,
 				D23BED9019E32AB1000FF210 /* Resources */,
 				D23BED3A19E32823000FF210 /* Supporting Files */,
 			);
@@ -295,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				D23BED4719E32823000FF210 /* Images.xcassets */,
+				D215B37F1A307076007ED4F0 /* Loading.xcassets */,
 				D2EF16F319EA031000D95789 /* Day.xcassets */,
 			);
 			name = Resources;
@@ -461,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D215B3811A307076007ED4F0 /* Loading.xcassets in Resources */,
 				D23BED4619E32823000FF210 /* Main.storyboard in Resources */,
 				D23BED4B19E32823000FF210 /* LaunchScreen.xib in Resources */,
 				D2EF16F519EA031000D95789 /* Day.xcassets in Resources */,
@@ -487,6 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D215B3801A307076007ED4F0 /* Loading.xcassets in Resources */,
 				D23BED8419E328DA000FF210 /* Main.storyboard in Resources */,
 				D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */,
 				D2EF16F419EA031000D95789 /* Day.xcassets in Resources */,
@@ -565,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D23BED4019E32823000FF210 /* ETAppDelegate.m in Sources */,
+				D215B37E1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
 				D23265E619E991A50009334B /* ETTools.m in Sources */,
 				D2EF16F919EA05D200D95789 /* ETDayItem.m in Sources */,
 				D2045FA419EB1E9600F4CEFA /* ETAPI.m in Sources */,
@@ -605,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D23BED8019E328DA000FF210 /* ETAppDelegate.m in Sources */,
+				D215B37D1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
 				D23265E519E991A50009334B /* ETTools.m in Sources */,
 				D2EF16F819EA05D200D95789 /* ETDayItem.m in Sources */,
 				D2045FA319EB1E9600F4CEFA /* ETAPI.m in Sources */,

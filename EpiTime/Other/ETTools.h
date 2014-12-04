@@ -26,4 +26,8 @@
 
 + (NSUInteger)weekDayIndexFromDate:(NSDate *)date;
 
++ (void)startLoadingActivity:(UIViewController *)vc;
+
++ (void)stopLoadingActivity:(UIViewController *)vc;
+
 @end
