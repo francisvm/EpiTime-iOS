@@ -33,7 +33,11 @@
     if (cachedWeekDays.count)
         self.day = cachedWeekDays[self.index];
     self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
+    if (!self.dateLabel.text)
+        self.dateLabel.text = @"Loading";
     self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
+    if (!self.dayLabel.text)
+        self.dayLabel.text = @"...";
 
     [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
@@ -45,9 +49,14 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    // FIXME: REFRESH
-    [refreshControl endRefreshing];
+    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+        self.day = week.days[self.index];
+        self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
+        self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
 
+        [self.tableView reloadData];
+        [refreshControl endRefreshing];
+     }];
 }
 
 #pragma mark - Table view data source
