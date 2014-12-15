@@ -65,7 +65,11 @@
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     if (self.currentTask)
+    {
+        [refreshControl endRefreshing];
         return;
+    }
+
     self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
