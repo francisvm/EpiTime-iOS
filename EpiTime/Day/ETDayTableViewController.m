@@ -16,6 +16,8 @@
 
 @interface ETDayTableViewController ()
 
+@property (strong, nonatomic) NSURLSessionDataTask *currentTask;
+
 @end
 
 @implementation ETDayTableViewController
@@ -26,6 +28,7 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
+    self.currentTask = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,23 +42,38 @@
     if (!self.dayLabel.text)
         self.dayLabel.text = @"...";
 
-    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
 
         [self.tableView reloadData];
+        self.currentTask = nil;
      }];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    if (self.currentTask)
+    {
+        NSLog(@"canceling");
+        [self.currentTask cancel];
+        self.currentTask = nil;
+    }
+
+    [super viewWillDisappear:animated];
+}
+
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    if (self.currentTask)
+        return;
+    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
 
         [self.tableView reloadData];
         [refreshControl endRefreshing];
+        self.currentTask = nil;
      }];
 }
 
