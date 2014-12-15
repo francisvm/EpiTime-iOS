@@ -14,34 +14,39 @@
 
 @implementation ETAPI
 
-+ (void)fetchWeek:(NSInteger)week
++ (NSURLSessionDataTask *)fetchWeek:(NSInteger)week
           ofGroup:(NSString *)group
    viewController:(UIViewController *)viewController
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
 {
     NSString *urlString = [NSString stringWithFormat:BASE_URL_WEEKS, 1, week, group];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
     if (viewController)
         [ETTools startLoadingActivity:viewController];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
-                               ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
-                               [week save]; // Save to cache
-                               if (onCompletion && recievedData)
-                               {
-                                   onCompletion(recievedData, week);
-                                   if (viewController)
-                                       [ETTools stopLoadingActivity:viewController];
-                               }
-                           }];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url
+                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                            NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
+                                            ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
+                                            [week save]; // Save to cache
+                                            if (onCompletion && recievedData)
+                                            {
+                                                // NSURSession runs on the background, so we need to update the UI on the main thread
+                                                dispatch_async(dispatch_get_main_queue(), ^{
+                                                    onCompletion(recievedData, week);
+                                                    if (viewController)
+                                                        [ETTools stopLoadingActivity:viewController];
+                                                });
+                                            }
+                                        }];
+    [task resume];
+    return task;
 }
 
-+ (void)fetchCurrentWeek:(NSString *)group
-   viewController:(UIViewController *)viewController
-       completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
++ (NSURLSessionDataTask *)fetchCurrentWeek:(NSString *)group
+          viewController:(UIViewController *)viewController
+              completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
 {
     return [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion];
 }

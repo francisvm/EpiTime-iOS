@@ -12,12 +12,12 @@
 
 @interface ETAPI : NSObject
 
-+ (void)fetchWeek:(NSInteger)week
++ (NSURLSessionDataTask *)fetchWeek:(NSInteger)week
                   ofGroup:(NSString *)group
            viewController:(UIViewController *)viewController
                completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
 
-+ (void)fetchCurrentWeek:(NSString *)group
++ (NSURLSessionDataTask *)fetchCurrentWeek:(NSString *)group
           viewController:(UIViewController *)viewController
               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
 
