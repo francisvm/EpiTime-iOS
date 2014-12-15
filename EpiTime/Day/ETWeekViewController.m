@@ -46,13 +46,11 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
-    if (current.index == 0)
-        self.weekIndex--;
     NSUInteger index = current.index == 0 ? 6 : current.index - 1;
 
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     new.index = index;
-    new.weekIndex = self.weekIndex;
+    new.weekIndex = current.weekIndex - (current.index == 0 ? 1 : 0);
     return new;
 }
 
@@ -64,7 +62,7 @@
 
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     new.index = index;
-    new.weekIndex = self.weekIndex;
+    new.weekIndex = current.weekIndex + (current.index == 6 ? 1 : 0);
     return new;
 }
 
