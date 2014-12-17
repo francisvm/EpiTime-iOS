@@ -72,4 +72,55 @@
     return week;
 }
 
++ (NSMutableArray *)cachedGroups {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *groups = [userDefaults objectForKey:RECIEVED_GROUPS];
+    return groups;
+}
+
+#pragma mark Groups
+
++ (void)fillArrayFromData:(id)recievedData array:(NSMutableArray *)array {
+    if ([recievedData isKindOfClass:[NSArray class]]) {
+        for (NSDictionary *node in recievedData)
+            [self fillArrayFromData:node array:array];
+    }
+    else {
+        NSString *name = [recievedData objectForKey:@"name"];
+        NSArray *nodes = [recievedData objectForKey:@"nodes"];
+        NSArray *node = [recievedData objectForKey:@"node"];
+        if (name)
+            [array addObject:name];
+        if (nodes)
+            [self fillArrayFromData:nodes array:array];
+        if (node)
+            [self fillArrayFromData:node array:array];
+    }
+}
+
++ (NSURLSessionDataTask *)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion
+{
+    NSString *urlString = BASE_URL_GROUPS;
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url
+                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                            NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
+                                            NSMutableArray *groupsArray = [NSMutableArray array];
+                                            [self fillArrayFromData:[recievedData objectForKey:@"node"] array:groupsArray];
+                                            [[NSUserDefaults standardUserDefaults] setObject:groupsArray forKey:RECIEVED_GROUPS];
+
+                                            if (onCompletion && recievedData)
+                                            {
+                                                // NSURSession runs on the background, so we need to update the UI on the main thread
+                                                dispatch_async(dispatch_get_main_queue(), ^{
+                                                    onCompletion(recievedData, groupsArray);
+                                                });
+                                            }
+                                        }];
+    [task resume];
+    return task;
+}
+
 @end
