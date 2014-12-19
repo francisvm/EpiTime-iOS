@@ -42,6 +42,12 @@
 		D23BED8419E328DA000FF210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4419E32823000FF210 /* Main.storyboard */; };
 		D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4919E32823000FF210 /* LaunchScreen.xib */; };
 		D23BED8619E328DA000FF210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4719E32823000FF210 /* Images.xcassets */; };
+		D28002161A443F9D00861E20 /* ETGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002151A443F9D00861E20 /* ETGroupsViewController.m */; };
+		D28002171A443F9D00861E20 /* ETGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002151A443F9D00861E20 /* ETGroupsViewController.m */; };
+		D280021A1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002191A443FF900861E20 /* ETGroupTableViewCell.m */; };
+		D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002191A443FF900861E20 /* ETGroupTableViewCell.m */; };
+		D280021E1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
+		D280021F1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
 		D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
 		D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
 		D2EF16F119E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
@@ -135,6 +141,12 @@
 		D23BED8C19E328DA000FF210 /* EpiTime Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EpiTime Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23BED8E19E32A86000FF210 /* EpiTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime-Info.plist"; sourceTree = "<group>"; };
 		D23BED8F19E32AA0000FF210 /* EpiTime Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime Staging-Info.plist"; sourceTree = "<group>"; };
+		D28002141A443F9D00861E20 /* ETGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGroupsViewController.h; path = Groups/ETGroupsViewController.h; sourceTree = "<group>"; };
+		D28002151A443F9D00861E20 /* ETGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupsViewController.m; path = Groups/ETGroupsViewController.m; sourceTree = "<group>"; };
+		D28002181A443FF900861E20 /* ETGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGroupTableViewCell.h; path = Groups/ETGroupTableViewCell.h; sourceTree = "<group>"; };
+		D28002191A443FF900861E20 /* ETGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupTableViewCell.m; path = Groups/ETGroupTableViewCell.m; sourceTree = "<group>"; };
+		D280021C1A44D18F00861E20 /* ETSchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSchoolItem.h; path = Groups/ETSchoolItem.h; sourceTree = "<group>"; };
+		D280021D1A44D18F00861E20 /* ETSchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSchoolItem.m; path = Groups/ETSchoolItem.m; sourceTree = "<group>"; };
 		D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ETDayTableViewController.h; path = Day/ETDayTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETDayTableViewController.m; path = Day/ETDayTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2EF16EF19E9FDAD00D95789 /* ETCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCourseTableViewCell.h; path = Day/ETCourseTableViewCell.h; sourceTree = "<group>"; };
@@ -242,6 +254,7 @@
 				D23BED3F19E32823000FF210 /* ETAppDelegate.m */,
 				D23BED4419E32823000FF210 /* Main.storyboard */,
 				D23BED4919E32823000FF210 /* LaunchScreen.xib */,
+				D28002131A443C9E00861E20 /* Groups */,
 				D2EF16EE19E9F82900D95789 /* Schedule */,
 				D2045FA519EB1EA000F4CEFA /* API */,
 				D23265E919E991A80009334B /* Other */,
@@ -316,6 +329,19 @@
 				D2EF16F319EA031000D95789 /* Day.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		D28002131A443C9E00861E20 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				D28002141A443F9D00861E20 /* ETGroupsViewController.h */,
+				D28002151A443F9D00861E20 /* ETGroupsViewController.m */,
+				D28002181A443FF900861E20 /* ETGroupTableViewCell.h */,
+				D28002191A443FF900861E20 /* ETGroupTableViewCell.m */,
+				D280021C1A44D18F00861E20 /* ETSchoolItem.h */,
+				D280021D1A44D18F00861E20 /* ETSchoolItem.m */,
+			);
+			name = Groups;
 			sourceTree = "<group>";
 		};
 		D2EF16EE19E9F82900D95789 /* Schedule */ = {
@@ -586,6 +612,8 @@
 			files = (
 				D23BED4019E32823000FF210 /* ETAppDelegate.m in Sources */,
 				D215B37E1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
+				D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */,
+				D28002171A443F9D00861E20 /* ETGroupsViewController.m in Sources */,
 				D23265E619E991A50009334B /* ETTools.m in Sources */,
 				D2EF16F919EA05D200D95789 /* ETDayItem.m in Sources */,
 				D2045FA419EB1E9600F4CEFA /* ETAPI.m in Sources */,
@@ -593,6 +621,7 @@
 				D23BED3D19E32823000FF210 /* main.m in Sources */,
 				D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
+				D280021F1A44D18F00861E20 /* ETSchoolItem.m in Sources */,
 				D2045FA919EB200000F4CEFA /* ETConstants.m in Sources */,
 				D2EF16F219E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */,
 				D2045FA019EB0B4500F4CEFA /* ETWeekViewController.m in Sources */,
@@ -627,6 +656,8 @@
 			files = (
 				D23BED8019E328DA000FF210 /* ETAppDelegate.m in Sources */,
 				D215B37D1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
+				D280021A1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */,
+				D28002161A443F9D00861E20 /* ETGroupsViewController.m in Sources */,
 				D23265E519E991A50009334B /* ETTools.m in Sources */,
 				D2EF16F819EA05D200D95789 /* ETDayItem.m in Sources */,
 				D2045FA319EB1E9600F4CEFA /* ETAPI.m in Sources */,
@@ -634,6 +665,7 @@
 				D23BED8119E328DA000FF210 /* main.m in Sources */,
 				D2EF16FC19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
+				D280021E1A44D18F00861E20 /* ETSchoolItem.m in Sources */,
 				D2045FA819EB200000F4CEFA /* ETConstants.m in Sources */,
 				D2EF16F119E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */,
 				D2045F9F19EB0B4500F4CEFA /* ETWeekViewController.m in Sources */,

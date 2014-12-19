@@ -10,6 +10,8 @@
 #import "ETTools.h"
 #import "ETConstants.h"
 #import "ETWeekItem.h"
+#import "ETSchoolItem.h"
+
 #import "XMLDictionary.h"
 
 @implementation ETAPI
@@ -80,21 +82,13 @@
 
 #pragma mark Groups
 
-+ (void)fillArrayFromData:(id)recievedData array:(NSMutableArray *)array {
-    if ([recievedData isKindOfClass:[NSArray class]]) {
-        for (NSDictionary *node in recievedData)
-            [self fillArrayFromData:node array:array];
-    }
-    else {
-        NSString *name = [recievedData objectForKey:@"name"];
-        NSArray *nodes = [recievedData objectForKey:@"nodes"];
-        NSArray *node = [recievedData objectForKey:@"node"];
-        if (name)
-            [array addObject:name];
-        if (nodes)
-            [self fillArrayFromData:nodes array:array];
-        if (node)
-            [self fillArrayFromData:node array:array];
++ (void)fillArrayFromRequestData:(id)recievedData array:(NSMutableArray *)array {
+    NSArray *nodes = recievedData[@"node"];
+    for (NSDictionary *node in nodes)
+    {
+        ETSchoolItem *school = [[ETSchoolItem alloc] initWithName:node[@"name"]];
+        [school fillWithDictionary:node];
+        [array addObject:school];
     }
 }
 
@@ -108,8 +102,7 @@
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                             NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
                                             NSMutableArray *groupsArray = [NSMutableArray array];
-                                            [self fillArrayFromData:[recievedData objectForKey:@"node"] array:groupsArray];
-                                            [[NSUserDefaults standardUserDefaults] setObject:groupsArray forKey:RECIEVED_GROUPS];
+                                            [self fillArrayFromRequestData:recievedData array:groupsArray];
 
                                             if (onCompletion && recievedData)
                                             {

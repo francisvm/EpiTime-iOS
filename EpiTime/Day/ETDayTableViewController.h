@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ETDayItem.h"
 
-@interface ETDayTableViewController : UIViewController
+@interface ETDayTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
