@@ -14,6 +14,8 @@
 
 + (void)setupData;
 
++ (void)clearData;
+
 + (NSDate *)dateFromString:(NSString *)string;
 
 + (NSString *)stringFromDate:(NSDate *)date;
@@ -29,5 +31,9 @@
 + (void)startLoadingActivity:(UIViewController *)vc;
 
 + (void)stopLoadingActivity:(UIViewController *)vc;
+
++ (NSString *)currentGroup;
+
++ (void)changeGroupWithCurrentViewController:(UIViewController *)vc;
 
 @end

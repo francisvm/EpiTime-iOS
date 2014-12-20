@@ -11,6 +11,7 @@
 NSString *const APP_NAME = @"EpiTime";
 
 NSString *const DAY_TABLE_VIEW_CONTROLLER = @"DayTableViewController";
+NSString *const GROUP_TABLE_VIEW_CONTROLLER = @"GroupTableViewController";
 
 NSString *const BASE_URL_WEEKS = @"http://webservices.chronos.epita.net/GetWeeks.aspx?num=%d&week=%d&group=%@&auth=3piko";
 

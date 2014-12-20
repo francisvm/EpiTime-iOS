@@ -29,6 +29,13 @@
     }
 }
 
++ (void)clearData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:RECIEVED_DATA];
+    NSDictionary *data = [NSDictionary dictionary];
+    [userDefaults setObject:data forKey:RECIEVED_DATA];
+}
+
 + (NSDate *)dateFromString:(NSString *)string {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
@@ -75,6 +82,15 @@
 
 + (void)stopLoadingActivity:(UIViewController *)vc {
     vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[];
+}
+
++ (NSString *)currentGroup {
+    return [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_GROUP];
+}
+
++ (void)changeGroupWithCurrentViewController:(UIViewController *)vc {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    [vc presentViewController:[storyboard instantiateViewControllerWithIdentifier:GROUP_TABLE_VIEW_CONTROLLER] animated:YES completion:nil];
 }
 
 @end

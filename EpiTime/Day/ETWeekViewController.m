@@ -27,6 +27,8 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     self.weekIndex = [ETAPI currentWeek];
+    self.title = [ETTools currentGroup];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,6 +66,10 @@
     new.index = index;
     new.weekIndex = current.weekIndex + (current.index == 6 ? 1 : 0);
     return new;
+}
+
+- (IBAction)didPressBackToGroups:(id)sender {
+    [ETTools changeGroupWithCurrentViewController:self];
 }
 
 @end

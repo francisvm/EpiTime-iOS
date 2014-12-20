@@ -8,6 +8,7 @@
 
 #import "ETAppDelegate.h"
 #import "ETTools.h"
+#import "ETConstants.h"
 
 @interface ETAppDelegate ()
 
@@ -19,7 +20,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ETTools setupAppearance];
     [ETTools setupData]; // Setup the data containing all weeks
-    
+    if (![ETTools currentGroup])
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:GROUP_TABLE_VIEW_CONTROLLER]];
+    }
+
     return YES;
 }
 

@@ -42,7 +42,7 @@
     if (!self.dayLabel.text)
         self.dayLabel.text = @"...";
 
-    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:[ETTools currentGroup] viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
@@ -70,7 +70,7 @@
         return;
     }
 
-    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:@"ING1/GRA2" viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:[ETTools currentGroup] viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
         self.day = week.days[self.index];
         self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
         self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];

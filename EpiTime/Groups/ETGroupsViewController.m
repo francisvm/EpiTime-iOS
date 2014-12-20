@@ -11,6 +11,8 @@
 #import "ETAPI.h"
 #import "ETSchoolItem.h"
 #import "ETConstants.h"
+#import "ETTools.h"
+
 
 #import "FVCustomAlertView.h"
 
@@ -88,6 +90,14 @@
                            ? self.filteredGroups[section]
                            : self.groups[section];
     return school.groups.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ETSchoolItem *school = isSearching
+                            ? self.filteredGroups[indexPath.section]
+                            : self.groups[indexPath.section];
+    [[NSUserDefaults standardUserDefaults] setValue:school.groups[indexPath.row] forKey:CURRENT_GROUP];
+    [ETTools clearData];
 }
 
 #pragma mark UISearchBar delegate

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4r0-lX-LjL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duT-S7-ybu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -19,7 +19,14 @@
                         <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="ING1/GRA2" id="fpF-qr-Eza"/>
+                    <navigationItem key="navigationItem" title="ING1/GRA2" id="fpF-qr-Eza">
+                        <barButtonItem key="leftBarButtonItem" title="Group" id="VSZ-RL-c4O">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didPressBackToGroups:" destination="zk9-Gv-TsT" id="J6y-uJ-9nD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kID-4c-5PR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,20 +226,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="ING1/GRA2" id="fe3-Jp-xMw">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Okk-Tq-92g">
-                            <color key="tintColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="next:" destination="F2x-Rc-brw" id="mHd-dV-D7b"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MeO-Al-o0R">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="refreshPressed:" destination="F2x-Rc-brw" id="DXA-TQ-vhx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="ING1/GRA2" id="fe3-Jp-xMw"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="dateLabel" destination="kvY-ES-i2U" id="xAy-M2-rVK"/>
@@ -271,25 +265,26 @@
                         <viewControllerLayoutGuide type="bottom" id="sJm-1n-iaw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5ga-gj-93f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hEB-KC-IG2">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.13333333333333333" green="0.43137254901960786" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" id="l7G-LM-TAT">
+                                <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" id="l7G-LM-TAT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.1098039299249649" green="0.50196081399917603" blue="0.27450981736183167" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" red="0.19215688109397888" green="0.22745099663734436" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="barTintColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
                                         <outlet property="delegate" destination="MA8-mP-cdS" id="rUi-q2-qxF"/>
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupIdentifierOdd" rowHeight="85" id="NTa-7E-75S" customClass="ETGroupTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupIdentifierOdd" rowHeight="85" id="NTa-7E-75S" customClass="ETGroupTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NTa-7E-75S" id="foE-nE-FqB">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -311,6 +306,7 @@
                                         <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <outlet property="label" destination="hUM-qH-6Ss" id="KHv-DB-pe2"/>
+                                            <segue destination="duT-S7-ybu" kind="show" id="496-pt-3dD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupIdentifierEven" rowHeight="85" id="t0T-NP-tp2" customClass="ETGroupTableViewCell">
@@ -335,6 +331,7 @@
                                         <color key="backgroundColor" red="0.1474817085" green="0.17548635570000001" blue="0.21467141540000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="label" destination="GDQ-hT-cOF" id="DS0-cU-TTe"/>
+                                            <segue destination="duT-S7-ybu" kind="show" id="Vtq-04-ige"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -348,7 +345,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hEB-KC-IG2" secondAttribute="trailing" id="Bcb-Py-0xx"/>
                             <constraint firstItem="hEB-KC-IG2" firstAttribute="leading" secondItem="5ga-gj-93f" secondAttribute="leading" id="Vpu-ES-e7E"/>
-                            <constraint firstItem="hEB-KC-IG2" firstAttribute="top" secondItem="tZd-w3-UYD" secondAttribute="bottom" id="XVR-fO-veJ"/>
+                            <constraint firstItem="hEB-KC-IG2" firstAttribute="top" secondItem="tZd-w3-UYD" secondAttribute="bottom" id="mwo-Rh-Nbo"/>
                             <constraint firstItem="sJm-1n-iaw" firstAttribute="top" secondItem="hEB-KC-IG2" secondAttribute="bottom" id="rdu-uh-Lko"/>
                         </constraints>
                     </view>
@@ -367,7 +364,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="searchBar" destination="hEB-KC-IG2" id="PxV-MA-eP6"/>
                         <outlet property="tableView" destination="hEB-KC-IG2" id="KX8-Ib-KmO"/>
@@ -375,29 +371,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fU7-DA-1RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4639" y="216"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="sMW-Pm-lBH">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4r0-lX-LjL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ie7-cy-LBP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MA8-mP-cdS" kind="relationship" relationship="rootViewController" id="f2q-5x-bDK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dKP-SZ-pfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3827" y="216"/>
+            <point key="canvasLocation" x="3975" y="222"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_calendar" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vtq-04-ige"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
 </document>
