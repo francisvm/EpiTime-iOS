@@ -14,7 +14,7 @@
 @implementation ETTools
 
 +(void)setupAppearance {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.110 green:0.502 blue:0.275 alpha:1.000]];
+    [[UINavigationBar appearance] setBarTintColor:GREEN];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[UINavigationBar appearance] setTranslucent:YES];
 }
