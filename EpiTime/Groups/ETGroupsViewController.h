@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETGroupsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface ETGroupsViewController : UIViewController <UITableViewDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) IBOutlet UITableView *searchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

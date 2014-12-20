@@ -12,6 +12,8 @@
 #import "ETSchoolItem.h"
 #import "ETConstants.h"
 
+#import "FVCustomAlertView.h"
+
 @interface ETGroupsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *groups;
@@ -19,18 +21,23 @@
 
 @end
 
-@implementation ETGroupsViewController
+@implementation ETGroupsViewController {
+    BOOL isSearching;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.groups = [NSMutableArray array];
     self.filteredGroups = [NSMutableArray array];
+    isSearching = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:@"Loading..."];
     [ETAPI fetchGroupList:^(NSDictionary *recievedData, NSMutableArray *groups)
      {
+         [FVCustomAlertView hideAlertFromView:self.view fading:YES];
          self.groups = groups;
          [self.tableView reloadData];
      }];
@@ -41,7 +48,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = !(indexPath.row % 2) ? @"GroupIdentifierEven" : @"GroupIdentifierOdd";
     ETGroupTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
-    ETSchoolItem *school = self.tableView == self.searchDisplayController.searchResultsTableView
+    ETSchoolItem *school = isSearching
                            ? self.filteredGroups[indexPath.section]
                            : self.groups[indexPath.section];
     cell.label.text = school.groups[indexPath.row];
@@ -49,7 +56,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    ETSchoolItem *school = tableView == self.searchDisplayController.searchResultsTableView
+    ETSchoolItem *school = isSearching
                            ? self.filteredGroups[section]
                            : self.groups[section];
     return school.name;
@@ -73,19 +80,17 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return tableView == self.searchDisplayController.searchResultsTableView ? self.filteredGroups.count : self.groups.count;
+    return isSearching ? self.filteredGroups.count : self.groups.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ETSchoolItem *school = tableView == self.searchDisplayController.searchResultsTableView
+    ETSchoolItem *school = isSearching
                            ? self.filteredGroups[section]
                            : self.groups[section];
     return school.groups.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 85;
-}
+#pragma mark UISearchBar delegate
 
 - (void)filterContentBy:(NSString *)search {
     [self.filteredGroups removeAllObjects];
@@ -97,9 +102,11 @@
     }
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    [self filterContentBy:searchString];
-    return YES;
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    isSearching = [searchText length];
+    if (isSearching)
+        [self filterContentBy:searchText];
+    [self.tableView reloadData];
 }
 
 @end

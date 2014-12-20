@@ -370,20 +370,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="searchBar" destination="hEB-KC-IG2" id="PxV-MA-eP6"/>
-                        <outlet property="searchDisplayController" destination="DTq-sq-Ris" id="4Nd-PB-q4F"/>
                         <outlet property="tableView" destination="hEB-KC-IG2" id="KX8-Ib-KmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fU7-DA-1RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="DTq-sq-Ris">
-                    <connections>
-                        <outlet property="delegate" destination="MA8-mP-cdS" id="dgh-2y-Rav"/>
-                        <outlet property="searchBar" destination="l7G-LM-TAT" id="JSv-KP-18k"/>
-                        <outlet property="searchContentsController" destination="MA8-mP-cdS" id="uLs-tF-yWm"/>
-                        <outlet property="searchResultsDataSource" destination="MA8-mP-cdS" id="enz-SN-hkQ"/>
-                        <outlet property="searchResultsDelegate" destination="MA8-mP-cdS" id="7ZG-R6-lII"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="4639" y="216"/>
         </scene>
