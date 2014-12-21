@@ -43,14 +43,7 @@
     if (!self.dayLabel.text)
         self.dayLabel.text = @"...";
 
-    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
-        self.day = week.days[self.index];
-        self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
-        self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
-
-        [self.tableView reloadData];
-        self.currentTask = nil;
-     }];
+    [self fetch:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -64,22 +57,32 @@
     [super viewWillDisappear:animated];
 }
 
+- (void)fetch:(UIRefreshControl *)refreshControl {
+    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self
+        completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+            self.day = week.days[self.index];
+            self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
+            self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
+
+            [self.tableView reloadData];
+            if (refreshControl)
+                [refreshControl endRefreshing];
+            self.currentTask = nil;
+        }
+        errorCompletion:^(NSError *error) {
+            if ([self.dateLabel.text isEqualToString:@"Loading"])
+                self.dateLabel.text = @"Connection error";
+        }
+     ];
+}
+
 - (void)refresh:(UIRefreshControl *)refreshControl {
     if (self.currentTask)
     {
         [refreshControl endRefreshing];
         return;
     }
-
-    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self completion:^(NSDictionary *recievedData, ETWeekItem *week) {
-        self.day = week.days[self.index];
-        self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
-        self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
-
-        [self.tableView reloadData];
-        [refreshControl endRefreshing];
-        self.currentTask = nil;
-     }];
+    [self fetch:refreshControl];
 }
 
 #pragma mark - Table view data source

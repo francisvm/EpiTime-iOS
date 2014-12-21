@@ -17,11 +17,13 @@
 + (NSURLSessionDataTask *)fetchWeek:(NSInteger)week
                   ofGroup:(NSString *)group
            viewController:(UIViewController *)viewController
-               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
+               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
+          errorCompletion:(void (^)(NSError *error))onErrorCompletion;
 
 + (NSURLSessionDataTask *)fetchCurrentWeek:(NSString *)group
           viewController:(UIViewController *)viewController
-              completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion;
+              completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
+         errorCompletion:(void (^)(NSError *error))onErrorCompletion;
 
 + (NSInteger)currentWeek;
 

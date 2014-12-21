@@ -20,6 +20,7 @@
           ofGroup:(NSString *)group
    viewController:(UIViewController *)viewController
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
+       errorCompletion:(void (^)(NSError *error))onErrorCompletion
 {
     NSString *urlString = [NSString stringWithFormat:BASE_URL_WEEKS, 1, week, group];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -29,18 +30,26 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithURL:url
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                            NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
-                                            ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
-                                            [week save]; // Save to cache
-                                            if (onCompletion && recievedData)
+                                            if (!data || error)
                                             {
-                                                // NSURSession runs on the background, so we need to update the UI on the main thread
-                                                dispatch_async(dispatch_get_main_queue(), ^{
-                                                    onCompletion(recievedData, week);
-                                                    if (viewController)
-                                                        [ETTools stopLoadingActivity:viewController];
-                                                });
+                                                if (onErrorCompletion)
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        onErrorCompletion(error);
+                                                    });
+                                            } else {
+                                                NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
+                                                ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
+                                                [week save]; // Save to cache
+                                                if (onCompletion && recievedData)
+                                                {
+                                                    // NSURSession runs on the background, so we need to update the UI on the main thread
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        onCompletion(recievedData, week);
+                                                    });
+                                                }
                                             }
+                                            if (viewController)
+                                                [ETTools stopLoadingActivity:viewController error:YES];
                                         }];
     [task resume];
     return task;
@@ -49,8 +58,9 @@
 + (NSURLSessionDataTask *)fetchCurrentWeek:(NSString *)group
           viewController:(UIViewController *)viewController
               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
+         errorCompletion:(void (^)(NSError *error))onErrorCompletion
 {
-    return [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion];
+    return [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion errorCompletion:onErrorCompletion];
 }
 
 + (NSInteger)currentWeek {

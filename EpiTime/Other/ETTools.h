@@ -30,7 +30,7 @@
 
 + (void)startLoadingActivity:(UIViewController *)vc;
 
-+ (void)stopLoadingActivity:(UIViewController *)vc;
++ (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error;
 
 + (NSString *)currentGroup;
 

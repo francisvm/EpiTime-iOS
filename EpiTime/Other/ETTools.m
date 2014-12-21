@@ -80,11 +80,12 @@
     vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[refreshing];
 }
 
-+ (void)stopLoadingActivity:(UIViewController *)vc {
++ (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error {
     vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[];
 }
 
 + (NSString *)currentGroup {
+    NSLog(@"%@", [[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_GROUP] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
     return [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_GROUP];
 }
 
