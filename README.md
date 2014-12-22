@@ -19,3 +19,14 @@ Chronos is the current scheduler for the IONIS group schools. Their API is used 
 ![Courses](https://raw.githubusercontent.com/thegameg/EpiTime-iOS/master/doc/courses.png)
 
 ![Groups](https://raw.githubusercontent.com/thegameg/EpiTime-iOS/master/doc/groups.png)
+
+## Author
+
+Francis Visoiu Mistrih
+http://francisvm.com/
+
+thegameg1@yahoo.com
+
+## License
+
+This code is distributed under the terms and conditions of the [MIT license](LICENSE).
