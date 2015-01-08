@@ -26,7 +26,6 @@
 
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
-    self.weekIndex = [ETAPI currentWeek];
     self.title = [ETTools currentGroup];
 
 }
@@ -35,7 +34,7 @@
     ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
     
     initialViewController.index = [ETTools weekDayIndexFromDate:[NSDate date]];
-    initialViewController.weekIndex = self.weekIndex;
+    initialViewController.weekIndex = [ETAPI currentWeek];
 
 
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
@@ -58,8 +57,6 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
-    if (current.index == 6)
-        self.weekIndex++;
     NSUInteger index = current.index == 6 ? 0 : current.index + 1;
 
     ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];

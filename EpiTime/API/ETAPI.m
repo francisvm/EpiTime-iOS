@@ -16,6 +16,8 @@
 
 @implementation ETAPI
 
+static const NSUInteger kWeeksPerYear = 52;
+
 + (NSURLSessionDataTask *)fetchWeek:(NSInteger)week
           ofGroup:(NSString *)group
    viewController:(UIViewController *)viewController
@@ -72,9 +74,9 @@
     NSDate *firstDate = [calendar dateFromComponents:firstComponents];
     firstComponents = [calendar components:NSWeekOfYearCalendarUnit fromDate:firstDate];
 
-    NSInteger currentWeek = [calendar component:NSWeekOfYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *currentDateComponents = [calendar components:NSYearCalendarUnit | NSWeekOfYearCalendarUnit fromDate:[NSDate date]];
 
-    return currentWeek - firstComponents.weekOfYear + 1;
+    return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1;
 }
 
 + (ETWeekItem *)cachedWeek:(NSInteger)weekNumber {
