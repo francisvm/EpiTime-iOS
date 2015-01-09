@@ -47,11 +47,11 @@ static const NSUInteger kWeeksPerYear = 52;
                                                     // NSURSession runs on the background, so we need to update the UI on the main thread
                                                     dispatch_async(dispatch_get_main_queue(), ^{
                                                         onCompletion(recievedData, week);
+                                                        if (viewController)
+                                                            [ETTools stopLoadingActivity:viewController error:YES];
                                                     });
                                                 }
                                             }
-                                            if (viewController)
-                                                [ETTools stopLoadingActivity:viewController error:YES];
                                         }];
     [task resume];
     return task;
