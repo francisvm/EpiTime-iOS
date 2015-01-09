@@ -72,10 +72,11 @@ static const NSUInteger kWeeksPerYear = 52;
     firstComponents.month = 9;
     firstComponents.day = 1;
     NSDate *firstDate = [calendar dateFromComponents:firstComponents];
-    firstComponents = [calendar components:NSWeekOfYearCalendarUnit fromDate:firstDate];
+    firstComponents = [calendar components:NSYearCalendarUnit | NSWeekOfYearCalendarUnit fromDate:firstDate];
 
     NSDateComponents *currentDateComponents = [calendar components:NSYearCalendarUnit | NSWeekOfYearCalendarUnit fromDate:[NSDate date]];
 
+    NSLog(@"%d", currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1);
     return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1;
 }
 
