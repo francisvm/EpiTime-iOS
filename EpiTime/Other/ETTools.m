@@ -85,7 +85,6 @@
 }
 
 + (NSString *)currentGroup {
-    NSLog(@"%@", [[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_GROUP] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
     return [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_GROUP];
 }
 
