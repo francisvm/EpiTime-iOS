@@ -24,7 +24,7 @@ static const NSUInteger kWeeksPerYear = 52;
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
        errorCompletion:(void (^)(NSError *error))onErrorCompletion
 {
-    NSString *urlString = [NSString stringWithFormat:BASE_URL_WEEKS, 1, week, group];
+    NSString *urlString = [NSString stringWithFormat:BASE_URL_WEEKS, 1, week, [group stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
     NSURL *url = [NSURL URLWithString:urlString];
     
     if (viewController)
