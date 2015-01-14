@@ -17,8 +17,6 @@
 
 @interface ETDayTableViewController ()
 
-@property (strong, nonatomic) NSURLSessionDataTask *currentTask;
-
 @end
 
 @implementation ETDayTableViewController
@@ -29,7 +27,6 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
-    self.currentTask = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,23 +39,26 @@
     self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
     if (!self.dayLabel.text)
         self.dayLabel.text = @"...";
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 
     [self fetch:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    if (self.currentTask)
+    if ([ETAPI currentTask])
     {
-        NSLog(@"canceling");
-        [self.currentTask cancel];
-        self.currentTask = nil;
+        [ETAPI cancelCurrentTask];
+        [ETTools stopLoadingActivity:self error:YES]; // stop the loading activity here, don't wait for the error block to be called
     }
 
     [super viewWillDisappear:animated];
 }
 
 - (void)fetch:(UIRefreshControl *)refreshControl {
-    self.currentTask = [ETAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self
+    [ETAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
             self.day = week.days[self.index];
             self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
@@ -67,22 +67,21 @@
             [self.tableView reloadData];
             if (refreshControl)
                 [refreshControl endRefreshing];
-            self.currentTask = nil;
         }
         errorCompletion:^(NSError *error) {
             if ([self.dateLabel.text isEqualToString:@"Loading"])
                 self.dateLabel.text = @"Connection error";
+            if (refreshControl)
+                [refreshControl endRefreshing];
         }
      ];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    if (self.currentTask)
-    {
+    if ([ETAPI currentTask])
         [refreshControl endRefreshing];
-        return;
-    }
-    [self fetch:refreshControl];
+    else
+        [self fetch:refreshControl];
 }
 
 #pragma mark - Table view data source

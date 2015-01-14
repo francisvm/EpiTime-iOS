@@ -12,15 +12,21 @@
 
 @interface ETAPI : NSObject
 
++ (NSURLSessionDataTask *)currentTask;
+
++ (void)removeCurrentTask;
+
++ (void)cancelCurrentTask;
+
 #pragma mark Week Schedule
 
-+ (NSURLSessionDataTask *)fetchWeek:(NSInteger)week
++ (void)fetchWeek:(NSInteger)week
                   ofGroup:(NSString *)group
            viewController:(UIViewController *)viewController
                completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
           errorCompletion:(void (^)(NSError *error))onErrorCompletion;
 
-+ (NSURLSessionDataTask *)fetchCurrentWeek:(NSString *)group
++ (void)fetchCurrentWeek:(NSString *)group
           viewController:(UIViewController *)viewController
               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
          errorCompletion:(void (^)(NSError *error))onErrorCompletion;
@@ -31,6 +37,6 @@
 
 #pragma mark Groups
 
-+ (NSURLSessionDataTask *)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion;
++ (void)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion;
 
 @end

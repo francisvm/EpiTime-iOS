@@ -18,7 +18,27 @@
 
 static const NSUInteger kWeeksPerYear = 52;
 
-+ (NSURLSessionDataTask *)fetchWeek:(NSInteger)week
+#pragma mark Current Task methods
+
+static NSURLSessionDataTask *currentTask = nil;
+
++ (NSURLSessionDataTask *)currentTask {
+    return currentTask;
+}
+
++ (void)removeCurrentTask {
+    currentTask = nil;
+}
+
++ (void)cancelCurrentTask {
+    NSLog(@"canceling");
+    [currentTask cancel];
+    [self removeCurrentTask];
+}
+
+#pragma mark Weeks
+
++ (void)fetchWeek:(NSInteger)week
           ofGroup:(NSString *)group
    viewController:(UIViewController *)viewController
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
@@ -30,7 +50,7 @@ static const NSUInteger kWeeksPerYear = 52;
     if (viewController)
         [ETTools startLoadingActivity:viewController];
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url
+    currentTask = [session dataTaskWithURL:url
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                             if (!data || error)
                                             {
@@ -47,22 +67,25 @@ static const NSUInteger kWeeksPerYear = 52;
                                                     // NSURSession runs on the background, so we need to update the UI on the main thread
                                                     dispatch_async(dispatch_get_main_queue(), ^{
                                                         onCompletion(recievedData, week);
-                                                        if (viewController)
-                                                            [ETTools stopLoadingActivity:viewController error:YES];
                                                     });
                                                 }
                                             }
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                // if cancelled, let the cancel trigger stop the activity loader
+                                                if (viewController && ![error.localizedDescription isEqualToString:@"cancelled"])
+                                                    [ETTools stopLoadingActivity:viewController error:YES];
+                                            });
+                                            [ETAPI removeCurrentTask];
                                         }];
-    [task resume];
-    return task;
+    [currentTask resume];
 }
 
-+ (NSURLSessionDataTask *)fetchCurrentWeek:(NSString *)group
++ (void)fetchCurrentWeek:(NSString *)group
           viewController:(UIViewController *)viewController
               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
          errorCompletion:(void (^)(NSError *error))onErrorCompletion
 {
-    return [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion errorCompletion:onErrorCompletion];
+    [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion errorCompletion:onErrorCompletion];
 }
 
 + (NSInteger)currentWeek {
@@ -104,13 +127,13 @@ static const NSUInteger kWeeksPerYear = 52;
     }
 }
 
-+ (NSURLSessionDataTask *)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion
++ (void)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion
 {
     NSString *urlString = BASE_URL_GROUPS;
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url
+    currentTask = [session dataTaskWithURL:url
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                             NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
                                             NSMutableArray *groupsArray = [NSMutableArray array];
@@ -123,9 +146,9 @@ static const NSUInteger kWeeksPerYear = 52;
                                                     onCompletion(recievedData, groupsArray);
                                                 });
                                             }
+                                            [ETAPI removeCurrentTask];
                                         }];
-    [task resume];
-    return task;
+    [currentTask resume];
 }
 
 @end
