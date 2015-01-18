@@ -25,9 +25,7 @@
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 
     self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:[[self view] bounds]];
     self.title = [ETTools currentGroup];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,12 +34,11 @@
     initialViewController.index = [ETTools weekDayIndexFromDate:[NSDate date]];
     initialViewController.weekIndex = [ETAPI currentWeek];
 
-
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
     [self addChildViewController:self.pageController];
-    [[self view] addSubview:[self.pageController view]];
+    [self.view addSubview:self.pageController.view];
     [self.pageController didMoveToParentViewController:self];
 }
 
