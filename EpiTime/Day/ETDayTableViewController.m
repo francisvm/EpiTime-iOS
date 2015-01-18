@@ -14,6 +14,7 @@
 #import "ETConstants.h"
 
 #import "XMLDictionary.h"
+#import "FVCustomAlertView.h"
 
 @interface ETDayTableViewController ()
 
@@ -110,6 +111,13 @@
     cell.endingLabel.text = [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15];
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ETCourseItem *course = self.day.courses[indexPath.row];
+    NSString *title = course.title;
+
+    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:200 backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:nil type:FVAlertTypeCustom];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
