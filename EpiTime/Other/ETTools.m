@@ -77,11 +77,11 @@
 
 + (void)startLoadingActivity:(UIViewController *)vc {
     UIBarButtonItem *refreshing = [[UIBarButtonItem alloc] initWithCustomView:[UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)]];
-    vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[refreshing];
+    vc.parentViewController.navigationItem.rightBarButtonItems = @[refreshing];
 }
 
 + (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error {
-    vc.parentViewController.parentViewController.navigationItem.rightBarButtonItems = @[];
+    vc.parentViewController.navigationItem.rightBarButtonItems = @[];
 }
 
 + (NSString *)currentGroup {
