@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ETWeekViewController.h"
 
-@interface ETWeekViewController : UIViewController <UIPageViewControllerDataSource>
-
-@property (strong, nonatomic) UIPageViewController *pageController;
+@interface ETWeekViewController : UIPageViewController <UIPageViewControllerDataSource>
 
 @end

@@ -6,42 +6,15 @@
     </dependencies>
     <scenes>
         <!--ING1/GRA2-->
-        <scene sceneID="c02-BJ-79H">
-            <objects>
-                <viewController id="zk9-Gv-TsT" customClass="ETWeekViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FOT-i4-ajq"/>
-                        <viewControllerLayoutGuide type="bottom" id="VFn-bj-wyC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="b7L-ao-09k">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="ING1/GRA2" id="fpF-qr-Eza">
-                        <barButtonItem key="leftBarButtonItem" title="Group" id="VSZ-RL-c4O">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="didPressBackToGroups:" destination="zk9-Gv-TsT" id="J6y-uJ-9nD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kID-4c-5PR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3580" y="-472"/>
-        </scene>
-        <!--ING1/GRA2-->
         <scene sceneID="0p4-vT-y3O">
             <objects>
-                <viewController storyboardIdentifier="DayTableViewController" id="F2x-Rc-brw" customClass="ETDayTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DayTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="F2x-Rc-brw" customClass="ETDayTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7fa-e7-lHY"/>
                         <viewControllerLayoutGuide type="bottom" id="Afo-vS-Q23"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="01H-W1-d7b">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQK-7G-hvm">
@@ -81,7 +54,7 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="W0X-Vc-Jey">
-                                <rect key="frame" x="0.0" y="90" width="600" height="446"/>
+                                <rect key="frame" x="0.0" y="90" width="600" height="510"/>
                                 <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -216,18 +189,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="Afo-vS-Q23" firstAttribute="top" secondItem="W0X-Vc-Jey" secondAttribute="bottom" id="DIR-rd-UWM"/>
+                            <constraint firstAttribute="bottom" secondItem="W0X-Vc-Jey" secondAttribute="bottom" id="BfB-3R-Nds"/>
                             <constraint firstAttribute="trailing" secondItem="W0X-Vc-Jey" secondAttribute="trailing" id="Mtl-va-D2U"/>
                             <constraint firstItem="W0X-Vc-Jey" firstAttribute="top" secondItem="IQK-7G-hvm" secondAttribute="bottom" id="NN5-u1-PbN"/>
                             <constraint firstItem="IQK-7G-hvm" firstAttribute="leading" secondItem="01H-W1-d7b" secondAttribute="leading" id="PlK-av-FCS"/>
                             <constraint firstAttribute="trailing" secondItem="IQK-7G-hvm" secondAttribute="trailing" id="U6Y-V0-nnX"/>
-                            <constraint firstItem="IQK-7G-hvm" firstAttribute="top" secondItem="7fa-e7-lHY" secondAttribute="bottom" id="rtq-jt-Ts6"/>
+                            <constraint firstItem="IQK-7G-hvm" firstAttribute="top" secondItem="01H-W1-d7b" secondAttribute="top" id="eUF-S1-Fzx"/>
                             <constraint firstItem="W0X-Vc-Jey" firstAttribute="leading" secondItem="01H-W1-d7b" secondAttribute="leading" id="xgY-2z-MFQ"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="ING1/GRA2" id="fe3-Jp-xMw"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="dateLabel" destination="kvY-ES-i2U" id="xAy-M2-rVK"/>
                         <outlet property="dayLabel" destination="MYx-2A-tPF" id="k33-KK-ReN"/>
@@ -249,12 +220,30 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zk9-Gv-TsT" kind="relationship" relationship="rootViewController" id="mbg-Ap-zXO"/>
+                        <segue destination="hzV-Rh-YlC" kind="relationship" relationship="rootViewController" id="XZX-hg-4co"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="685-3M-Bg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2768" y="-472"/>
+        </scene>
+        <!--Week View Controller-->
+        <scene sceneID="20K-c1-GOe">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hzV-Rh-YlC" customClass="ETWeekViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="lhr-13-Cqx">
+                        <barButtonItem key="leftBarButtonItem" title="Groups" id="3Km-0J-grS">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didPressBackToGroups:" destination="hzV-Rh-YlC" id="lWb-NZ-MME"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1e-BB-h4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3512" y="-472"/>
         </scene>
         <!--ING1/GRA2-->
         <scene sceneID="2l5-Ce-N37">

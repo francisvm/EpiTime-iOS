@@ -19,27 +19,19 @@
 @implementation ETWeekViewController
 
 - (void)viewDidLoad {
-
-    [super viewDidLoad];
-
-    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-
-    self.pageController.dataSource = self;
+    self.dataSource = self;
     self.title = [ETTools currentGroup];
+
+    self.view.backgroundColor = BLUE;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
-    
     initialViewController.index = [ETTools weekDayIndexFromDate:[NSDate date]];
     initialViewController.weekIndex = [ETAPI currentWeek];
 
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
-    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-
-    [self addChildViewController:self.pageController];
-    [self.view addSubview:self.pageController.view];
-    [self.pageController didMoveToParentViewController:self];
+    [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
