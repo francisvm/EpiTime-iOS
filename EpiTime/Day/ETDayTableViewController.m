@@ -84,6 +84,10 @@
         [self fetch:refreshControl];
 }
 
+- (BOOL)shouldShowHeader {
+    return self.day && !self.day.courses.count;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -109,11 +113,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return self.day.courses.count ? 0 : 100;
+    return [self shouldShowHeader] ? 100 : 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (!self.day.courses.count) {
+    if ([self shouldShowHeader]) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
