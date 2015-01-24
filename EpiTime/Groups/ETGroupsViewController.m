@@ -36,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:@"Loading..."];
+    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:@"Loading..." withBlur:NO];
     [ETAPI fetchGroupList:^(NSDictionary *recievedData, NSMutableArray *groups)
      {
          [FVCustomAlertView hideAlertFromView:self.view fading:YES];
