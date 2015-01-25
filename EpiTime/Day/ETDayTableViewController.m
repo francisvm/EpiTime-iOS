@@ -117,7 +117,7 @@
     ETCourseItem *course = self.day.courses[indexPath.row];
     NSString *title = course.title;
 
-    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:200 backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:nil type:FVAlertTypeCustom];
+    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:200 blur:YES backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:nil type:FVAlertTypeCustom];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
