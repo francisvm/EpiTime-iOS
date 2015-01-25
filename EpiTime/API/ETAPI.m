@@ -95,9 +95,9 @@ static NSURLSessionDataTask *currentTask = nil;
     firstComponents.month = 9;
     firstComponents.day = 1;
     NSDate *firstDate = [calendar dateFromComponents:firstComponents];
-    firstComponents = [calendar components:NSYearCalendarUnit | NSWeekOfYearCalendarUnit fromDate:firstDate];
+    firstComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:firstDate];
 
-    NSDateComponents *currentDateComponents = [calendar components:NSYearCalendarUnit | NSWeekOfYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:[NSDate date]];
 
     return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1;
 }
