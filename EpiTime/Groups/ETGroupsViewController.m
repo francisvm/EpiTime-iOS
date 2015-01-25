@@ -43,6 +43,7 @@
          self.groups = groups;
          [self.tableView reloadData];
      }];
+    self.searchBar.keyboardAppearance = UIKeyboardAppearanceDark;
 }
 
 #pragma mark UITableView delegate & dataSource

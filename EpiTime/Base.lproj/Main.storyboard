@@ -354,7 +354,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="hEB-KC-IG2" id="PxV-MA-eP6"/>
+                        <outlet property="searchBar" destination="l7G-LM-TAT" id="fSU-Do-3aD"/>
                         <outlet property="tableView" destination="hEB-KC-IG2" id="KX8-Ib-KmO"/>
                     </connections>
                 </viewController>
