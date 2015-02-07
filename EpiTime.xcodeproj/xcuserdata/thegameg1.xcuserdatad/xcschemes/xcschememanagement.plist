@@ -7,11 +7,6 @@
 		<key>EpiTime Staging.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>EpiTime-Widget.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>EpiTime.xcscheme</key>
@@ -19,9 +14,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Today.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D203A8981A8611E500DD280E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D23BED3619E32823000FF210</key>
 		<dict>
 			<key>primary</key>
@@ -38,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>D23BED7919E328DA000FF210</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D27EC82D1A860FB50044074B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
