@@ -19,11 +19,6 @@
 
 @implementation TodayViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.preferredContentSize = self.tableView.contentSize;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     if ([ETAPI currentTask])
         [ETAPI cancelCurrentTask];
@@ -35,16 +30,20 @@
     NSLog(@"I just fetched my ass");
     [ETAPI fetchWeek:[ETAPI currentWeek] ofGroup:@"ING1/GRA2" viewController:nil
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
-            self.day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]] - 4];
-            if (self.day)
+            self.day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
+            if (self.day) {
                 [self.tableView reloadData];
+                self.preferredContentSize = self.tableView.contentSize;
+            }
             completionHandler(NCUpdateResultNewData);
         }
         errorCompletion:^(NSError *error) {
-            // FIXME: To show some error on the widget
+            completionHandler(NCUpdateResultFailed);
         }
      ];
 }
+
+#pragma mark UITableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -53,7 +52,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.day.courses.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = !(indexPath.row % 2) ? @"TodayCourseIdentifierEven" : @"TodayCourseIdentifierOdd";
@@ -65,6 +63,12 @@
     cell.endingLabel.text = [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15];
 
     return cell;
+}
+
+#pragma mark Widget methods
+
+-(UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
+    return UIEdgeInsetsZero;
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
