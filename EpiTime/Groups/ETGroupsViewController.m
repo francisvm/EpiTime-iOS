@@ -97,7 +97,11 @@
     ETSchoolItem *school = isSearching
                             ? self.filteredGroups[indexPath.section]
                             : self.groups[indexPath.section];
-    [[NSUserDefaults standardUserDefaults] setValue:school.groups[indexPath.row] forKey:CURRENT_GROUP];
+    // save the group on the extension
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    [userDefaults setValue:school.groups[indexPath.row] forKey:CURRENT_GROUP];
+    [userDefaults synchronize];   // (!!) This is crucial.
+
     [ETTools clearData];
 }
 

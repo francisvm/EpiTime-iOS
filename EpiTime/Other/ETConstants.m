@@ -9,6 +9,7 @@
 #import "ETConstants.h"
 
 NSString *const APP_NAME = @"EpiTime";
+NSString *const APP_GROUP = @"group.epitime.SharedDefaults";
 
 NSString *const DAY_TABLE_VIEW_CONTROLLER = @"DayTableViewController";
 NSString *const GROUP_TABLE_VIEW_CONTROLLER = @"GroupTableViewController";

@@ -13,6 +13,7 @@
 #define BLUE [UIColor colorWithRed:0.192 green:0.227 blue:0.271 alpha:1.000]
 
 extern NSString *const APP_NAME;
+extern NSString *const APP_GROUP;
 extern NSString *const DAY_TABLE_VIEW_CONTROLLER;
 extern NSString *const GROUP_TABLE_VIEW_CONTROLLER;
 extern NSString *const BASE_URL_WEEKS;

@@ -20,7 +20,7 @@
 }
 
 + (void)setupData {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
     NSDictionary *recieved = [userDefaults objectForKey:RECIEVED_DATA];
     if (!recieved.count)
     {
@@ -30,8 +30,9 @@
 }
 
 + (void)clearData {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
     [userDefaults removeObjectForKey:RECIEVED_DATA];
+    // create a new dictionary to hold the data
     NSDictionary *data = [NSDictionary dictionary];
     [userDefaults setObject:data forKey:RECIEVED_DATA];
 }
@@ -85,7 +86,8 @@
 }
 
 + (NSString *)currentGroup {
-    return [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_GROUP];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    return [userDefaults valueForKey:CURRENT_GROUP];
 }
 
 + (void)changeGroupWithCurrentViewController:(UIViewController *)vc {
