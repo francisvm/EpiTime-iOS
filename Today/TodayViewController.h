@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ETDayItem.h"
 
-@interface TodayViewController : UIViewController <UITableViewDataSource, UITabBarDelegate>
+@interface TodayViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
