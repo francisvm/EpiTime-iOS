@@ -20,7 +20,7 @@
 }
 
 + (void)setupData {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *recieved = [userDefaults objectForKey:RECIEVED_DATA];
     if (!recieved.count)
     {
@@ -30,7 +30,7 @@
 }
 
 + (void)clearData {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults removeObjectForKey:RECIEVED_DATA];
     // create a new dictionary to hold the data
     NSDictionary *data = [NSDictionary dictionary];
@@ -86,7 +86,7 @@
 }
 
 + (NSString *)currentGroup {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     return [userDefaults valueForKey:CURRENT_GROUP];
 }
 

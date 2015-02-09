@@ -98,7 +98,7 @@
                             ? self.filteredGroups[indexPath.section]
                             : self.groups[indexPath.section];
     // save the group on the extension
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setValue:school.groups[indexPath.row] forKey:CURRENT_GROUP];
     [userDefaults synchronize];   // (!!) This is crucial.
 

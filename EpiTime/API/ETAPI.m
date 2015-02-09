@@ -103,14 +103,14 @@ static NSURLSessionDataTask *currentTask = nil;
 }
 
 + (ETWeekItem *)cachedWeek:(NSInteger)weekNumber {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *weeks = [userDefaults objectForKey:RECIEVED_DATA];
     ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:weeks[[NSString stringWithFormat:@"%ld", (long)weekNumber]]];
     return week;
 }
 
 + (NSMutableArray *)cachedGroups {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *groups = [userDefaults objectForKey:RECIEVED_GROUPS];
     return groups;
 }
