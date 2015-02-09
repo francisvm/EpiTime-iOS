@@ -24,4 +24,6 @@
 
 - (NSDictionary *)toDictionary;
 
+- (BOOL)isEqualToDayItem:(ETDayItem *)day;
+
 @end

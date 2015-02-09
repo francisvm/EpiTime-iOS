@@ -75,4 +75,41 @@
     return dict;
 }
 
+- (BOOL)isEqual:(id)object {
+    if (self == object)
+        return YES;
+
+    if (![object isKindOfClass:[ETCourseItem class]])
+        return NO; // trust the superclass
+
+    return [self isEqualToCourseItem:object];
+}
+
+- (BOOL)isEqualToCourseItem:(ETCourseItem *)course {
+    if (!course)
+        return NO;
+
+    if (self.rooms.count != course.rooms.count
+        || self.trainees.count != course.trainees.count)
+        return NO;
+
+    // check for rooms equality
+    for (NSInteger i = 0; i < self.rooms.count; ++i) {
+        if (![self.rooms[i] isEqualToString:course.rooms[i]])
+            return NO;
+    }
+
+    // check for trainees equality
+    for (NSInteger i = 0; i < self.trainees.count; ++i) {
+        if (![self.trainees[i] isEqualToString:course.trainees[i]])
+            return NO;
+    }
+
+    return self.id == course.id
+           && [self.title isEqualToString:course.title]
+           && self.hour == course.hour
+           && self.duration == course.duration
+           && [self.instructor isEqualToString:course.instructor];
+}
+
 @end

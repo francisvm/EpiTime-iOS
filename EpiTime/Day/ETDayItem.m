@@ -57,5 +57,33 @@
     return dict;
 }
 
+- (BOOL)isEqual:(id)object {
+    if (self == object)
+        return YES;
+
+    if (![object isKindOfClass:[ETDayItem class]])
+        return NO; // trust the superclass
+
+    return [self isEqualToDayItem:object];
+}
+
+- (BOOL)isEqualToDayItem:(ETDayItem *)day {
+    if (!day)
+        return NO;
+
+    if (self.courses.count != day.courses.count)
+        return NO;
+
+    // check for equality of every course
+    for (NSUInteger i = 0; i < day.courses.count; ++i) {
+        ETCourseItem *myCourse = self.courses[i];
+        ETCourseItem *otherCourse = day.courses[i];
+        if (![myCourse isEqualToCourseItem:otherCourse])
+            return NO;
+    }
+
+    return self.id == day.id
+           && [self.date isEqualToDate:day.date];
+}
 
 @end

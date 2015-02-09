@@ -38,4 +38,6 @@
 
 - (NSDictionary *)toDictionary;
 
+- (BOOL)isEqualToCourseItem:(ETCourseItem *)course;
+
 @end
