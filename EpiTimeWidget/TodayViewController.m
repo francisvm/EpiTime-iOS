@@ -19,6 +19,14 @@
 
 @implementation TodayViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // FIXME: Share the cache
+    NSArray *cachedWeekDays = [ETAPI cachedWeek:[ETAPI currentWeek]].days;
+    if (cachedWeekDays.count)
+        self.day = cachedWeekDays[[ETTools weekDayIndexFromDate:[NSDate date]]];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     if ([ETAPI currentTask])
         [ETAPI cancelCurrentTask];
@@ -27,18 +35,28 @@
 }
 
 - (void)fetchWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    NSLog(@"I just fetched my ass");
     [ETAPI fetchWeek:[ETAPI currentWeek] ofGroup:@"ING1/GRA2" viewController:nil
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
-            self.day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
-            if (self.day) {
+
+            // If an error is encountered, use NCUpdateResultFailed
+            // If there's no update required, use NCUpdateResultNoData
+            // If there's an update, use NCUpdateResultNewData
+
+            ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
+            if (false && [self.day isEqualToDayItem:day]) { // FIXME: Wait for shared cache
+                completionHandler(NCUpdateResultNoData);
+            } else {
+                self.day = day;
                 [self.tableView reloadData];
                 self.preferredContentSize = self.tableView.contentSize;
+                completionHandler(NCUpdateResultNewData);
             }
-            completionHandler(NCUpdateResultNewData);
         }
         errorCompletion:^(NSError *error) {
-            completionHandler(NCUpdateResultFailed);
+            if (self.day)
+                completionHandler(NCUpdateResultNoData);
+            else
+                completionHandler(NCUpdateResultFailed);
         }
      ];
 }
@@ -76,12 +94,7 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
     [self fetchWithCompletionHandler:completionHandler];
-    
-    // If an error is encountered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
 }
 
 @end

@@ -7,21 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1FA06D64D554297A58F9044 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1256C4568AC4A6E8E53AF04 /* libPods.a */; };
-		D203A89A1A8611E500DD280E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
-		D203A8A21A8611E500DD280E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D203A8A11A8611E500DD280E /* MainInterface.storyboard */; };
-		D203A8A51A8611E500DD280E /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D203A8991A8611E500DD280E /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D203A8AB1A86125F00DD280E /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D203A8AA1A86125F00DD280E /* TodayViewController.m */; };
-		D203A8AC1A86127D00DD280E /* ETAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA219EB1E9600F4CEFA /* ETAPI.m */; };
-		D203A8AD1A86128A00DD280E /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
-		D203A8AF1A8612AA00DD280E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D203A8AE1A8612AA00DD280E /* libPods.a */; };
-		D203A8B01A86146600DD280E /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
-		D203A8B11A86146600DD280E /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
-		D203A8B21A86146600DD280E /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
-		D203A8B31A86153200DD280E /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D203A8991A8611E500DD280E /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D203A8B61A86160500DD280E /* ETConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA719EB200000F4CEFA /* ETConstants.m */; };
-		D203A8B71A86161400DD280E /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
-		D203A8B81A861E3400DD280E /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
 		D2045F9F19EB0B4500F4CEFA /* ETWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045F9E19EB0B4500F4CEFA /* ETWeekViewController.m */; };
 		D2045FA019EB0B4500F4CEFA /* ETWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045F9E19EB0B4500F4CEFA /* ETWeekViewController.m */; };
 		D2045FA319EB1E9600F4CEFA /* ETAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA219EB1E9600F4CEFA /* ETAPI.m */; };
@@ -46,13 +31,27 @@
 		D23BED8419E328DA000FF210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4419E32823000FF210 /* Main.storyboard */; };
 		D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4919E32823000FF210 /* LaunchScreen.xib */; };
 		D23BED8619E328DA000FF210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23BED4719E32823000FF210 /* Images.xcassets */; };
-		D27EC8421A8611560044074B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D27EC8411A8611560044074B /* libPods.a */; };
+		D2781CA21A8950D30090369F /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
 		D28002161A443F9D00861E20 /* ETGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002151A443F9D00861E20 /* ETGroupsViewController.m */; };
 		D28002171A443F9D00861E20 /* ETGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002151A443F9D00861E20 /* ETGroupsViewController.m */; };
 		D280021A1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002191A443FF900861E20 /* ETGroupTableViewCell.m */; };
 		D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002191A443FF900861E20 /* ETGroupTableViewCell.m */; };
 		D280021E1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
 		D280021F1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
+		D2EE373B1A894CC100E70651 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
+		D2EE37411A894CC100E70651 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EE37401A894CC100E70651 /* TodayViewController.m */; };
+		D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
+		D2EE37461A894CC100E70651 /* EpiTimeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2EE374C1A894D4700E70651 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
+		D2EE374D1A894D4700E70651 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
+		D2EE374E1A894D4700E70651 /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
+		D2EE374F1A894D4700E70651 /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
+		D2EE37501A894D4700E70651 /* ETAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA219EB1E9600F4CEFA /* ETAPI.m */; };
+		D2EE37511A894D4700E70651 /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
+		D2EE37521A894D4700E70651 /* ETConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA719EB200000F4CEFA /* ETConstants.m */; };
+		D2EE37561A894E9200E70651 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EE37551A894E9200E70651 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		D2EE37581A894E9A00E70651 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EE37571A894E9A00E70651 /* libPods.a */; };
+		D2EE375A1A894EA000E70651 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EE37591A894EA000E70651 /* libPods.a */; };
 		D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
 		D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */; };
 		D2EF16F119E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
@@ -68,26 +67,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D203A8A31A8611E500DD280E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D203A8981A8611E500DD280E;
-			remoteInfo = Today;
-		};
-		D203A8B41A86153200DD280E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D203A8981A8611E500DD280E;
-			remoteInfo = Today;
-		};
 		D23BED5119E32823000FF210 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D23BED3619E32823000FF210;
 			remoteInfo = EpiTime;
+		};
+		D2EE37441A894CC100E70651 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2EE37391A894CC100E70651;
+			remoteInfo = EpiTimeWidget;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -98,7 +90,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D203A8B31A86153200DD280E /* Today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +100,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D203A8A51A8611E500DD280E /* Today.appex in Embed App Extensions */,
+				D2EE37461A894CC100E70651 /* EpiTimeWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,13 +110,6 @@
 /* Begin PBXFileReference section */
 		17F193E0234C88AF8757E8AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90738772E0B42BB0F4E3E2A4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C1256C4568AC4A6E8E53AF04 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D203A8991A8611E500DD280E /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D203A89D1A8611E500DD280E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D203A8A11A8611E500DD280E /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		D203A8A91A86125F00DD280E /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		D203A8AA1A86125F00DD280E /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		D203A8AE1A8612AA00DD280E /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		D2045F9D19EB0B4500F4CEFA /* ETWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETWeekViewController.h; path = Day/ETWeekViewController.h; sourceTree = "<group>"; };
 		D2045F9E19EB0B4500F4CEFA /* ETWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETWeekViewController.m; path = Day/ETWeekViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2045FA119EB1E9600F4CEFA /* ETAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETAPI.h; path = API/ETAPI.h; sourceTree = "<group>"; };
@@ -151,13 +135,20 @@
 		D23BED8C19E328DA000FF210 /* EpiTime Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EpiTime Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23BED8E19E32A86000FF210 /* EpiTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime-Info.plist"; sourceTree = "<group>"; };
 		D23BED8F19E32AA0000FF210 /* EpiTime Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpiTime Staging-Info.plist"; sourceTree = "<group>"; };
-		D27EC8411A8611560044074B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		D28002141A443F9D00861E20 /* ETGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGroupsViewController.h; path = Groups/ETGroupsViewController.h; sourceTree = "<group>"; };
 		D28002151A443F9D00861E20 /* ETGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupsViewController.m; path = Groups/ETGroupsViewController.m; sourceTree = "<group>"; };
 		D28002181A443FF900861E20 /* ETGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGroupTableViewCell.h; path = Groups/ETGroupTableViewCell.h; sourceTree = "<group>"; };
 		D28002191A443FF900861E20 /* ETGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupTableViewCell.m; path = Groups/ETGroupTableViewCell.m; sourceTree = "<group>"; };
 		D280021C1A44D18F00861E20 /* ETSchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSchoolItem.h; path = Groups/ETSchoolItem.h; sourceTree = "<group>"; };
 		D280021D1A44D18F00861E20 /* ETSchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSchoolItem.m; path = Groups/ETSchoolItem.m; sourceTree = "<group>"; };
+		D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EpiTimeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2EE373E1A894CC100E70651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2EE373F1A894CC100E70651 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		D2EE37401A894CC100E70651 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		D2EE37421A894CC100E70651 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		D2EE37551A894E9200E70651 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		D2EE37571A894E9A00E70651 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		D2EE37591A894EA000E70651 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		D2EF16EA19E9F82500D95789 /* ETDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ETDayTableViewController.h; path = Day/ETDayTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D2EF16EB19E9F82500D95789 /* ETDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETDayTableViewController.m; path = Day/ETDayTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2EF16EF19E9FDAD00D95789 /* ETCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCourseTableViewCell.h; path = Day/ETCourseTableViewCell.h; sourceTree = "<group>"; };
@@ -172,20 +163,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D203A8961A8611E500DD280E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D203A8AF1A8612AA00DD280E /* libPods.a in Frameworks */,
-				D203A89A1A8611E500DD280E /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D23BED3419E32823000FF210 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D27EC8421A8611560044074B /* libPods.a in Frameworks */,
+				D2EE375A1A894EA000E70651 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +182,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1FA06D64D554297A58F9044 /* libPods.a in Frameworks */,
+				D2EE37581A894E9A00E70651 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EE37371A894CC100E70651 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EE37561A894E9200E70651 /* libPods.a in Frameworks */,
+				D2EE373B1A894CC100E70651 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,25 +205,6 @@
 				90738772E0B42BB0F4E3E2A4 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		D203A89B1A8611E500DD280E /* Today */ = {
-			isa = PBXGroup;
-			children = (
-				D203A8A91A86125F00DD280E /* TodayViewController.h */,
-				D203A8AA1A86125F00DD280E /* TodayViewController.m */,
-				D203A8A11A8611E500DD280E /* MainInterface.storyboard */,
-				D203A89C1A8611E500DD280E /* Supporting Files */,
-			);
-			path = Today;
-			sourceTree = "<group>";
-		};
-		D203A89C1A8611E500DD280E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D203A89D1A8611E500DD280E /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D2045FA519EB1EA000F4CEFA /* API */ = {
@@ -269,7 +241,7 @@
 			children = (
 				D23BED3919E32823000FF210 /* EpiTime */,
 				D23BED5319E32823000FF210 /* EpiTimeTests */,
-				D203A89B1A8611E500DD280E /* Today */,
+				D2EE373C1A894CC100E70651 /* EpiTimeWidget */,
 				D23BED6519E328C7000FF210 /* Frameworks */,
 				D23BED3819E32823000FF210 /* Products */,
 				3DCFF51B0CD397BA1F48C31D /* Pods */,
@@ -282,7 +254,7 @@
 				D23BED3719E32823000FF210 /* EpiTime.app */,
 				D23BED5019E32823000FF210 /* EpiTimeTests.xctest */,
 				D23BED8C19E328DA000FF210 /* EpiTime Staging.app */,
-				D203A8991A8611E500DD280E /* Today.appex */,
+				D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,10 +307,10 @@
 		D23BED6519E328C7000FF210 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D203A8AE1A8612AA00DD280E /* libPods.a */,
-				D27EC8411A8611560044074B /* libPods.a */,
+				D2EE37591A894EA000E70651 /* libPods.a */,
+				D2EE37571A894E9A00E70651 /* libPods.a */,
+				D2EE37551A894E9200E70651 /* libPods.a */,
 				D23BED6619E328C7000FF210 /* NotificationCenter.framework */,
-				C1256C4568AC4A6E8E53AF04 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,6 +338,25 @@
 			name = Groups;
 			sourceTree = "<group>";
 		};
+		D2EE373C1A894CC100E70651 /* EpiTimeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D2EE373F1A894CC100E70651 /* TodayViewController.h */,
+				D2EE37401A894CC100E70651 /* TodayViewController.m */,
+				D2EE37421A894CC100E70651 /* MainInterface.storyboard */,
+				D2EE373D1A894CC100E70651 /* Supporting Files */,
+			);
+			path = EpiTimeWidget;
+			sourceTree = "<group>";
+		};
+		D2EE373D1A894CC100E70651 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2EE373E1A894CC100E70651 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D2EF16EE19E9F82900D95789 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,23 +379,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D203A8981A8611E500DD280E /* Today */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D203A8A81A8611E500DD280E /* Build configuration list for PBXNativeTarget "Today" */;
-			buildPhases = (
-				D203A8951A8611E500DD280E /* Sources */,
-				D203A8961A8611E500DD280E /* Frameworks */,
-				D203A8971A8611E500DD280E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Today;
-			productName = Today;
-			productReference = D203A8991A8611E500DD280E /* Today.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		D23BED3619E32823000FF210 /* EpiTime */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D23BED5A19E32823000FF210 /* Build configuration list for PBXNativeTarget "EpiTime" */;
@@ -419,7 +393,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D203A8B51A86153200DD280E /* PBXTargetDependency */,
 			);
 			name = EpiTime;
 			productName = EpiTime;
@@ -458,12 +431,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				D203A8A41A8611E500DD280E /* PBXTargetDependency */,
+				D2EE37451A894CC100E70651 /* PBXTargetDependency */,
 			);
 			name = "EpiTime Staging";
 			productName = EpiTime;
 			productReference = D23BED8C19E328DA000FF210 /* EpiTime Staging.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D2EE37391A894CC100E70651 /* EpiTimeWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2EE37471A894CC100E70651 /* Build configuration list for PBXNativeTarget "EpiTimeWidget" */;
+			buildPhases = (
+				D2EE37361A894CC100E70651 /* Sources */,
+				D2EE37371A894CC100E70651 /* Frameworks */,
+				D2EE37381A894CC100E70651 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EpiTimeWidget;
+			productName = EpiTimeWidget;
+			productReference = D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -471,18 +461,9 @@
 		D23BED2F19E32823000FF210 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = EpiTime;
 				TargetAttributes = {
-					D203A8981A8611E500DD280E = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = E5L7NC8M9T;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-						};
-					};
 					D23BED3619E32823000FF210 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = E5L7NC8M9T;
@@ -504,6 +485,10 @@
 							};
 						};
 					};
+					D2EE37391A894CC100E70651 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = E5L7NC8M9T;
+					};
 				};
 			};
 			buildConfigurationList = D23BED3219E32823000FF210 /* Build configuration list for PBXProject "EpiTime" */;
@@ -522,20 +507,12 @@
 				D23BED7919E328DA000FF210 /* EpiTime Staging */,
 				D23BED3619E32823000FF210 /* EpiTime */,
 				D23BED4F19E32823000FF210 /* EpiTimeTests */,
-				D203A8981A8611E500DD280E /* Today */,
+				D2EE37391A894CC100E70651 /* EpiTimeWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D203A8971A8611E500DD280E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D203A8A21A8611E500DD280E /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D23BED3519E32823000FF210 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,6 +541,14 @@
 				D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */,
 				D2EF16F419EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED8619E328DA000FF210 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EE37381A894CC100E70651 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,22 +618,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D203A8951A8611E500DD280E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D203A8B81A861E3400DD280E /* ETCourseTableViewCell.m in Sources */,
-				D203A8B71A86161400DD280E /* ETSchoolItem.m in Sources */,
-				D203A8B61A86160500DD280E /* ETConstants.m in Sources */,
-				D203A8B01A86146600DD280E /* ETWeekItem.m in Sources */,
-				D203A8B11A86146600DD280E /* ETDayItem.m in Sources */,
-				D203A8B21A86146600DD280E /* ETCourseItem.m in Sources */,
-				D203A8AD1A86128A00DD280E /* ETTools.m in Sources */,
-				D203A8AC1A86127D00DD280E /* ETAPI.m in Sources */,
-				D203A8AB1A86125F00DD280E /* TodayViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D23BED3319E32823000FF210 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,23 +671,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2EE37361A894CC100E70651 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2781CA21A8950D30090369F /* ETSchoolItem.m in Sources */,
+				D2EE374C1A894D4700E70651 /* ETCourseTableViewCell.m in Sources */,
+				D2EE374D1A894D4700E70651 /* ETWeekItem.m in Sources */,
+				D2EE374E1A894D4700E70651 /* ETDayItem.m in Sources */,
+				D2EE374F1A894D4700E70651 /* ETCourseItem.m in Sources */,
+				D2EE37501A894D4700E70651 /* ETAPI.m in Sources */,
+				D2EE37511A894D4700E70651 /* ETTools.m in Sources */,
+				D2EE37521A894D4700E70651 /* ETConstants.m in Sources */,
+				D2EE37411A894CC100E70651 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D203A8A41A8611E500DD280E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D203A8981A8611E500DD280E /* Today */;
-			targetProxy = D203A8A31A8611E500DD280E /* PBXContainerItemProxy */;
-		};
-		D203A8B51A86153200DD280E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D203A8981A8611E500DD280E /* Today */;
-			targetProxy = D203A8B41A86153200DD280E /* PBXContainerItemProxy */;
-		};
 		D23BED5219E32823000FF210 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D23BED3619E32823000FF210 /* EpiTime */;
 			targetProxy = D23BED5119E32823000FF210 /* PBXContainerItemProxy */;
+		};
+		D2EE37451A894CC100E70651 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2EE37391A894CC100E70651 /* EpiTimeWidget */;
+			targetProxy = D2EE37441A894CC100E70651 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -742,60 +722,10 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D203A8A61A8611E500DD280E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17F193E0234C88AF8757E8AB /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D203A8A71A8611E500DD280E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90738772E0B42BB0F4E3E2A4 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		D23BED5819E32823000FF210 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -836,7 +766,7 @@
 		D23BED5919E32823000FF210 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -952,6 +882,10 @@
 				INFOPLIST_FILE = "EpiTime/EpiTime Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "EpiTime Staging";
 				PROVISIONING_PROFILE = "";
 			};
@@ -967,23 +901,58 @@
 				INFOPLIST_FILE = "EpiTime/EpiTime Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "EpiTime Staging";
 				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		D2EE37481A894CC100E70651 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F193E0234C88AF8757E8AB /* Pods.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EpiTimeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D2EE37491A894CC100E70651 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90738772E0B42BB0F4E3E2A4 /* Pods.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EpiTimeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D203A8A81A8611E500DD280E /* Build configuration list for PBXNativeTarget "Today" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D203A8A61A8611E500DD280E /* Debug */,
-				D203A8A71A8611E500DD280E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D23BED3219E32823000FF210 /* Build configuration list for PBXProject "EpiTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1016,6 +985,15 @@
 			buildConfigurations = (
 				D23BED8A19E328DA000FF210 /* Debug */,
 				D23BED8B19E328DA000FF210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2EE37471A894CC100E70651 /* Build configuration list for PBXNativeTarget "EpiTimeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2EE37481A894CC100E70651 /* Debug */,
+				D2EE37491A894CC100E70651 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
