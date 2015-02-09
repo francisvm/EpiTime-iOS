@@ -477,6 +477,11 @@
 					D203A8981A8611E500DD280E = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = E5L7NC8M9T;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					D23BED3619E32823000FF210 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -493,6 +498,11 @@
 					};
 					D23BED7919E328DA000FF210 = {
 						DevelopmentTeam = E5L7NC8M9T;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -754,6 +764,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -776,6 +787,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
