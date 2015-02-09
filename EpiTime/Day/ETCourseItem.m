@@ -24,9 +24,13 @@
         self.hour = hour;
         self.duration = duration;
         self.instructor = instructor;
-        if ([rooms isKindOfClass:[NSString class]])
+
+        if ([rooms isKindOfClass:[NSString class]]) // check for XMLDictionary fail
             rooms = [NSArray arrayWithObject:rooms];
         self.rooms = rooms;
+
+        if ([trainees isKindOfClass:[NSString class]]) // check for XMLDictionary fail
+            trainees = [NSArray arrayWithObject:trainees];
         self.trainees = trainees;
     }
 
