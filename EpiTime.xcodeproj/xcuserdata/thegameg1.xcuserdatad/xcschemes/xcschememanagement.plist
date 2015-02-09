@@ -7,14 +7,14 @@
 		<key>EpiTime Staging.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<key>EpiTime.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
 		</dict>
-		<key>Today.xcscheme</key>
+		<key>EpiTimeWidget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
@@ -37,17 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D23BED6319E328C7000FF210</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D23BED7919E328DA000FF210</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D27EC82D1A860FB50044074B</key>
+		<key>D2EE37391A894CC100E70651</key>
 		<dict>
 			<key>primary</key>
 			<true/>
