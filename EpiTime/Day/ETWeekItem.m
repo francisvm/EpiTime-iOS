@@ -43,6 +43,7 @@
     NSMutableDictionary *weeks = [[userDefaults objectForKey:RECIEVED_DATA] mutableCopy];
     [weeks setObject:weekDict forKey:[NSString stringWithFormat:@"%lu", (unsigned long)self.id]];
     [userDefaults setObject:weeks forKey:RECIEVED_DATA];
+    [userDefaults synchronize];
 }
 
 @end
