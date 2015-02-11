@@ -18,7 +18,7 @@
 
 @property (assign, nonatomic) NSUInteger duration;
 
-@property (strong, nonatomic) NSString *instructor;
+@property (strong, nonatomic) NSArray *instructors;
 
 @property (strong, nonatomic) NSArray *rooms;
 
@@ -28,7 +28,7 @@
                      title:(NSString *)title
                       hour:(NSUInteger)hour
                   duration:(NSUInteger)duration
-                instructor:(NSString *)instructor
+                instructors:(NSArray *)instructors
                      rooms:(NSArray *)rooms
                   trainees:(NSArray *)trainees;
 

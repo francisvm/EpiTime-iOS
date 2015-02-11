@@ -14,7 +14,7 @@
                      title:(NSString *)title
                       hour:(NSUInteger)hour
                   duration:(NSUInteger)duration
-                instructor:(NSString *)instructor
+               instructors:(NSArray *)instructors
                      rooms:(NSArray *)rooms
                   trainees:(NSArray *)trainees
 {
@@ -23,7 +23,10 @@
         self.title = title;
         self.hour = hour;
         self.duration = duration;
-        self.instructor = instructor;
+
+        if ([instructors isKindOfClass:[NSString class]]) // check for XMLDictionary fail
+            instructors = [NSArray arrayWithObject:instructors];
+        self.instructors = instructors;
 
         if ([rooms isKindOfClass:[NSString class]]) // check for XMLDictionary fail
             rooms = [NSArray arrayWithObject:rooms];
@@ -42,7 +45,7 @@
                                                       title:dicCourse[@"title"]
                                                        hour:[dicCourse[@"hour"] integerValue]
                                                    duration:[dicCourse[@"duration"] integerValue]
-                                                 instructor:dicCourse[@"instructor"]
+                                                instructors:dicCourse[@"instructor"]
                                                       rooms:dicCourse[@"room"]
                                                    trainees:dicCourse[@"trainee"]];
 
@@ -65,8 +68,8 @@
     [dict setObject:self.title forKey:@"title"];
     [dict setObject:[NSNumber numberWithInteger:self.hour] forKey:@"hour"];
     [dict setObject:[NSNumber numberWithInteger:self.duration] forKey:@"duration"];
-    if (self.instructor)
-        [dict setObject:self.instructor forKey:@"instructor"];
+    if (self.instructors)
+        [dict setObject:self.instructors forKey:@"instructor"];
     if (self.rooms)
         [dict setObject:self.rooms forKey:@"room"];
     if (self.trainees)
@@ -105,11 +108,17 @@
             return NO;
     }
 
+    for (NSInteger i = 0; i < self.instructors.count; ++i) {
+        if (![self.instructors[i] isEqualToString:course.instructors[i]])
+            return NO;
+    }
+
+    // check for instructors equality
+
     return self.id == course.id
            && [self.title isEqualToString:course.title]
            && self.hour == course.hour
-           && self.duration == course.duration
-           && [self.instructor isEqualToString:course.instructor];
+           && self.duration == course.duration;
 }
 
 @end
