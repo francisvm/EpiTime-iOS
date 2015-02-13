@@ -38,6 +38,10 @@
 		D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002191A443FF900861E20 /* ETGroupTableViewCell.m */; };
 		D280021E1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
 		D280021F1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
+		D2E3BDDB1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */; };
+		D2E3BDDC1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */; };
+		D2E3BDDE1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */; };
+		D2E3BDDF1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */; };
 		D2EE373B1A894CC100E70651 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
 		D2EE37411A894CC100E70651 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EE37401A894CC100E70651 /* TodayViewController.m */; };
 		D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
@@ -141,6 +145,9 @@
 		D28002191A443FF900861E20 /* ETGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupTableViewCell.m; path = Groups/ETGroupTableViewCell.m; sourceTree = "<group>"; };
 		D280021C1A44D18F00861E20 /* ETSchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSchoolItem.h; path = Groups/ETSchoolItem.h; sourceTree = "<group>"; };
 		D280021D1A44D18F00861E20 /* ETSchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSchoolItem.m; path = Groups/ETSchoolItem.m; sourceTree = "<group>"; };
+		D2E3BDD91A8B4A00008FE3D9 /* ETCourseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ETCourseDetailView.h; path = Day/ETCourseDetailView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETCourseDetailView.m; path = Day/ETCourseDetailView.m; sourceTree = "<group>"; };
+		D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ETCourseDetailView.xib; path = Day/ETCourseDetailView.xib; sourceTree = "<group>"; };
 		D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EpiTimeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EE373E1A894CC100E70651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EE373F1A894CC100E70651 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -156,8 +163,8 @@
 		D2EF16F319EA031000D95789 /* Day.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Day.xcassets; path = Resources/Day.xcassets; sourceTree = "<group>"; };
 		D2EF16F619EA05D200D95789 /* ETDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETDayItem.h; path = Day/ETDayItem.h; sourceTree = "<group>"; };
 		D2EF16F719EA05D200D95789 /* ETDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETDayItem.m; path = Day/ETDayItem.m; sourceTree = "<group>"; };
-		D2EF16FA19EA065D00D95789 /* ETCourseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCourseItem.h; path = Day/ETCourseItem.h; sourceTree = "<group>"; };
-		D2EF16FB19EA065D00D95789 /* ETCourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETCourseItem.m; path = Day/ETCourseItem.m; sourceTree = "<group>"; };
+		D2EF16FA19EA065D00D95789 /* ETCourseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ETCourseItem.h; path = Day/ETCourseItem.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D2EF16FB19EA065D00D95789 /* ETCourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETCourseItem.m; path = Day/ETCourseItem.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2EF16FE19EA067300D95789 /* ETWeekItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETWeekItem.h; path = Day/ETWeekItem.h; sourceTree = "<group>"; };
 		D2EF16FF19EA067300D95789 /* ETWeekItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETWeekItem.m; path = Day/ETWeekItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,6 +379,9 @@
 				D2EF16F719EA05D200D95789 /* ETDayItem.m */,
 				D2EF16FA19EA065D00D95789 /* ETCourseItem.h */,
 				D2EF16FB19EA065D00D95789 /* ETCourseItem.m */,
+				D2E3BDD91A8B4A00008FE3D9 /* ETCourseDetailView.h */,
+				D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */,
+				D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -520,6 +530,7 @@
 				D215B3811A307076007ED4F0 /* Loading.xcassets in Resources */,
 				D23BED4619E32823000FF210 /* Main.storyboard in Resources */,
 				D23BED4B19E32823000FF210 /* LaunchScreen.xib in Resources */,
+				D2E3BDDF1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */,
 				D2EF16F519EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED4819E32823000FF210 /* Images.xcassets in Resources */,
 			);
@@ -539,6 +550,7 @@
 				D215B3801A307076007ED4F0 /* Loading.xcassets in Resources */,
 				D23BED8419E328DA000FF210 /* Main.storyboard in Resources */,
 				D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */,
+				D2E3BDDE1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */,
 				D2EF16F419EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED8619E328DA000FF210 /* Images.xcassets in Resources */,
 			);
@@ -629,6 +641,7 @@
 				D23265E619E991A50009334B /* ETTools.m in Sources */,
 				D2EF16F919EA05D200D95789 /* ETDayItem.m in Sources */,
 				D2045FA419EB1E9600F4CEFA /* ETAPI.m in Sources */,
+				D2E3BDDC1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */,
 				D2EF170119EA067300D95789 /* ETWeekItem.m in Sources */,
 				D23BED3D19E32823000FF210 /* main.m in Sources */,
 				D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */,
@@ -660,6 +673,7 @@
 				D23265E519E991A50009334B /* ETTools.m in Sources */,
 				D2EF16F819EA05D200D95789 /* ETDayItem.m in Sources */,
 				D2045FA319EB1E9600F4CEFA /* ETAPI.m in Sources */,
+				D2E3BDDB1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */,
 				D2EF170019EA067300D95789 /* ETWeekItem.m in Sources */,
 				D23BED8119E328DA000FF210 /* main.m in Sources */,
 				D2EF16FC19EA065D00D95789 /* ETCourseItem.m in Sources */,

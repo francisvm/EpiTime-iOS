@@ -9,6 +9,7 @@
 #import "ETDayTableViewController.h"
 #import "ETCourseTableViewCell.h"
 #import "ETCourseItem.h"
+#import "ETCourseDetailView.h"
 #import "ETTools.h"
 #import "ETAPI.h"
 #import "ETConstants.h"
@@ -117,7 +118,13 @@
     ETCourseItem *course = self.day.courses[indexPath.row];
     NSString *title = course.title;
 
-    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:200 blur:YES backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:nil type:FVAlertTypeCustom];
+    ETCourseDetailView *detailView = [[ETCourseDetailView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    detailView.roomsLabel.text = [course.rooms componentsJoinedByString:@" "];
+    detailView.groupsLabel.text = [course.trainees componentsJoinedByString:@" "];
+    detailView.instructorsLabel.text = [course.instructors componentsJoinedByString:@" "];
+    detailView.hourLabel.text = [NSString stringWithFormat:@"%@ - %@", [ETTools timeStringFromMinutes:course.hour * 15], [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15]];
+
+    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:detailView.frame.size.height blur:YES backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:detailView type:FVAlertTypeCustom];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
