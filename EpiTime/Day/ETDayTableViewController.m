@@ -118,13 +118,13 @@
     ETCourseItem *course = self.day.courses[indexPath.row];
     NSString *title = course.title;
 
-    ETCourseDetailView *detailView = [[ETCourseDetailView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    detailView.roomsLabel.text = [course.rooms componentsJoinedByString:@" "];
-    detailView.groupsLabel.text = [course.trainees componentsJoinedByString:@" "];
-    detailView.instructorsLabel.text = [course.instructors componentsJoinedByString:@" "];
+    ETCourseDetailView *detailView = [[ETCourseDetailView alloc] init];
+    detailView.roomsLabel.text = [course.rooms componentsJoinedByString:@"\n"];
+    detailView.groupsLabel.text = [course.trainees componentsJoinedByString:@"\n"];
+    detailView.instructorsLabel.text = [course.instructors componentsJoinedByString:@"\n"];
     detailView.hourLabel.text = [NSString stringWithFormat:@"%@ - %@", [ETTools timeStringFromMinutes:course.hour * 15], [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15]];
 
-    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:detailView.frame.size.height blur:YES backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:detailView type:FVAlertTypeCustom];
+    [FVCustomAlertView showAlertOnView:self.view withTitle:title titleColor:[UIColor whiteColor] width:self.view.frame.size.width - 40 height:detailView.bounds.size.height blur:YES backgroundImage:nil backgroundColor:BLUE cornerRadius:20 shadowAlpha:0.6 alpha:1 contentView:detailView type:FVAlertTypeCustom];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

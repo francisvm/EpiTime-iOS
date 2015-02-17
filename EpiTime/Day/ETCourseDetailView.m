@@ -11,7 +11,7 @@
 @implementation ETCourseDetailView
 
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)init {
     NSArray *bundles = [[NSBundle mainBundle] loadNibNamed:@"ETCourseDetailView"
                                                      owner:self
                                                    options:nil];
