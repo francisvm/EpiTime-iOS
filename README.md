@@ -1,4 +1,5 @@
-# EpiTime-iOS
+
+# EpiTime-iOS [![Build Status](https://travis-ci.org/thegameg/EpiTime-iOS.svg?branch=master)](https://travis-ci.org/thegameg/EpiTime-iOS)
 
 This is the official github repository of EpiTime-iOS.
 EpiTime is a scheduler application for Epita students which displays next classes.
