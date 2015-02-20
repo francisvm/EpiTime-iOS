@@ -4,8 +4,6 @@
 This is the official github repository of EpiTime-iOS.
 EpiTime is a scheduler application for Epita students which displays next classes.
 
-Original EpiTime application is created by Gaubert Renaud. https://github.com/GreedLabs/EpiTime
-
 # Installation
 
 EpiTime-iOS uses CocoaPods. Run `pod install` in the root directory to install all the dependencies.
@@ -21,12 +19,14 @@ Chronos is the current scheduler for the IONIS group schools. Their API is used 
 
 ![Groups](https://raw.githubusercontent.com/thegameg/EpiTime-iOS/master/doc/groups.png)
 
+![Today](https://raw.githubusercontent.com/thegameg/EpiTime-iOS/master/doc/today.png)
+
 ## Author
 
 Francis Visoiu Mistrih
 http://francisvm.com/
 
-thegameg1@yahoo.com
+francisvm@yahoo.com
 
 ## License
 

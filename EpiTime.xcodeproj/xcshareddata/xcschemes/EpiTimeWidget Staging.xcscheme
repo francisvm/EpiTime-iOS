@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D22839E51A973D24001DEB27"
-               BuildableName = "EpiTimeWidget copy.appex"
+               BuildableName = "EpiTimeWidget Staging.appex"
                BlueprintName = "EpiTimeWidget Staging"
                ReferencedContainer = "container:EpiTime.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D22839E51A973D24001DEB27"
-            BuildableName = "EpiTimeWidget copy.appex"
+            BuildableName = "EpiTimeWidget Staging.appex"
             BlueprintName = "EpiTimeWidget Staging"
             ReferencedContainer = "container:EpiTime.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D22839E51A973D24001DEB27"
-            BuildableName = "EpiTimeWidget copy.appex"
+            BuildableName = "EpiTimeWidget Staging.appex"
             BlueprintName = "EpiTimeWidget Staging"
             ReferencedContainer = "container:EpiTime.xcodeproj">
          </BuildableReference>

@@ -31,6 +31,8 @@
 		D22839F21A973D24001DEB27 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
 		D22839F41A973D24001DEB27 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
 		D22839FC1A974218001DEB27 /* EpiTimeWidget Staging.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D22839FE1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22839FD1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist */; };
+		D22839FF1A97477C001DEB27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2EE373E1A894CC100E70651 /* Info.plist */; };
 		D23265E519E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E619E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E719E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
@@ -145,7 +147,7 @@
 		D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Animation.m"; sourceTree = "<group>"; };
 		D215B37F1A307076007ED4F0 /* Loading.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Loading.xcassets; path = Resources/Loading.xcassets; sourceTree = "<group>"; };
 		D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EpiTimeWidget Staging.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D22839F91A973D24001DEB27 /* EpiTimeWidget Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EpiTimeWidget Staging-Info.plist"; path = "/Volumes/MacintoshHD/Dropbox/EpiTime/EpiTime/EpiTimeWidget Staging-Info.plist"; sourceTree = "<absolute>"; };
+		D22839FD1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EpiTimeWidget Staging-Info.plist"; sourceTree = "<group>"; };
 		D23265E319E991A50009334B /* ETTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETTools.h; path = Other/ETTools.h; sourceTree = "<group>"; };
 		D23265E419E991A50009334B /* ETTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETTools.m; path = Other/ETTools.m; sourceTree = "<group>"; };
 		D23BED3719E32823000FF210 /* EpiTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,7 +394,7 @@
 		D2EE373D1A894CC100E70651 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D22839F91A973D24001DEB27 /* EpiTimeWidget Staging-Info.plist */,
+				D22839FD1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist */,
 				D2EE373E1A894CC100E70651 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -583,6 +585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22839FE1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist in Resources */,
 				D22839F41A973D24001DEB27 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +627,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22839FF1A97477C001DEB27 /* Info.plist in Resources */,
 				D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
