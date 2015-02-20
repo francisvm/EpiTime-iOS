@@ -17,6 +17,20 @@
 		D215B37E1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */; };
 		D215B3801A307076007ED4F0 /* Loading.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D215B37F1A307076007ED4F0 /* Loading.xcassets */; };
 		D215B3811A307076007ED4F0 /* Loading.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D215B37F1A307076007ED4F0 /* Loading.xcassets */; };
+		D22839E41A973C44001DEB27 /* EpiTimeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D22839E71A973D24001DEB27 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
+		D22839E81A973D24001DEB27 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
+		D22839E91A973D24001DEB27 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
+		D22839EA1A973D24001DEB27 /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
+		D22839EB1A973D24001DEB27 /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
+		D22839EC1A973D24001DEB27 /* ETAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA219EB1E9600F4CEFA /* ETAPI.m */; };
+		D22839ED1A973D24001DEB27 /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
+		D22839EE1A973D24001DEB27 /* ETConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA719EB200000F4CEFA /* ETConstants.m */; };
+		D22839EF1A973D24001DEB27 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EE37401A894CC100E70651 /* TodayViewController.m */; };
+		D22839F11A973D24001DEB27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EE37551A894E9200E70651 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		D22839F21A973D24001DEB27 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
+		D22839F41A973D24001DEB27 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
+		D22839FC1A974218001DEB27 /* EpiTimeWidget Staging.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D23265E519E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E619E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E719E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
@@ -45,7 +59,6 @@
 		D2EE373B1A894CC100E70651 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
 		D2EE37411A894CC100E70651 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EE37401A894CC100E70651 /* TodayViewController.m */; };
 		D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
-		D2EE37461A894CC100E70651 /* EpiTimeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2EE374C1A894D4700E70651 /* ETCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F019E9FDAD00D95789 /* ETCourseTableViewCell.m */; };
 		D2EE374D1A894D4700E70651 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
 		D2EE374E1A894D4700E70651 /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
@@ -71,19 +84,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D22839E21A973C39001DEB27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2EE37391A894CC100E70651;
+			remoteInfo = EpiTimeWidget;
+		};
+		D22839FA1A973D48001DEB27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D22839E51A973D24001DEB27;
+			remoteInfo = "EpiTimeWidget Staging";
+		};
 		D23BED5119E32823000FF210 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D23BED3619E32823000FF210;
 			remoteInfo = EpiTime;
-		};
-		D2EE37441A894CC100E70651 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2EE37391A894CC100E70651;
-			remoteInfo = EpiTimeWidget;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -94,6 +114,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				D22839E41A973C44001DEB27 /* EpiTimeWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +125,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D2EE37461A894CC100E70651 /* EpiTimeWidget.appex in Embed App Extensions */,
+				D22839FC1A974218001DEB27 /* EpiTimeWidget Staging.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +144,8 @@
 		D215B37B1A306CAF007ED4F0 /* UIImageView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Animation.h"; sourceTree = "<group>"; };
 		D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Animation.m"; sourceTree = "<group>"; };
 		D215B37F1A307076007ED4F0 /* Loading.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Loading.xcassets; path = Resources/Loading.xcassets; sourceTree = "<group>"; };
+		D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EpiTimeWidget Staging.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22839F91A973D24001DEB27 /* EpiTimeWidget Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EpiTimeWidget Staging-Info.plist"; path = "/Volumes/MacintoshHD/Dropbox/EpiTime/EpiTime/EpiTimeWidget Staging-Info.plist"; sourceTree = "<absolute>"; };
 		D23265E319E991A50009334B /* ETTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETTools.h; path = Other/ETTools.h; sourceTree = "<group>"; };
 		D23265E419E991A50009334B /* ETTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETTools.m; path = Other/ETTools.m; sourceTree = "<group>"; };
 		D23BED3719E32823000FF210 /* EpiTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +193,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D22839F01A973D24001DEB27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D22839F11A973D24001DEB27 /* libPods.a in Frameworks */,
+				D22839F21A973D24001DEB27 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D23BED3419E32823000FF210 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +294,7 @@
 				D23BED5019E32823000FF210 /* EpiTimeTests.xctest */,
 				D23BED8C19E328DA000FF210 /* EpiTime Staging.app */,
 				D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */,
+				D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,6 +392,7 @@
 		D2EE373D1A894CC100E70651 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D22839F91A973D24001DEB27 /* EpiTimeWidget Staging-Info.plist */,
 				D2EE373E1A894CC100E70651 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -389,6 +423,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D22839E51A973D24001DEB27 /* EpiTimeWidget Staging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D22839F51A973D24001DEB27 /* Build configuration list for PBXNativeTarget "EpiTimeWidget Staging" */;
+			buildPhases = (
+				D22839E61A973D24001DEB27 /* Sources */,
+				D22839F01A973D24001DEB27 /* Frameworks */,
+				D22839F31A973D24001DEB27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EpiTimeWidget Staging";
+			productName = EpiTimeWidget;
+			productReference = D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D23BED3619E32823000FF210 /* EpiTime */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D23BED5A19E32823000FF210 /* Build configuration list for PBXNativeTarget "EpiTime" */;
@@ -403,6 +454,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D22839E31A973C39001DEB27 /* PBXTargetDependency */,
 			);
 			name = EpiTime;
 			productName = EpiTime;
@@ -441,7 +493,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D2EE37451A894CC100E70651 /* PBXTargetDependency */,
+				D22839FB1A973D48001DEB27 /* PBXTargetDependency */,
 			);
 			name = "EpiTime Staging";
 			productName = EpiTime;
@@ -474,6 +526,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = EpiTime;
 				TargetAttributes = {
+					D22839E51A973D24001DEB27 = {
+						DevelopmentTeam = E5L7NC8M9T;
+					};
 					D23BED3619E32823000FF210 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = E5L7NC8M9T;
@@ -517,12 +572,21 @@
 				D23BED7919E328DA000FF210 /* EpiTime Staging */,
 				D23BED3619E32823000FF210 /* EpiTime */,
 				D23BED4F19E32823000FF210 /* EpiTimeTests */,
+				D22839E51A973D24001DEB27 /* EpiTimeWidget Staging */,
 				D2EE37391A894CC100E70651 /* EpiTimeWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D22839F31A973D24001DEB27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D22839F41A973D24001DEB27 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D23BED3519E32823000FF210 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,7 +658,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2045FAC19EB4C1600F4CEFA /* Check Pods Manifest.lock */ = {
@@ -630,6 +694,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D22839E61A973D24001DEB27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D22839E71A973D24001DEB27 /* ETSchoolItem.m in Sources */,
+				D22839E81A973D24001DEB27 /* ETCourseTableViewCell.m in Sources */,
+				D22839E91A973D24001DEB27 /* ETWeekItem.m in Sources */,
+				D22839EA1A973D24001DEB27 /* ETDayItem.m in Sources */,
+				D22839EB1A973D24001DEB27 /* ETCourseItem.m in Sources */,
+				D22839EC1A973D24001DEB27 /* ETAPI.m in Sources */,
+				D22839ED1A973D24001DEB27 /* ETTools.m in Sources */,
+				D22839EE1A973D24001DEB27 /* ETConstants.m in Sources */,
+				D22839EF1A973D24001DEB27 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D23BED3319E32823000FF210 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -704,15 +784,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D22839E31A973C39001DEB27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2EE37391A894CC100E70651 /* EpiTimeWidget */;
+			targetProxy = D22839E21A973C39001DEB27 /* PBXContainerItemProxy */;
+		};
+		D22839FB1A973D48001DEB27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D22839E51A973D24001DEB27 /* EpiTimeWidget Staging */;
+			targetProxy = D22839FA1A973D48001DEB27 /* PBXContainerItemProxy */;
+		};
 		D23BED5219E32823000FF210 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D23BED3619E32823000FF210 /* EpiTime */;
 			targetProxy = D23BED5119E32823000FF210 /* PBXContainerItemProxy */;
-		};
-		D2EE37451A894CC100E70651 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2EE37391A894CC100E70651 /* EpiTimeWidget */;
-			targetProxy = D2EE37441A894CC100E70651 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -736,6 +821,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D22839F61A973D24001DEB27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F193E0234C88AF8757E8AB /* Pods.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EpiTimeWidget Staging-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "EpiTimeWidget Staging";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D22839F71A973D24001DEB27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90738772E0B42BB0F4E3E2A4 /* Pods.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "EpiTimeWidget Staging-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "EpiTimeWidget Staging";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D23BED5819E32823000FF210 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -773,6 +894,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -807,6 +929,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -822,10 +945,8 @@
 				INFOPLIST_FILE = "EpiTime/EpiTime-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -841,10 +962,8 @@
 				INFOPLIST_FILE = "EpiTime/EpiTime-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -865,6 +984,7 @@
 				);
 				INFOPLIST_FILE = EpiTimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EpiTime.app/EpiTime";
 			};
@@ -881,6 +1001,7 @@
 				);
 				INFOPLIST_FILE = EpiTimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EpiTime.app/EpiTime";
 			};
@@ -896,10 +1017,8 @@
 				INFOPLIST_FILE = "EpiTime/EpiTime Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "EpiTime Staging";
 				PROVISIONING_PROFILE = "";
 			};
@@ -915,10 +1034,8 @@
 				INFOPLIST_FILE = "EpiTime/EpiTime Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "EpiTime Staging";
 				PROVISIONING_PROFILE = "";
 			};
@@ -937,10 +1054,8 @@
 				INFOPLIST_FILE = EpiTimeWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -955,10 +1070,8 @@
 				INFOPLIST_FILE = EpiTimeWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -967,6 +1080,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D22839F51A973D24001DEB27 /* Build configuration list for PBXNativeTarget "EpiTimeWidget Staging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D22839F61A973D24001DEB27 /* Debug */,
+				D22839F71A973D24001DEB27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D23BED3219E32823000FF210 /* Build configuration list for PBXProject "EpiTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
