@@ -18,7 +18,7 @@
     ETCourseDetailView *view = bundles[0];
     if ((self = view))
     {
-
+        // Initialization is done in the XIB. Add more logic here. (Maybe the size?)
     }
     return self;
 }

@@ -26,9 +26,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
+    ETDayTableViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier:kDayTableViewController];
     initialViewController.index = [ETTools weekDayIndexFromDate:[NSDate date]];
-    initialViewController.weekIndex = [ETAPI currentWeek];
+    initialViewController.weekIndex = [ETTools currentWeek];
 
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -38,7 +38,7 @@
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
     NSUInteger index = current.index == 0 ? 6 : current.index - 1;
 
-    ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
+    ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:kDayTableViewController];
     new.index = index;
     new.weekIndex = current.weekIndex - (current.index == 0 ? 1 : 0);
     return new;
@@ -48,14 +48,15 @@
     ETDayTableViewController *current = (ETDayTableViewController *)viewController;
     NSUInteger index = current.index == 6 ? 0 : current.index + 1;
 
-    ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:DAY_TABLE_VIEW_CONTROLLER];
+    ETDayTableViewController *new = [self.storyboard instantiateViewControllerWithIdentifier:kDayTableViewController];
     new.index = index;
     new.weekIndex = current.weekIndex + (current.index == 6 ? 1 : 0);
     return new;
 }
 
 - (IBAction)didPressBackToGroups:(id)sender {
-    [ETTools changeGroupWithCurrentViewController:self];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kMainStoryboard bundle:[NSBundle mainBundle]];
+    [self presentViewController:[storyboard instantiateViewControllerWithIdentifier:kGroupTableViewController] animated:YES completion:nil];
 }
 
 @end

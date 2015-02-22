@@ -40,9 +40,9 @@
 - (void)save {
     NSDictionary *weekDict = [self toDictionary];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *weeks = [[userDefaults objectForKey:RECIEVED_DATA] mutableCopy];
+    NSMutableDictionary *weeks = [[userDefaults objectForKey:kRecievedData] mutableCopy];
     [weeks setObject:weekDict forKey:[NSString stringWithFormat:@"%lu", (unsigned long)self.id]];
-    [userDefaults setObject:weeks forKey:RECIEVED_DATA];
+    [userDefaults setObject:weeks forKey:kRecievedData];
     [userDefaults synchronize];
 }
 

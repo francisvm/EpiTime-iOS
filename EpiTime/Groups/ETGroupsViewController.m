@@ -36,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:@"Loading..." withBlur:NO];
+    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
     [ETAPI fetchGroupList:^(NSDictionary *recievedData, NSMutableArray *groups)
      {
          [FVCustomAlertView hideAlertFromView:self.view fading:YES];
@@ -49,7 +49,7 @@
 #pragma mark UITableView delegate & dataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = !(indexPath.row % 2) ? @"GroupIdentifierEven" : @"GroupIdentifierOdd";
+    NSString *identifier = !(indexPath.row % 2) ? kCellGroupIdentifierEven : kCellGroupIdentifierOdd;
     ETGroupTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     ETSchoolItem *school = isSearching
                            ? self.filteredGroups[indexPath.section]
@@ -99,7 +99,7 @@
                             : self.groups[indexPath.section];
     // save the group on the extension
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:school.groups[indexPath.row] forKey:CURRENT_GROUP];
+    [userDefaults setValue:school.groups[indexPath.row] forKey:kCurrentGroup];
     [userDefaults synchronize];   // (!!) This is crucial.
 
     [ETTools clearData];

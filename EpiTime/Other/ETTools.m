@@ -13,42 +13,51 @@
 
 @implementation ETTools
 
+#pragma mark Setup
+
+// Setup the global appearance
 +(void)setupAppearance {
     [[UINavigationBar appearance] setBarTintColor:GREEN];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName:[UIColor whiteColor] }];
     [[UINavigationBar appearance] setTranslucent:YES];
 }
 
+// Create an empty dictionary if there is no data
 + (void)setupData {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *recieved = [userDefaults objectForKey:RECIEVED_DATA];
-    if (!recieved.count)
-    {
+    NSDictionary *recieved = [userDefaults objectForKey:kRecievedData];
+    if (!recieved.count) {
         NSDictionary *data = [NSDictionary dictionary];
-        [userDefaults setObject:data forKey:RECIEVED_DATA];
+        [userDefaults setObject:data forKey:kRecievedData];
     }
 }
 
+// Clear the dictionary
 + (void)clearData {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults removeObjectForKey:RECIEVED_DATA];
+    [userDefaults removeObjectForKey:kRecievedData];
     // create a new dictionary to hold the data
     NSDictionary *data = [NSDictionary dictionary];
-    [userDefaults setObject:data forKey:RECIEVED_DATA];
+    [userDefaults setObject:data forKey:kRecievedData];
 }
 
+#pragma mark Convert
+
+// NSString to NSDate using dd/MM/yyyy hh:mm:ss format
 + (NSDate *)dateFromString:(NSString *)string {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
     return [formatter dateFromString:string];
 }
 
+// NSDate to NSString using dd/MM/yyyy hh:mm:ss format
 + (NSString *)stringFromDate:(NSDate *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
     return [formatter stringFromDate:date];
 }
 
+// Minutes to HHhMM format
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes {
     NSUInteger hrs = minutes / 60;
     NSUInteger mins = minutes % 60;
@@ -56,18 +65,21 @@
     return [NSString stringWithFormat:@"%2.2luh%2.2lu", (unsigned long)hrs, (unsigned long)mins];
 }
 
+// NSDate to NSString using long style format
 + (NSString *)humanDateFromDate:(NSDate *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateStyle = NSDateFormatterLongStyle;
     return [formatter stringFromDate:date];
 }
 
+// NSDate to week day NSString (Monday, Tuesday, etc.)
 + (NSString *)weekDayFromDate:(NSDate *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateStyle = NSDateFormatterFullStyle;
     return [[formatter stringFromDate:date] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"' "]][0];
 }
 
+// NSDate to week day NSUInteger (index)
 + (NSUInteger)weekDayIndexFromDate:(NSDate *)date {
     // https://stackoverflow.com/questions/11019761/nsdatecomponents-weekday-doesnt-show-correct-weekday
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -76,23 +88,58 @@
     return adjustedWeekdayOrdinal - 1;
 }
 
+#pragma mark Loading activity
+
+// Display the custom loading activity as a right bar button
 + (void)startLoadingActivity:(UIViewController *)vc {
     UIBarButtonItem *refreshing = [[UIBarButtonItem alloc] initWithCustomView:[UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)]];
     vc.parentViewController.navigationItem.rightBarButtonItems = @[refreshing];
 }
 
+// Remove the custom loading activity from the riht bar button
 + (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error {
     vc.parentViewController.navigationItem.rightBarButtonItems = @[];
 }
 
+#pragma mark Group functions
+
+// Get current group NSString
 + (NSString *)currentGroup {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:CURRENT_GROUP];
+    return [userDefaults valueForKey:kCurrentGroup];
 }
 
-+ (void)changeGroupWithCurrentViewController:(UIViewController *)vc {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    [vc presentViewController:[storyboard instantiateViewControllerWithIdentifier:GROUP_TABLE_VIEW_CONTROLLER] animated:YES completion:nil];
+// Get NSArray of cached groups
++ (NSArray *)cachedGroups {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *groups = [userDefaults objectForKey:kRecievedGroups];
+    return groups;
 }
+
+#pragma mark Week functions
+
+// Get current week NSInteger
++ (NSInteger)currentWeek {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
+    NSDateComponents *firstComponents = [[NSDateComponents alloc] init];
+    firstComponents.year = 2014;
+    firstComponents.month = 9;
+    firstComponents.day = 1;
+    NSDate *firstDate = [calendar dateFromComponents:firstComponents];
+    firstComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:firstDate];
+
+    NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:[NSDate date]];
+
+    return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1;
+}
+
+// Get an ETWeekItem object from cached dictionary
++ (ETWeekItem *)cachedWeek:(NSInteger)weekNumber {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *weeks = [userDefaults objectForKey:kRecievedData];
+    ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:weeks[[NSString stringWithFormat:@"%ld", (long)weekNumber]]];
+    return week;
+}
+
 
 @end

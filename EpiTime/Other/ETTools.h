@@ -8,32 +8,63 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ETWeekItem.h"
+
 @interface ETTools : NSObject
 
+#pragma mark Setup
+
+// Setup the global appearance
 + (void)setupAppearance;
 
+// Create an empty dictionary if there is no data
 + (void)setupData;
 
+// Clear the dictionary
 + (void)clearData;
 
+#pragma mark Convert
+
+// NSString to NSDate using dd/MM/yyyy hh:mm:ss format
 + (NSDate *)dateFromString:(NSString *)string;
 
+// NSDate to NSString using dd/MM/yyyy hh:mm:ss format
 + (NSString *)stringFromDate:(NSDate *)date;
 
+// Minutes to HHhMM format
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes;
 
+// NSDate to NSString using long style format
 + (NSString *)humanDateFromDate:(NSDate *)date;
 
+// NSDate to week day (Monday, Tuesday, etc.)
 + (NSString *)weekDayFromDate:(NSDate *)date;
 
+// NSDate to week day NSUInteger (index)
 + (NSUInteger)weekDayIndexFromDate:(NSDate *)date;
 
+#pragma mark Loading activity
+
+// Display the custom loading activity as a right bar button
 + (void)startLoadingActivity:(UIViewController *)vc;
 
+// Remove the custom loading activity from the riht bar button
 + (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error;
 
+#pragma mark Group functions
+
+// Get current group NSString
 + (NSString *)currentGroup;
 
-+ (void)changeGroupWithCurrentViewController:(UIViewController *)vc;
+// Get NSArray of cached groups
++ (NSArray *)cachedGroups;
+
+#pragma mark Week functions
+
+// Get current week NSInteger
++ (NSInteger)currentWeek;
+
+// Get an ETWeekItem object from cached dictionary
++ (ETWeekItem *)cachedWeek:(NSInteger)weekNumber;
 
 @end

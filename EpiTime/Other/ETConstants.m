@@ -8,18 +8,25 @@
 
 #import "ETConstants.h"
 
-NSString *const APP_NAME = @"EpiTime";
-NSString *const APP_GROUP = @"group.epitime.SharedDefaults";
+NSString *const kAppName = @"EpiTime";
+NSString *const kAppGroup = @"group.epitime.SharedDefaults";
+NSString *const kMainStoryboard = @"Main";
 
-NSString *const DAY_TABLE_VIEW_CONTROLLER = @"DayTableViewController";
-NSString *const GROUP_TABLE_VIEW_CONTROLLER = @"GroupTableViewController";
+NSString *const kDayTableViewController = @"DayTableViewController";
+NSString *const kGroupTableViewController = @"GroupTableViewController";
 
-NSString *const BASE_URL_WEEKS = @"http://webservices.chronos.epita.net/GetWeeks.aspx?num=%d&week=%d&group=%@&auth=3piko";
+NSString *const kBaseUrlWeeks = @"http://webservices.chronos.epita.net/GetWeeks.aspx?num=%d&week=%d&group=%@&auth=3piko";
+NSString *const kBaseUrlGroups = @"http://webservices.chronos.epita.net/GetWeeks.aspx?auth=3piko&getMenu=trainnees";
 
-NSString *const BASE_URL_GROUPS = @"http://webservices.chronos.epita.net/GetWeeks.aspx?auth=3piko&getMenu=trainnees";
+NSString *const kRecievedData = @"kRecievedData";
+NSString *const kCurrentGroup = @"kCurrentGroup";
+NSString *const kRecievedGroups = @"kRecievedGroups";
 
-NSString *const RECIEVED_DATA = @"RECIEVED_DATA";
-NSString *const CURRENT_GROUP = @"CURRENT_GROUP";
-NSString *const RECIEVED_GROUPS = @"RECIEVED_GROUPS";
+NSUInteger const kWeeksPerYear = 52;
 
-NSUInteger const WEEKS_IN_A_YEAR = 53;
+NSString *const kCellCourseIdentifierEven = @"CourseIdentifierEven";
+NSString *const kCellCourseIdentifierOdd = @"CourseIdentifierOdd";
+NSString *const kTodayCellCourseIdentifierEven = @"TodayCourseIdentifierEven";
+NSString *const kTodayCellCourseIdentifierOdd = @"TodayCourseIdentifierOdd";
+NSString *const kCellGroupIdentifierEven = @"GroupIdentifierEven";
+NSString *const kCellGroupIdentifierOdd = @"GroupIdentifierOdd";

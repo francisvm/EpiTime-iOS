@@ -1,0 +1,54 @@
+
+/* Class = "IBUIBarButtonItem"; title = "Groups"; ObjectID = "3Km-0J-grS"; */
+"3Km-0J-grS.title" = "Groups";
+
+/* Class = "IBUINavigationItem"; title = "ING1/GRA2"; ObjectID = "8uy-8w-VCf"; */
+"8uy-8w-VCf.title" = "ING1/GRA2";
+
+/* Class = "IBUILabel"; text = "VA 311"; ObjectID = "A0e-Lb-8aG"; */
+"A0e-Lb-8aG.text" = "VA 311";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "GDQ-hT-cOF"; */
+"GDQ-hT-cOF.text" = "Label";
+
+/* Class = "IBUILabel"; text = "08h30"; ObjectID = "GG9-5c-tMm"; */
+"GG9-5c-tMm.text" = "08h30";
+
+/* Class = "IBUILabel"; text = "-"; ObjectID = "JRN-W2-GYT"; */
+"JRN-W2-GYT.text" = "-";
+
+/* Class = "IBUILabel"; text = "vendredi"; ObjectID = "MYx-2A-tPF"; */
+"MYx-2A-tPF.text" = "vendredi";
+
+/* Class = "IBUILabel"; text = "Algorithmique"; ObjectID = "MtX-XQ-ibf"; */
+"MtX-XQ-ibf.text" = "Algorithmique";
+
+/* Class = "IBUILabel"; text = "VA 311"; ObjectID = "VUh-jl-jT0"; */
+"VUh-jl-jT0.text" = "VA 311";
+
+/* Class = "IBUILabel"; text = "10h00"; ObjectID = "We2-bg-IBS"; */
+"We2-bg-IBS.text" = "10h00";
+
+/* Class = "IBUILabel"; text = "08h30"; ObjectID = "bdS-B8-L1s"; */
+"bdS-B8-L1s.text" = "08h30";
+
+/* Class = "IBUILabel"; text = "10h00"; ObjectID = "eco-AL-ZsG"; */
+"eco-AL-ZsG.text" = "10h00";
+
+/* Class = "IBUINavigationItem"; title = "ING1/GRA2"; ObjectID = "fe3-Jp-xMw"; */
+"fe3-Jp-xMw.title" = "ING1/GRA2";
+
+/* Class = "IBUILabel"; text = "-"; ObjectID = "gES-O7-f7c"; */
+"gES-O7-f7c.text" = "-";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "hUM-qH-6Ss"; */
+"hUM-qH-6Ss.text" = "Label";
+
+/* Class = "IBUILabel"; text = "18 avril 2014"; ObjectID = "kvY-ES-i2U"; */
+"kvY-ES-i2U.text" = "18 avril 2014";
+
+/* Class = "IBUISearchBar"; placeholder = "Search"; ObjectID = "l7G-LM-TAT"; */
+"l7G-LM-TAT.placeholder" = "Search";
+
+/* Class = "IBUILabel"; text = "Algorithmique"; ObjectID = "qt3-eF-Sxt"; */
+"qt3-eF-Sxt.text" = "Algorithmique";

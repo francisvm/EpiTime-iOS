@@ -11,6 +11,7 @@
 #import "ETAPI.h"
 #import "ETCourseItem.h"
 #import "ETTools.h"
+#import "ETConstants.h"
 #import <NotificationCenter/NotificationCenter.h>
 
 @interface TodayViewController () <NCWidgetProviding>
@@ -22,7 +23,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // FIXME: Share the cache
-    NSArray *cachedWeekDays = [ETAPI cachedWeek:[ETAPI currentWeek]].days;
+    NSArray *cachedWeekDays = [ETTools cachedWeek:[ETTools currentWeek]].days;
     if (cachedWeekDays.count)
         self.day = cachedWeekDays[[ETTools weekDayIndexFromDate:[NSDate date]]];
 }
@@ -35,7 +36,7 @@
 }
 
 - (void)fetchWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    [ETAPI fetchWeek:[ETAPI currentWeek] ofGroup:@"ING1/GRA2" viewController:nil
+    [ETAPI fetchWeek:[ETTools currentWeek] ofGroup:@"ING1/GRA2" viewController:nil // FIXME : Current group
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
 
             // If an error is encountered, use NCUpdateResultFailed
@@ -76,7 +77,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = !(indexPath.row % 2) ? @"TodayCourseIdentifierEven" : @"TodayCourseIdentifierOdd";
+    NSString *identifier = !(indexPath.row % 2) ? kTodayCellCourseIdentifierEven : kTodayCellCourseIdentifierOdd;
     ETCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     ETCourseItem *course = self.day.courses[indexPath.row];
     cell.nameLabel.text = course.title;
@@ -101,7 +102,7 @@
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         label.alpha = 0.5;
-        label.text = @"No classes today";
+        label.text = NSLocalizedString(@"no_class", nil);
         return label;
     }
     return nil;

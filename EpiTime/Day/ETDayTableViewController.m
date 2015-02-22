@@ -32,12 +32,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSArray *cachedWeekDays = [ETAPI cachedWeek:self.weekIndex].days;
+    NSArray *cachedWeekDays = [ETTools cachedWeek:self.weekIndex].days;
     if (cachedWeekDays.count)
         self.day = cachedWeekDays[self.index];
     self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
     if (!self.dateLabel.text)
-        self.dateLabel.text = @"Loading";
+        self.dateLabel.text = NSLocalizedString(@"loading", nil);
     self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
     if (!self.dayLabel.text)
         self.dayLabel.text = @"...";
@@ -71,8 +71,8 @@
                 [refreshControl endRefreshing];
         }
         errorCompletion:^(NSError *error) {
-            if ([self.dateLabel.text isEqualToString:@"Loading"])
-                self.dateLabel.text = @"Connection error";
+            if ([self.dateLabel.text isEqualToString:NSLocalizedString(@"loading", nil)])
+                self.dateLabel.text = NSLocalizedString(@"connection_error", nil);
             if (refreshControl)
                 [refreshControl endRefreshing];
         }
@@ -100,9 +100,8 @@
     return self.day.courses.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = !(indexPath.row % 2) ? @"CourseIdentifierEven" : @"CourseIdentifierOdd";
+    NSString *identifier = !(indexPath.row % 2) ? kCellCourseIdentifierEven : kCellCourseIdentifierOdd;
     ETCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 
     ETCourseItem *course = self.day.courses[indexPath.row];
@@ -137,7 +136,7 @@
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         label.alpha = 0.5;
-        label.text = @"No classes today";
+        label.text = NSLocalizedString(@"no_class", nil);
 
         UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no_class"]];
         logo.frame = CGRectMake(self.view.frame.size.width / 2 - logo.frame.size.width / 2, label.frame.size.height, logo.frame.size.width, logo.frame.size.height);

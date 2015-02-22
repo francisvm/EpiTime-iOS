@@ -22,8 +22,8 @@
     [ETTools setupData]; // Setup the data containing all weeks
     if (![ETTools currentGroup])
     {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:GROUP_TABLE_VIEW_CONTROLLER]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kMainStoryboard bundle:[NSBundle mainBundle]];
+        [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:kGroupTableViewController]];
     }
 
     return YES;

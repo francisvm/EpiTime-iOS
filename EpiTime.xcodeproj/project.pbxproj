@@ -31,8 +31,6 @@
 		D22839F21A973D24001DEB27 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
 		D22839F41A973D24001DEB27 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
 		D22839FC1A974218001DEB27 /* EpiTimeWidget Staging.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D22839FE1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22839FD1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist */; };
-		D22839FF1A97477C001DEB27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2EE373E1A894CC100E70651 /* Info.plist */; };
 		D23265E519E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E619E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
 		D23265E719E991A50009334B /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
@@ -54,6 +52,10 @@
 		D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28002191A443FF900861E20 /* ETGroupTableViewCell.m */; };
 		D280021E1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
 		D280021F1A44D18F00861E20 /* ETSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETSchoolItem.m */; };
+		D2DD27A31A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
+		D2DD27A41A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
+		D2DD27A51A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
+		D2DD27A61A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
 		D2E3BDDB1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */; };
 		D2E3BDDC1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */; };
 		D2E3BDDE1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */; };
@@ -147,7 +149,7 @@
 		D215B37C1A306CAF007ED4F0 /* UIImageView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Animation.m"; sourceTree = "<group>"; };
 		D215B37F1A307076007ED4F0 /* Loading.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Loading.xcassets; path = Resources/Loading.xcassets; sourceTree = "<group>"; };
 		D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EpiTimeWidget Staging.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D22839FD1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EpiTimeWidget Staging-Info.plist"; sourceTree = "<group>"; };
+		D22839FD1A974771001DEB27 /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		D23265E319E991A50009334B /* ETTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETTools.h; path = Other/ETTools.h; sourceTree = "<group>"; };
 		D23265E419E991A50009334B /* ETTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETTools.m; path = Other/ETTools.m; sourceTree = "<group>"; };
 		D23BED3719E32823000FF210 /* EpiTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,9 @@
 		D28002191A443FF900861E20 /* ETGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupTableViewCell.m; path = Groups/ETGroupTableViewCell.m; sourceTree = "<group>"; };
 		D280021C1A44D18F00861E20 /* ETSchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSchoolItem.h; path = Groups/ETSchoolItem.h; sourceTree = "<group>"; };
 		D280021D1A44D18F00861E20 /* ETSchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSchoolItem.m; path = Groups/ETSchoolItem.m; sourceTree = "<group>"; };
+		D2DD27A11A9A49E600710562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D2DD27A21A9A49E600710562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D2DD27A71A9A4A5900710562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D2E3BDD91A8B4A00008FE3D9 /* ETCourseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ETCourseDetailView.h; path = Day/ETCourseDetailView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETCourseDetailView.m; path = Day/ETCourseDetailView.m; sourceTree = "<group>"; };
 		D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ETCourseDetailView.xib; path = Day/ETCourseDetailView.xib; sourceTree = "<group>"; };
@@ -363,6 +368,7 @@
 				D23BED4719E32823000FF210 /* Images.xcassets */,
 				D215B37F1A307076007ED4F0 /* Loading.xcassets */,
 				D2EF16F319EA031000D95789 /* Day.xcassets */,
+				D2DD27A81A9A4A5900710562 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -394,7 +400,7 @@
 		D2EE373D1A894CC100E70651 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D22839FD1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist */,
+				D22839FD1A974771001DEB27 /* Staging-Info.plist */,
 				D2EE373E1A894CC100E70651 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -563,7 +569,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = D23BED2E19E32823000FF210;
@@ -585,7 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22839FE1A974771001DEB27 /* EpiTimeWidget Staging-Info.plist in Resources */,
+				D2DD27A51A9A4A5900710562 /* Localizable.strings in Resources */,
 				D22839F41A973D24001DEB27 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D215B3811A307076007ED4F0 /* Loading.xcassets in Resources */,
+				D2DD27A41A9A4A5900710562 /* Localizable.strings in Resources */,
 				D23BED4619E32823000FF210 /* Main.storyboard in Resources */,
 				D23BED4B19E32823000FF210 /* LaunchScreen.xib in Resources */,
 				D2E3BDDF1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */,
@@ -615,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D215B3801A307076007ED4F0 /* Loading.xcassets in Resources */,
+				D2DD27A31A9A4A5900710562 /* Localizable.strings in Resources */,
 				D23BED8419E328DA000FF210 /* Main.storyboard in Resources */,
 				D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */,
 				D2E3BDDE1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */,
@@ -627,7 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22839FF1A97477C001DEB27 /* Info.plist in Resources */,
+				D2DD27A61A9A4A5900710562 /* Localizable.strings in Resources */,
 				D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,6 +817,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D23BED4519E32823000FF210 /* Base */,
+				D2DD27A11A9A49E600710562 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -818,8 +826,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D23BED4A19E32823000FF210 /* Base */,
+				D2DD27A21A9A49E600710562 /* en */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D2DD27A81A9A4A5900710562 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2DD27A71A9A4A5900710562 /* en */,
+			);
+			name = Localizable.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -835,7 +853,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "EpiTimeWidget Staging-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EpiTimeWidget/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -851,7 +869,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "EpiTimeWidget Staging-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EpiTimeWidget/Staging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
