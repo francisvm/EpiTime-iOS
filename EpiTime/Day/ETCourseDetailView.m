@@ -28,6 +28,7 @@
 }
 
 - (IBAction)didTapScreen:(id)sender {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     [ETTools fadeOutView:self completion:^(BOOL finished) {
         if (finished)
             [self removeFromSuperview];
