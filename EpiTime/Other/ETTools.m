@@ -141,5 +141,26 @@
     return week;
 }
 
+// Fade in view
++ (void)fadeInView:(UIView *)view completion:(void (^)(BOOL finished))completion {
+    [UIView animateWithDuration:kFadeDuration
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [view setAlpha:1.0];
+                     }
+                     completion:completion];
+}
+
+// Fade out view
++ (void)fadeOutView:(UIView *)view completion:(void (^)(BOOL finished))completion {
+    [UIView animateWithDuration:kFadeDuration
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [view setAlpha:0.0];
+                     }
+                     completion:completion];
+}
 
 @end

@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface ETCourseDetailView : UIView
+
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *roomsLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *groupsLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *instructorsLabel;
 
-@property (strong, nonatomic) IBOutlet UILabel *hourLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

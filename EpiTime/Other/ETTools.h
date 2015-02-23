@@ -67,4 +67,12 @@
 // Get an ETWeekItem object from cached dictionary
 + (ETWeekItem *)cachedWeek:(NSInteger)weekNumber;
 
+#pragma mark View functions
+
+// Fade in a view
++ (void)fadeInView:(UIView *)view completion:(void (^)(BOOL finished))completion;
+
+// Fade out a view
++ (void)fadeOutView:(UIView *)view completion:(void (^)(BOOL finished))completion;
+
 @end

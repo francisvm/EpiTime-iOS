@@ -8,6 +8,8 @@
 
 #import "ETCourseDetailView.h"
 
+#import "ETTools.h"
+
 @implementation ETCourseDetailView
 
 
@@ -19,8 +21,17 @@
     if ((self = view))
     {
         // Initialization is done in the XIB. Add more logic here. (Maybe the size?)
+        self.alpha = 0.0f;
+        [ETTools fadeInView:self completion:nil];
     }
     return self;
+}
+
+- (IBAction)didTapScreen:(id)sender {
+    [ETTools fadeOutView:self completion:^(BOOL finished) {
+        if (finished)
+            [self removeFromSuperview];
+    }];
 }
 
 /*

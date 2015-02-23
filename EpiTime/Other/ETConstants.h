@@ -34,3 +34,5 @@ extern NSString *const kTodayCellCourseIdentifierEven;
 extern NSString *const kTodayCellCourseIdentifierOdd;
 extern NSString *const kCellGroupIdentifierEven;
 extern NSString *const kCellGroupIdentifierOdd;
+
+extern float const kFadeDuration;
