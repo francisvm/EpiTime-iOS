@@ -9,3 +9,6 @@
 "loading" = "Loading";
 "connection_error" = "Connection error";
 "no_class" = "No classes today";
+"students" = "Students";
+"professors" = "Professors";
+"rooms" = "Rooms";
