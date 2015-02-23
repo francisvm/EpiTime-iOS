@@ -10,7 +10,7 @@
 #import "ETTools.h"
 #import "ETConstants.h"
 #import "ETWeekItem.h"
-#import "ETSchoolItem.h"
+#import "ETGroupItem.h"
 
 #import "XMLDictionary.h"
 
@@ -99,18 +99,26 @@ static NSURLSessionDataTask *currentTask = nil;
 // Fill the array with the recieved school names
 + (void)fillArrayFromRequestData:(id)recievedData array:(NSMutableArray *)array {
     NSArray *nodes = recievedData[@"node"];
-    for (NSDictionary *node in nodes)
-    {
-        ETSchoolItem *school = [[ETSchoolItem alloc] initWithName:node[@"name"]];
+    for (NSDictionary *node in nodes) {
+        ETGroupItem *school = [[ETGroupItem alloc] initWithName:node[@"name"]];
         [school fillWithDictionary:node];
         [array addObject:school];
     }
 }
 
+// Fill the array with the instructors (special case, no sections)
++ (void)fillArrayFromInstructorsRequestData:(id)recievedData array:(NSMutableArray *)array {
+    NSArray *nodes = recievedData[@"node"];
+    [array addObject:[[ETGroupItem alloc] initWithName:NSLocalizedString(@"Professors", nil)]];
+    ETGroupItem *professors = array[0];
+    for (NSDictionary *node in nodes) {
+        [professors.groups addObject:node[@"name"]];
+    }
+}
+
 // Fetch the group list
-+ (void)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion
-{
-    NSString *urlString = kBaseUrlGroups;
++ (void)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion {
+    NSString *urlString = [NSString stringWithFormat:kBaseUrlGroups, kGroupsTrainnees];
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLSession *session = [NSURLSession sharedSession];
@@ -129,6 +137,54 @@ static NSURLSessionDataTask *currentTask = nil;
                                             }
                                             [ETAPI removeCurrentTask];
                                         }];
+    [currentTask resume];
+}
+
+// Fetch the rooms list
++ (void)fetchRoomsList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion {
+    NSString *urlString = [NSString stringWithFormat:kBaseUrlGroups, kGroupsRooms];
+    NSURL *url = [NSURL URLWithString:urlString];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    currentTask = [session dataTaskWithURL:url
+                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                             NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
+                             NSMutableArray *groupsArray = [NSMutableArray array];
+                             [self fillArrayFromRequestData:recievedData array:groupsArray];
+
+                             if (onCompletion && recievedData) {
+                                 // NSURSession runs on the background, so we need to update the UI on the main thread
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     onCompletion(recievedData, groupsArray);
+                                 });
+                             }
+
+                             [ETAPI removeCurrentTask];
+                         }];
+    [currentTask resume];
+}
+
+// Fetch the professors list
++ (void)fetchInstructorsList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion {
+    NSString *urlString = [NSString stringWithFormat:kBaseUrlGroups, kGroupsInstructors];
+    NSURL *url = [NSURL URLWithString:urlString];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    currentTask = [session dataTaskWithURL:url
+                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                             NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
+                             NSMutableArray *groupsArray = [NSMutableArray array];
+                             [self fillArrayFromInstructorsRequestData:recievedData array:groupsArray];
+
+                             if (onCompletion && recievedData)
+                             {
+                                 // NSURSession runs on the background, so we need to update the UI on the main thread
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     onCompletion(recievedData, groupsArray);
+                                 });
+                             }
+                             [ETAPI removeCurrentTask];
+                         }];
     [currentTask resume];
 }
 

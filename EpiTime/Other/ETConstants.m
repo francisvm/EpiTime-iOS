@@ -16,7 +16,10 @@ NSString *const kDayTableViewController = @"DayTableViewController";
 NSString *const kGroupTableViewController = @"GroupTableViewController";
 
 NSString *const kBaseUrlWeeks = @"http://webservices.chronos.epita.net/GetWeeks.aspx?num=%d&week=%d&group=%@&auth=3piko";
-NSString *const kBaseUrlGroups = @"http://webservices.chronos.epita.net/GetWeeks.aspx?auth=3piko&getMenu=trainnees";
+NSString *const kBaseUrlGroups = @"http://webservices.chronos.epita.net/GetWeeks.aspx?auth=3piko&getMenu=%@";
+NSString *const kGroupsInstructors = @"instructors";
+NSString *const kGroupsRooms = @"rooms";
+NSString *const kGroupsTrainnees = @"trainnees";
 
 NSString *const kRecievedData = @"kRecievedData";
 NSString *const kCurrentGroup = @"kCurrentGroup";

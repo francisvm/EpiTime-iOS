@@ -21,6 +21,9 @@ extern NSString *const kGroupTableViewController;
 
 extern NSString *const kBaseUrlWeeks;
 extern NSString *const kBaseUrlGroups;
+extern NSString *const kGroupsInstructors;
+extern NSString *const kGroupsRooms;
+extern NSString *const kGroupsTrainnees;
 
 extern NSString *const kRecievedData;
 extern NSString *const kCurrentGroup;

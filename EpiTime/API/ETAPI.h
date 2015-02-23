@@ -42,4 +42,10 @@
 // Fetch the group list
 + (void)fetchGroupList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion;
 
+// Fetch the rooms list
++ (void)fetchRoomsList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion;
+
+// Fetch the professors list
++ (void)fetchInstructorsList:(void (^)(NSDictionary *recievedData, NSMutableArray *groups))onCompletion;
+
 @end

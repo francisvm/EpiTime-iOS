@@ -1,5 +1,5 @@
 //
-//  ETSchoolItem.h
+//  ETGroupItem.h
 //  EpiTime
 //
 //  Created by Francis Visoiu Mistrih on 19/12/2014.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ETSchoolItem : NSObject
+@interface ETGroupItem : NSObject
 
 @property (nonatomic, strong) NSString *name;
 

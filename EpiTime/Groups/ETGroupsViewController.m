@@ -9,7 +9,7 @@
 #import "ETGroupsViewController.h"
 #import "ETGroupTableViewCell.h"
 #import "ETAPI.h"
-#import "ETSchoolItem.h"
+#import "ETGroupItem.h"
 #import "ETConstants.h"
 #import "ETTools.h"
 
@@ -18,9 +18,17 @@
 
 @interface ETGroupsViewController ()
 
-@property (nonatomic, strong) NSMutableArray *groups;
+@property (nonatomic, strong) NSMutableArray *trainnees;
+@property (nonatomic, strong) NSMutableArray *instructors;
+@property (nonatomic, strong) NSMutableArray *rooms;
 @property (nonatomic, strong) NSMutableArray *filteredGroups;
 @property (nonatomic, strong) UISearchController *searchController;
+
+typedef NS_ENUM(NSInteger, ETGroupType) {
+    ETGroupTypeTrainnee,
+    ETGroupTypeInstructor,
+    ETGroupTypeRoom
+};
 
 @end
 
@@ -30,9 +38,6 @@
     [super viewDidLoad];
     // Hide statusbar
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-
-    self.groups = [NSMutableArray array];
-    self.filteredGroups = [NSMutableArray array];
 
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
 
@@ -52,16 +57,32 @@
     self.definesPresentationContext = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
+    // First load the students
     [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
-    [ETAPI fetchGroupList:^(NSDictionary *recievedData, NSMutableArray *groups)
-     {
-         [FVCustomAlertView hideAlertFromView:self.view fading:YES];
-         self.groups = groups;
-         self.filteredGroups = [self.groups mutableCopy];
-         [self.tableView reloadData];
-     }];
+    [ETAPI fetchGroupList:^(NSDictionary *recievedData, NSMutableArray *groups) {
+        [FVCustomAlertView hideAlertFromView:self.view fading:YES];
+        self.trainnees = groups;
+        self.filteredGroups = [self.trainnees mutableCopy];
+        [self.tableView reloadData];
+    }];
+
+
+}
+
+// Get the specific array of groups depending on the scope
+- (NSMutableArray *)selectedGroup {
+    switch (self.searchController.searchBar.selectedScopeButtonIndex) {
+        case ETGroupTypeTrainnee:
+            return self.trainnees;
+        case ETGroupTypeInstructor:
+            return self.instructors;
+        case ETGroupTypeRoom:
+            return self.rooms;
+        default:
+            return nil;
+            break;
+    }
 }
 
 #pragma mark UITableView delegate & dataSource
@@ -69,18 +90,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = !(indexPath.row % 2) ? kCellGroupIdentifierEven : kCellGroupIdentifierOdd;
     ETGroupTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
-    ETSchoolItem *school = self.searchController.active
+
+    NSMutableArray *groups = [self selectedGroup];
+    ETGroupItem *group = self.searchController.active
                            ? self.filteredGroups[indexPath.section]
-                           : self.groups[indexPath.section];
-    cell.label.text = school.groups[indexPath.row];
+                           : groups[indexPath.section];
+    cell.label.text = group.groups[indexPath.row];
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    ETSchoolItem *school = self.searchController.active
+    NSMutableArray *groups = [self selectedGroup];
+    ETGroupItem *group = self.searchController.active
                            ? self.filteredGroups[section]
-                           : self.groups[section];
-    return school.name;
+                           : groups[section];
+    return group.name;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -88,38 +112,42 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    ETSchoolItem *school = self.searchController.active
+    NSMutableArray *groups = [self selectedGroup];
+    ETGroupItem *group = self.searchController.active
                            ? self.filteredGroups[section]
-                           : self.groups[section];
+                           : groups[section];
     UIView *v = [[UIView alloc] init];
     float height = [self tableView:self.tableView heightForHeaderInSection:section];
-    UILabel *schoolLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, height)];
-    schoolLabel.textAlignment = NSTextAlignmentCenter;
-    schoolLabel.text = school.name;
-    schoolLabel.textColor = [UIColor whiteColor];
-    [v addSubview:schoolLabel];
+    UILabel *groupLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, height)];
+    groupLabel.textAlignment = NSTextAlignmentCenter;
+    groupLabel.text = group.name;
+    groupLabel.textColor = [UIColor whiteColor];
+    [v addSubview:groupLabel];
     v.backgroundColor = RED;
     return v;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.groups.count;
+    NSMutableArray *groups = [self selectedGroup];
+    return groups.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ETSchoolItem *school = self.searchController.active
+    NSMutableArray *groups = [self selectedGroup];
+    ETGroupItem *group = self.searchController.active
                            ? self.filteredGroups[section]
-                           : self.groups[section];
-    return school.groups.count;
+                           : groups[section];
+    return group.groups.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ETSchoolItem *school = self.searchController.active
+    NSMutableArray *groups = [self selectedGroup];
+    ETGroupItem *group = self.searchController.active
                            ? self.filteredGroups[indexPath.section]
-                           : self.groups[indexPath.section];
+                           : groups[indexPath.section];
     // save the group on the extension
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:school.groups[indexPath.row] forKey:kCurrentGroup];
+    [userDefaults setValue:group.groups[indexPath.row] forKey:kCurrentGroup];
     [userDefaults synchronize];   // (!!) This is crucial.
 
     [ETTools clearData];
@@ -143,22 +171,39 @@
 
 // Workaround for bug: -updateSearchResultsForSearchController: is not called when scope buttons change
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    // Lazily fetch rooms or instructors
+    if (!self.rooms && selectedScope == ETGroupTypeRoom) {
+        [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
+        [ETAPI fetchRoomsList:^(NSDictionary *recievedData, NSMutableArray *groups) {
+             [FVCustomAlertView hideAlertFromView:self.view fading:YES];
+             self.rooms = groups;
+             [self updateSearchResultsForSearchController:self.searchController];
+        }];
+    } else if (!self.instructors && selectedScope == ETGroupTypeInstructor) {
+        [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
+        [ETAPI fetchInstructorsList:^(NSDictionary *recievedData, NSMutableArray *groups) {
+             [FVCustomAlertView hideAlertFromView:self.view fading:YES];
+             self.instructors = groups;
+             [self updateSearchResultsForSearchController:self.searchController];
+        }];
+    }
     [self updateSearchResultsForSearchController:self.searchController];
 }
 
 #pragma mark - Filtering
 
 - (void)filterContentBy:(NSString *)search andScope:(NSInteger)selectedScope {
+    NSMutableArray *groups = [self selectedGroup];
     if (!search || !search.length) {
-        self.filteredGroups = [self.groups mutableCopy];
+        self.filteredGroups = [groups mutableCopy];
         return;
     }
     [self.filteredGroups removeAllObjects];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", search];
-    for (ETSchoolItem *school in self.groups) {
-        ETSchoolItem *filteredSchool = [[ETSchoolItem alloc] initWithName:school.name];
-        filteredSchool.groups = [NSMutableArray arrayWithArray:[school.groups filteredArrayUsingPredicate:predicate]];
-        [self.filteredGroups addObject:filteredSchool];
+    for (ETGroupItem *group in groups) {
+        ETGroupItem *filteredGroup = [[ETGroupItem alloc] initWithName:group.name];
+        filteredGroup.groups = [NSMutableArray arrayWithArray:[group.groups filteredArrayUsingPredicate:predicate]];
+        [self.filteredGroups addObject:filteredGroup];
     }
 }
 

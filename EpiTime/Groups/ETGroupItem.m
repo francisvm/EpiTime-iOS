@@ -1,14 +1,14 @@
 //
-//  ETSchoolItem.m
+//  ETGchoolItem.m
 //  EpiTime
 //
 //  Created by Francis Visoiu Mistrih on 19/12/2014.
 //  Copyright (c) 2014 EpiTime. All rights reserved.
 //
 
-#import "ETSchoolItem.h"
+#import "ETGroupItem.h"
 
-@implementation ETSchoolItem
+@implementation ETGroupItem
 
 - (instancetype)initWithName:(NSString *)name {
     if ((self = [self init]))
