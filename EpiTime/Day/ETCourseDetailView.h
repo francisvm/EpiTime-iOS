@@ -12,7 +12,11 @@
 
 @protocol ETCourseDetailViewProtocol <NSObject>
 
+@optional
+
 - (void)courseDetailView:(ETCourseDetailView *)courseDetailView didExitViewWithTitle:(NSString *)ignoredTitle;
+
+@required
 
 - (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle;
 

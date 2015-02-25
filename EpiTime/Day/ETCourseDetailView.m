@@ -31,7 +31,8 @@
 - (void)exitFading {
     [ETTools fadeOutView:self completion:^(BOOL finished) {
         if (finished) {
-            [self.delegate courseDetailView:self didExitViewWithTitle:self.titleLabel.text];
+            if ([self.delegate respondsToSelector:@selector(courseDetailView:didExitViewWithTitle:)])
+                [self.delegate courseDetailView:self didExitViewWithTitle:self.titleLabel.text];
             [self removeFromSuperview];
         }
     }];
@@ -50,7 +51,8 @@
 */
 
 - (IBAction)didPressIgnore:(id)sender {
-    [self.delegate courseDetailView:self didPressIgnoreWithTitle:self.titleLabel.text];
+    if ([self.delegate respondsToSelector:@selector(courseDetailView:didPressIgnoreWithTitle:)])
+        [self.delegate courseDetailView:self didPressIgnoreWithTitle:self.titleLabel.text];
     [self exitFading];
 }
 

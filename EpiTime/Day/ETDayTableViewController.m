@@ -151,10 +151,6 @@
 
 #pragma mark ETCourseDetailViewProtocol
 
-- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didExitViewWithTitle:(NSString *)ignoredTitle {
-
-}
-
 - (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle {
     [ETTools addIgnoredData:ignoredTitle];
     [self fetch:nil];
