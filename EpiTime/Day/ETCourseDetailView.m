@@ -42,14 +42,6 @@
     [self exitFading];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 - (IBAction)didPressIgnore:(id)sender {
     if ([self.delegate respondsToSelector:@selector(courseDetailView:didPressIgnoreWithTitle:)])
         [self.delegate courseDetailView:self didPressIgnoreWithTitle:self.titleLabel.text];

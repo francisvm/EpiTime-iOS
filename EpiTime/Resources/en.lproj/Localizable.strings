@@ -9,6 +9,7 @@
 "loading" = "Loading";
 "connection_error" = "Connection error";
 "no_class" = "No classes today";
+"no_ignored" = "No ignored classes";
 "students" = "Students";
 "professors" = "Professors";
 "rooms" = "Rooms";
