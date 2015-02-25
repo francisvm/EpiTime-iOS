@@ -236,8 +236,10 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didPressBackToGroups:" destination="hzV-Rh-YlC" id="lWb-NZ-MME"/>
+                                <segue destination="MA8-mP-cdS" kind="presentation" id="Wwq-SP-Nxg"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ignored" id="A1j-HC-RlP"/>
                     </navigationItem>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1e-BB-h4d" userLabel="First Responder" sceneMemberID="firstResponder"/>

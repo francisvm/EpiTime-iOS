@@ -54,9 +54,4 @@
     return new;
 }
 
-- (IBAction)didPressBackToGroups:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kMainStoryboard bundle:[NSBundle mainBundle]];
-    [self presentViewController:[storyboard instantiateViewControllerWithIdentifier:kGroupTableViewController] animated:YES completion:nil];
-}
-
 @end
