@@ -12,6 +12,7 @@
 #import "ETTools.h"
 #import "ETAPI.h"
 #import "ETConstants.h"
+#import "ETWeekViewController.h"
 
 #import "XMLDictionary.h"
 #import "FVCustomAlertView.h"
@@ -108,7 +109,13 @@
 
 // User pressed the TODAY icon
 - (IBAction)didPressToday:(id)sender {
-   [self switchToDate:[NSDate date]];
+    [self switchToDate:[NSDate date]];
+
+    // https://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style/12939384#12939384
+    // We want to update the before and after cached view controller here. We can set the page's view controller to an array containing this view.
+    // The bug in iOS doesn't update the 'before' view.
+    ETWeekViewController *week = (ETWeekViewController *)self.parentViewController;
+    [week setViewControllers:@[self] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
 #pragma mark - Table view data source
