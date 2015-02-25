@@ -35,5 +35,7 @@ NSString *const kTodayCellCourseIdentifierEven = @"TodayCourseIdentifierEven";
 NSString *const kTodayCellCourseIdentifierOdd = @"TodayCourseIdentifierOdd";
 NSString *const kCellGroupIdentifierEven = @"GroupIdentifierEven";
 NSString *const kCellGroupIdentifierOdd = @"GroupIdentifierOdd";
+NSString *const kCellIgnoreIdentifierEven = @"IgnoreIdentifierEven";
+NSString *const kCellIgnoreIdentifierOdd = @"IgnoreIdentifierOdd";
 
 float const kFadeDuration = 0.2f;

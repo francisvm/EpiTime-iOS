@@ -85,6 +85,10 @@
 		D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
 		D2EF170019EA067300D95789 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
 		D2EF170119EA067300D95789 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
+		D2F7AEB41A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
+		D2F7AEB51A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
+		D2F7AEBC1A9DE74000F750E2 /* ETIgnoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEBB1A9DE74000F750E2 /* ETIgnoreTableViewCell.m */; };
+		D2F7AEBD1A9DE74000F750E2 /* ETIgnoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEBB1A9DE74000F750E2 /* ETIgnoreTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +201,10 @@
 		D2EF16FB19EA065D00D95789 /* ETCourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETCourseItem.m; path = Day/ETCourseItem.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2EF16FE19EA067300D95789 /* ETWeekItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETWeekItem.h; path = Day/ETWeekItem.h; sourceTree = "<group>"; };
 		D2EF16FF19EA067300D95789 /* ETWeekItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETWeekItem.m; path = Day/ETWeekItem.m; sourceTree = "<group>"; };
+		D2F7AEB21A9DE5CE00F750E2 /* ETIgnoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETIgnoreViewController.h; path = Ignore/ETIgnoreViewController.h; sourceTree = "<group>"; };
+		D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETIgnoreViewController.m; path = Ignore/ETIgnoreViewController.m; sourceTree = "<group>"; };
+		D2F7AEBA1A9DE74000F750E2 /* ETIgnoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETIgnoreTableViewCell.h; path = Ignore/ETIgnoreTableViewCell.h; sourceTree = "<group>"; };
+		D2F7AEBB1A9DE74000F750E2 /* ETIgnoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETIgnoreTableViewCell.m; path = Ignore/ETIgnoreTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +323,7 @@
 				D23BED4919E32823000FF210 /* LaunchScreen.xib */,
 				D28002131A443C9E00861E20 /* Groups */,
 				D2EF16EE19E9F82900D95789 /* Schedule */,
+				D2F7AEB11A9DE5B000F750E2 /* Ignore */,
 				D2045FA519EB1EA000F4CEFA /* API */,
 				D23265E919E991A80009334B /* Other */,
 				D215B37A1A306CAF007ED4F0 /* UIImageView+Animation */,
@@ -426,6 +435,17 @@
 				D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */,
 			);
 			name = Schedule;
+			sourceTree = "<group>";
+		};
+		D2F7AEB11A9DE5B000F750E2 /* Ignore */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7AEB21A9DE5CE00F750E2 /* ETIgnoreViewController.h */,
+				D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */,
+				D2F7AEBA1A9DE74000F750E2 /* ETIgnoreTableViewCell.h */,
+				D2F7AEBB1A9DE74000F750E2 /* ETIgnoreTableViewCell.m */,
+			);
+			name = Ignore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -725,6 +745,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F7AEB51A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */,
 				D23BED4019E32823000FF210 /* ETAppDelegate.m in Sources */,
 				D215B37E1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
 				D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */,
@@ -734,6 +755,7 @@
 				D2045FA419EB1E9600F4CEFA /* ETAPI.m in Sources */,
 				D2E3BDDC1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */,
 				D2EF170119EA067300D95789 /* ETWeekItem.m in Sources */,
+				D2F7AEBD1A9DE74000F750E2 /* ETIgnoreTableViewCell.m in Sources */,
 				D23BED3D19E32823000FF210 /* main.m in Sources */,
 				D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
@@ -757,6 +779,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F7AEB41A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */,
 				D23BED8019E328DA000FF210 /* ETAppDelegate.m in Sources */,
 				D215B37D1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
 				D280021A1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */,
@@ -766,6 +789,7 @@
 				D2045FA319EB1E9600F4CEFA /* ETAPI.m in Sources */,
 				D2E3BDDB1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */,
 				D2EF170019EA067300D95789 /* ETWeekItem.m in Sources */,
+				D2F7AEBC1A9DE74000F750E2 /* ETIgnoreTableViewCell.m in Sources */,
 				D23BED8119E328DA000FF210 /* main.m in Sources */,
 				D2EF16FC19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */,

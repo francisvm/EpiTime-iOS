@@ -73,6 +73,9 @@
 // Add ignored data to the cache
 + (void)addIgnoredData:(NSString *)title;
 
+// Remove ignored data from the cache
++ (void)removeIgnoredData:(NSUInteger)index;
+
 #pragma mark View functions
 
 // Fade in a view

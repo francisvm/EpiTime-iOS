@@ -161,6 +161,16 @@
     [userDefaults setObject:data forKey:kIgnoredData];
 }
 
+// Remove ignored data from the cache
++ (void)removeIgnoredData:(NSUInteger)index {
+    NSMutableSet *dataSet = [ETTools ignoredData];
+    [dataSet removeObject:dataSet.allObjects[index]];
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dataSet];
+    [userDefaults setObject:data forKey:kIgnoredData];
+}
+
 // Fade in view
 + (void)fadeInView:(UIView *)view completion:(void (^)(BOOL finished))completion {
     [UIView animateWithDuration:kFadeDuration
