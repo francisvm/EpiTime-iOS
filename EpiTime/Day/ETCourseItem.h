@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) NSArray *trainees;
 
+@property (assign, atomic) BOOL isIgnored;
+
 - (instancetype)initWithid:(NSUInteger)id
                      title:(NSString *)title
                       hour:(NSUInteger)hour

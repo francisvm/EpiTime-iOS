@@ -7,6 +7,7 @@
 //
 
 #import "ETCourseItem.h"
+#import "ETTools.h"
 
 @implementation ETCourseItem
 
@@ -35,6 +36,7 @@
         if ([trainees isKindOfClass:[NSString class]]) // check for XMLDictionary fail
             trainees = [NSArray arrayWithObject:trainees];
         self.trainees = trainees;
+        self.isIgnored = [[ETTools ignoredData] containsObject:self.title];
     }
 
     return self;
@@ -56,7 +58,9 @@
     NSMutableArray *dumpedCourses = [NSMutableArray array];
 
     for (NSDictionary *dicCourse in courses) {
-        [dumpedCourses addObject:[[ETCourseItem alloc] initWithDictionary:dicCourse]];
+        ETCourseItem * course = [[ETCourseItem alloc] initWithDictionary:dicCourse];
+        if (!course.isIgnored)
+            [dumpedCourses addObject:course];
     }
 
     return dumpedCourses;
