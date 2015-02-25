@@ -9,6 +9,7 @@
 #import "ETCourseDetailView.h"
 
 #import "ETTools.h"
+#import "ETConstants.h"
 
 @implementation ETCourseDetailView
 
@@ -42,5 +43,9 @@
     // Drawing code
 }
 */
+
+- (IBAction)didPressIgnore:(id)sender {
+    [ETTools addIgnoredData:self.titleLabel.text];
+}
 
 @end

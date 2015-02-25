@@ -20,4 +20,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
+- (IBAction)didPressIgnore:(id)sender;
+
 @end

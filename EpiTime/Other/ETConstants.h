@@ -29,6 +29,8 @@ extern NSString *const kRecievedData;
 extern NSString *const kCurrentGroup;
 extern NSString *const kRecievedGroups;
 
+extern NSString *const kIgnoredData;
+
 extern NSUInteger const kWeeksPerYear;
 
 extern NSString *const kCellCourseIdentifierEven;

@@ -67,6 +67,12 @@
 // Get an ETWeekItem object from cached dictionary
 + (ETWeekItem *)cachedWeek:(NSInteger)weekNumber;
 
+// Get ignored data
++ (NSMutableSet *)ignoredData;
+
+// Add ignored data to the cache
++ (void)addIgnoredData:(NSString *)title;
+
 #pragma mark View functions
 
 // Fade in a view

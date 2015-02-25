@@ -141,6 +141,27 @@
     return week;
 }
 
+// Get cached ignored data
++ (NSMutableSet *)ignoredData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [userDefaults objectForKey:kIgnoredData];
+    NSMutableSet *dataSet = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (!dataSet) {
+        dataSet = [NSMutableSet set];
+    }
+    return dataSet;
+}
+
+// Add ignored data to the cache
++ (void)addIgnoredData:(NSString *)title {
+    NSMutableSet *dataSet = [ETTools ignoredData];
+    [dataSet addObject:title];
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dataSet];
+    [userDefaults setObject:data forKey:kIgnoredData];
+}
+
 // Fade in view
 + (void)fadeInView:(UIView *)view completion:(void (^)(BOOL finished))completion {
     [UIView animateWithDuration:kFadeDuration

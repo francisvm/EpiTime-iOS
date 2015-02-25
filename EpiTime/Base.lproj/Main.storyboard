@@ -261,7 +261,7 @@
                                 <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="0.13333333333333333" green="0.43137254901960786" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.14509804546833038" green="0.17254902422428131" blue="0.20784313976764679" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupIdentifierOdd" rowHeight="85" id="NTa-7E-75S" customClass="ETGroupTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>

@@ -25,6 +25,8 @@ NSString *const kRecievedData = @"kRecievedData";
 NSString *const kCurrentGroup = @"kCurrentGroup";
 NSString *const kRecievedGroups = @"kRecievedGroups";
 
+NSString *const kIgnoredData = @"kIgnoredData";
+
 NSUInteger const kWeeksPerYear = 52;
 
 NSString *const kCellCourseIdentifierEven = @"CourseIdentifierEven";
