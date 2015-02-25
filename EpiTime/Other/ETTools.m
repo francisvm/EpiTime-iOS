@@ -92,13 +92,12 @@
 
 // Display the custom loading activity as a right bar button
 + (void)startLoadingActivity:(UIViewController *)vc {
-    UIBarButtonItem *refreshing = [[UIBarButtonItem alloc] initWithCustomView:[UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)]];
-    vc.parentViewController.navigationItem.rightBarButtonItems = @[refreshing];
+    vc.parentViewController.navigationItem.titleView = [UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)];
 }
 
 // Remove the custom loading activity from the riht bar button
 + (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error {
-    vc.parentViewController.navigationItem.rightBarButtonItems = @[];
+    vc.parentViewController.navigationItem.titleView = nil;
 }
 
 #pragma mark Group functions
