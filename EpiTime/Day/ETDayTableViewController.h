@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETCourseDetailView.h"
 #import "ETDayItem.h"
 
-@interface ETDayTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ETDayTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ETCourseDetailViewProtocol>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

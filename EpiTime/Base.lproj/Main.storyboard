@@ -443,7 +443,9 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Ignored" id="aWO-B3-ER9"/>
+                    <navigationItem key="navigationItem" title="Ignored" id="aWO-B3-ER9">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="maO-D8-agc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jee-Le-kcT" id="xxH-Oa-16L"/>
                     </connections>

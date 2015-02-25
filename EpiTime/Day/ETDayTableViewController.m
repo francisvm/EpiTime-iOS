@@ -9,7 +9,6 @@
 #import "ETDayTableViewController.h"
 #import "ETCourseTableViewCell.h"
 #import "ETCourseItem.h"
-#import "ETCourseDetailView.h"
 #import "ETTools.h"
 #import "ETAPI.h"
 #import "ETConstants.h"
@@ -118,6 +117,7 @@
     NSString *title = course.title;
 
     ETCourseDetailView *detailView = [[ETCourseDetailView alloc] init];
+    detailView.delegate = self;
     detailView.titleLabel.text = title;
     detailView.frame = [[UIScreen mainScreen] bounds];
     [self.navigationController.view addSubview:detailView];
@@ -125,7 +125,6 @@
     detailView.groupsLabel.text = [course.trainees componentsJoinedByString:@"\n"];
     detailView.instructorsLabel.text = [course.instructors componentsJoinedByString:@"\n"];
     detailView.timeLabel.text = [NSString stringWithFormat:@"%@ - %@", [ETTools timeStringFromMinutes:course.hour * 15], [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15]];
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -148,6 +147,17 @@
         return wrapper;
     }
     return nil;
+}
+
+#pragma mark ETCourseDetailViewProtocol
+
+- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didExitViewWithTitle:(NSString *)ignoredTitle {
+
+}
+
+- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle {
+    [ETTools addIgnoredData:ignoredTitle];
+    [self fetch:nil];
 }
 
 @end

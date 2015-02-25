@@ -28,12 +28,17 @@
     return self;
 }
 
-- (IBAction)didTapScreen:(id)sender {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+- (void)exitFading {
     [ETTools fadeOutView:self completion:^(BOOL finished) {
-        if (finished)
+        if (finished) {
+            [self.delegate courseDetailView:self didExitViewWithTitle:self.titleLabel.text];
             [self removeFromSuperview];
+        }
     }];
+}
+
+- (IBAction)didTapScreen:(id)sender {
+    [self exitFading];
 }
 
 /*
@@ -45,7 +50,8 @@
 */
 
 - (IBAction)didPressIgnore:(id)sender {
-    [ETTools addIgnoredData:self.titleLabel.text];
+    [self.delegate courseDetailView:self didPressIgnoreWithTitle:self.titleLabel.text];
+    [self exitFading];
 }
 
 @end
