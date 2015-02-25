@@ -108,6 +108,11 @@
     return nil;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *urlString = [NSString stringWithFormat:@"epitime://?today=%d", indexPath.row];
+    [self.extensionContext openURL:[NSURL URLWithString:urlString] completionHandler:nil];
+}
+
 #pragma mark Widget methods
 
 -(UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
