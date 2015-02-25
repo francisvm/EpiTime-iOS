@@ -31,15 +31,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSArray *cachedWeekDays = [ETTools cachedWeek:self.weekIndex].days;
-    if (cachedWeekDays.count)
-        self.day = cachedWeekDays[self.index];
-    self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
-    if (!self.dateLabel.text)
-        self.dateLabel.text = NSLocalizedString(@"loading", nil);
-    self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
-    if (!self.dayLabel.text)
-        self.dayLabel.text = @"...";
+    [self loadCachedData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -49,13 +41,29 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    if ([ETAPI currentTask])
-    {
+    [self cancelCurrentTask];
+    [super viewWillDisappear:animated];
+}
+
+// Cancel the current task and stop the loading activity indicator
+- (void)cancelCurrentTask {
+    if ([ETAPI currentTask]) {
         [ETAPI cancelCurrentTask];
         [ETTools stopLoadingActivity:self error:YES]; // stop the loading activity here, don't wait for the error block to be called
     }
+}
 
-    [super viewWillDisappear:animated];
+// Load cached data
+- (void)loadCachedData {
+    NSArray *cachedWeekDays = [ETTools cachedWeek:self.weekIndex].days;
+    if (cachedWeekDays.count)
+        self.day = cachedWeekDays[self.index];
+    self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
+    if (!self.dateLabel.text)
+        self.dateLabel.text = NSLocalizedString(@"loading", nil);
+    self.dayLabel.text = [ETTools weekDayFromDate:self.day.date];
+    if (!self.dayLabel.text)
+        self.dayLabel.text = @"...";
 }
 
 - (void)fetch:(UIRefreshControl *)refreshControl {
@@ -78,6 +86,10 @@
      ];
 }
 
+- (BOOL)shouldShowHeader {
+    return self.day && !self.day.courses.count;
+}
+
 - (void)refresh:(UIRefreshControl *)refreshControl {
     if ([ETAPI currentTask])
         [refreshControl endRefreshing];
@@ -85,8 +97,18 @@
         [self fetch:refreshControl];
 }
 
-- (BOOL)shouldShowHeader {
-    return self.day && !self.day.courses.count;
+- (void)switchToDate:(NSDate *)date {
+    [self cancelCurrentTask]; // Cancel the current task
+    self.weekIndex = [ETTools weekIndex:date]; // Change the indices
+    self.index = [ETTools weekDayIndexFromDate:date];
+    [self loadCachedData]; // Load cached data if it exist
+    [self.tableView reloadData];
+    [self fetch:nil];
+}
+
+// User pressed the TODAY icon
+- (IBAction)didPressToday:(id)sender {
+   [self switchToDate:[NSDate date]];
 }
 
 #pragma mark - Table view data source

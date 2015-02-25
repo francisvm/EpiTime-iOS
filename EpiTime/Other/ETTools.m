@@ -118,8 +118,8 @@
 
 #pragma mark Week functions
 
-// Get current week NSInteger
-+ (NSInteger)currentWeek {
+// Get week index from NSDate
++ (NSInteger)weekIndex:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     NSDateComponents *firstComponents = [[NSDateComponents alloc] init];
     firstComponents.year = 2014;
@@ -128,9 +128,14 @@
     NSDate *firstDate = [calendar dateFromComponents:firstComponents];
     firstComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:firstDate];
 
-    NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:[NSDate date]];
+    NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:date];
 
     return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1;
+}
+
+// Get current week NSInteger
++ (NSInteger)currentWeek {
+    return [self weekIndex:[NSDate date]];
 }
 
 // Get an ETWeekItem object from cached dictionary

@@ -61,11 +61,16 @@
 
 #pragma mark Week functions
 
+// Get week index from NSDate
++ (NSInteger)weekIndex:(NSDate *)date;
+
 // Get current week NSInteger
 + (NSInteger)currentWeek;
 
 // Get an ETWeekItem object from cached dictionary
 + (ETWeekItem *)cachedWeek:(NSInteger)weekNumber;
+
+#pragma mark Ignored functions
 
 // Get ignored data
 + (NSMutableSet *)ignoredData;

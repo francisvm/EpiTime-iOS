@@ -31,17 +31,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="WBL-wc-Th0">
-                                        <rect key="frame" x="288" y="61" width="24" height="24"/>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ1-2e-lR8">
+                                        <rect key="frame" x="289" y="61" width="24" height="24"/>
+                                        <state key="normal" image="icon_calendar">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressToday:" destination="F2x-Rc-brw" eventType="touchUpInside" id="JMN-he-4g6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WBL-wc-Th0" firstAttribute="centerX" secondItem="MYx-2A-tPF" secondAttribute="centerX" constant="-0.5" id="1NI-IA-k2J"/>
+                                    <constraint firstItem="MYx-2A-tPF" firstAttribute="centerX" secondItem="XJ1-2e-lR8" secondAttribute="centerX" id="2pw-WO-FOT"/>
+                                    <constraint firstAttribute="bottom" secondItem="XJ1-2e-lR8" secondAttribute="bottom" constant="5" id="9Hf-VG-uT4"/>
                                     <constraint firstItem="kvY-ES-i2U" firstAttribute="top" secondItem="IQK-7G-hvm" secondAttribute="top" constant="8" id="AjU-FC-jg9"/>
-                                    <constraint firstItem="WBL-wc-Th0" firstAttribute="top" secondItem="MYx-2A-tPF" secondAttribute="bottom" constant="5" id="PaH-mi-3e0"/>
+                                    <constraint firstItem="XJ1-2e-lR8" firstAttribute="top" secondItem="MYx-2A-tPF" secondAttribute="bottom" constant="5" id="CdV-6D-Gnm"/>
                                     <constraint firstAttribute="height" constant="100" id="QOJ-KL-6EH"/>
-                                    <constraint firstAttribute="bottom" secondItem="WBL-wc-Th0" secondAttribute="bottom" constant="5" id="The-8j-eXr"/>
                                     <constraint firstItem="MYx-2A-tPF" firstAttribute="top" secondItem="kvY-ES-i2U" secondAttribute="bottom" constant="8" id="dHM-LB-DPi"/>
                                     <constraint firstAttribute="centerX" secondItem="kvY-ES-i2U" secondAttribute="centerX" id="pTS-TR-Ytb"/>
                                     <constraint firstItem="MYx-2A-tPF" firstAttribute="centerX" secondItem="kvY-ES-i2U" secondAttribute="centerX" id="u6a-iq-DVS"/>
