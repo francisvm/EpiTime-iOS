@@ -20,8 +20,6 @@
 
 - (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle;
 
-- (void)didExitView;
-
 @end
 
 @interface ETCourseDetailView : UIView
