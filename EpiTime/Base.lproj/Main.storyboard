@@ -287,7 +287,7 @@
                                         <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <outlet property="label" destination="hUM-qH-6Ss" id="KHv-DB-pe2"/>
-                                            <segue destination="duT-S7-ybu" kind="show" id="496-pt-3dD"/>
+                                            <segue destination="duT-S7-ybu" kind="presentation" id="496-pt-3dD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupIdentifierEven" rowHeight="85" id="t0T-NP-tp2" customClass="ETGroupTableViewCell">
@@ -312,7 +312,7 @@
                                         <color key="backgroundColor" red="0.1474817085" green="0.17548635570000001" blue="0.21467141540000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="label" destination="GDQ-hT-cOF" id="DS0-cU-TTe"/>
-                                            <segue destination="duT-S7-ybu" kind="show" id="Vtq-04-ige"/>
+                                            <segue destination="duT-S7-ybu" kind="presentation" id="Vtq-04-ige"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -359,7 +359,7 @@
         <image name="icon_calendar" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vtq-04-ige"/>
+        <segue reference="496-pt-3dD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
 </document>
