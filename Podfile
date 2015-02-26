@@ -2,4 +2,4 @@
 platform :ios, "8.0"
 
 pod 'XMLDictionary', '~> 1.4'
-pod 'FVCustomAlertView'
+pod 'FVCustomAlertView', '~> 0.3.3'

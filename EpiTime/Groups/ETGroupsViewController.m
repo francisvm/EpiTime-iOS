@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, ETGroupType) {
 
 - (void)viewWillAppear:(BOOL)animated {
     // First load the students
-    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
+    [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO allowTap:NO];
     [ETAPI fetchGroupList:^(NSDictionary *recievedData, NSMutableArray *groups) {
         [FVCustomAlertView hideAlertFromView:self.view fading:YES];
         self.trainnees = groups;
@@ -173,14 +173,14 @@ typedef NS_ENUM(NSInteger, ETGroupType) {
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     // Lazily fetch rooms or instructors
     if (!self.rooms && selectedScope == ETGroupTypeRoom) {
-        [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
+        [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO allowTap:NO];
         [ETAPI fetchRoomsList:^(NSDictionary *recievedData, NSMutableArray *groups) {
              [FVCustomAlertView hideAlertFromView:self.view fading:YES];
              self.rooms = groups;
              [self updateSearchResultsForSearchController:self.searchController];
         }];
     } else if (!self.instructors && selectedScope == ETGroupTypeInstructor) {
-        [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO];
+        [FVCustomAlertView showDefaultLoadingAlertOnView:self.view withTitle:NSLocalizedString(@"loading", nil) withBlur:NO allowTap:NO];
         [ETAPI fetchInstructorsList:^(NSDictionary *recievedData, NSMutableArray *groups) {
              [FVCustomAlertView hideAlertFromView:self.view fading:YES];
              self.instructors = groups;
