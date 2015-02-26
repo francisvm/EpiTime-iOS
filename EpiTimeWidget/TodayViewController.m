@@ -109,7 +109,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *urlString = [NSString stringWithFormat:@"epitime://?today=%d", indexPath.row];
+    NSString *urlString = [NSString stringWithFormat:@"epitime://?today"];
     [self.extensionContext openURL:[NSURL URLWithString:urlString] completionHandler:nil];
 }
 
