@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--ING1/GRA2-->
+        <!--Day Table View Controller-->
         <scene sceneID="0p4-vT-y3O">
             <objects>
                 <viewController storyboardIdentifier="DayTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="F2x-Rc-brw" customClass="ETDayTableViewController" sceneMemberID="viewController">
@@ -203,7 +203,7 @@
                             <constraint firstItem="W0X-Vc-Jey" firstAttribute="leading" secondItem="01H-W1-d7b" secondAttribute="leading" id="xgY-2z-MFQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ING1/GRA2" id="fe3-Jp-xMw"/>
+                    <navigationItem key="navigationItem" id="fe3-Jp-xMw"/>
                     <connections>
                         <outlet property="dateLabel" destination="kvY-ES-i2U" id="xAy-M2-rVK"/>
                         <outlet property="dayLabel" destination="MYx-2A-tPF" id="k33-KK-ReN"/>
@@ -242,7 +242,7 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didPressBackToGroups:" destination="hzV-Rh-YlC" id="lWb-NZ-MME"/>
-                                <segue destination="MA8-mP-cdS" kind="presentation" id="Wwq-SP-Nxg"/>
+                                <segue destination="MA8-mP-cdS" kind="show" id="Wwq-SP-Nxg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Ignored" id="A1j-HC-RlP">
@@ -257,20 +257,20 @@
             </objects>
             <point key="canvasLocation" x="3512" y="-472"/>
         </scene>
-        <!--ING1/GRA2-->
+        <!--Groups-->
         <scene sceneID="2l5-Ce-N37">
             <objects>
-                <viewController storyboardIdentifier="GroupTableViewController" id="MA8-mP-cdS" customClass="ETGroupsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupTableViewController" title="Groups" id="MA8-mP-cdS" customClass="ETGroupsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZd-w3-UYD"/>
                         <viewControllerLayoutGuide type="bottom" id="sJm-1n-iaw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5ga-gj-93f">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hEB-KC-IG2">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
@@ -343,20 +343,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="ING1/GRA2" id="8uy-8w-VCf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="1cF-nF-FRe">
-                            <color key="tintColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="next:" destination="MA8-mP-cdS" id="pSl-Nt-HCE"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="I1K-At-F8h">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="refreshPressed:" destination="MA8-mP-cdS" id="BMV-jH-iBx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Groups" id="8uy-8w-VCf"/>
                     <connections>
                         <outlet property="tableView" destination="hEB-KC-IG2" id="KX8-Ib-KmO"/>
                     </connections>
@@ -368,7 +355,7 @@
         <!--Ignored-->
         <scene sceneID="gmU-K9-kvp">
             <objects>
-                <viewController storyboardIdentifier="IgnoredTableViewController" id="2r4-4b-N4J" customClass="ETIgnoreViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IgnoredTableViewController" title="Ignored" id="2r4-4b-N4J" customClass="ETIgnoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luY-T7-FNN"/>
                         <viewControllerLayoutGuide type="bottom" id="KFs-vv-GSO"/>

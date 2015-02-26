@@ -2,9 +2,6 @@
 /* Class = "IBUIBarButtonItem"; title = "Groups"; ObjectID = "3Km-0J-grS"; */
 "3Km-0J-grS.title" = "Groups";
 
-/* Class = "IBUINavigationItem"; title = "ING1/GRA2"; ObjectID = "8uy-8w-VCf"; */
-"8uy-8w-VCf.title" = "ING1/GRA2";
-
 /* Class = "IBUILabel"; text = "VA 311"; ObjectID = "A0e-Lb-8aG"; */
 "A0e-Lb-8aG.text" = "VA 311";
 
@@ -34,9 +31,6 @@
 
 /* Class = "IBUILabel"; text = "10h00"; ObjectID = "eco-AL-ZsG"; */
 "eco-AL-ZsG.text" = "10h00";
-
-/* Class = "IBUINavigationItem"; title = "ING1/GRA2"; ObjectID = "fe3-Jp-xMw"; */
-"fe3-Jp-xMw.title" = "ING1/GRA2";
 
 /* Class = "IBUILabel"; text = "-"; ObjectID = "gES-O7-f7c"; */
 "gES-O7-f7c.text" = "-";

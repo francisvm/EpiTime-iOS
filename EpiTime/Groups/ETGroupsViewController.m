@@ -37,8 +37,6 @@ typedef NS_ENUM(NSInteger, ETGroupType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Hide statusbar
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
 
     // Setup appearance
@@ -53,8 +51,12 @@ typedef NS_ENUM(NSInteger, ETGroupType) {
     self.searchController.searchResultsUpdater = self;
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.dimsBackgroundDuringPresentation = NO;
-    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    self.searchController.hidesNavigationBarDuringPresentation = YES;
     self.definesPresentationContext = YES;
+
+    // Hack to replace the bounce background
+    // http://stackoverflow.com/a/23385790/434809
+    self.tableView.backgroundView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -151,9 +153,6 @@ typedef NS_ENUM(NSInteger, ETGroupType) {
     [userDefaults synchronize];   // (!!) This is crucial.
 
     [ETTools clearData];
-
-    // Don't forget to show the status bar again
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
 #pragma mark - UISearchResultsUpdating
