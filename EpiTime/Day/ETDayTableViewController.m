@@ -150,9 +150,9 @@
     detailView.titleLabel.text = title;
     detailView.frame = [[UIScreen mainScreen] bounds];
     [self.navigationController.view addSubview:detailView];
-    detailView.roomsLabel.text = [course.rooms componentsJoinedByString:@"\n"];
-    detailView.groupsLabel.text = [course.trainees componentsJoinedByString:@"\n"];
-    detailView.instructorsLabel.text = [course.instructors componentsJoinedByString:@"\n"];
+    detailView.roomsLabel.text = course.rooms.count ? [course.rooms componentsJoinedByString:@"\n"] : @" - ";
+    detailView.groupsLabel.text = course.trainees.count ? [course.trainees componentsJoinedByString:@"\n"] : @" - ";
+    detailView.instructorsLabel.text = course.instructors.count ? [course.instructors componentsJoinedByString:@"\n"] : @" - ";
     detailView.timeLabel.text = [NSString stringWithFormat:@"%@ - %@", [ETTools timeStringFromMinutes:course.hour * 15], [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15]];
 }
 

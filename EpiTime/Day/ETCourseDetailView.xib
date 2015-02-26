@@ -38,7 +38,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Amphi 4" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gz1-zC-jo9">
-                                                <rect key="frame" x="122" y="56" width="166" height="21"/>
+                                                <rect key="frame" x="122" y="56" width="64" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -56,13 +56,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ING1/GRA2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLx-F3-0Mk">
-                                                <rect key="frame" x="122" y="97" width="166" height="21"/>
+                                                <rect key="frame" x="122" y="97" width="91" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Akim" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-Sz-4kI">
-                                                <rect key="frame" x="122" y="138" width="166" height="21"/>
+                                                <rect key="frame" x="122" y="138" width="39" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -98,12 +98,12 @@
                                             <constraint firstItem="YwJ-Sz-4kI" firstAttribute="leading" secondItem="m9H-U6-yze" secondAttribute="trailing" constant="20" id="1uY-PF-Y0e"/>
                                             <constraint firstItem="yNi-1m-Wff" firstAttribute="leading" secondItem="m9H-U6-yze" secondAttribute="trailing" constant="20" id="1xT-D2-xzI"/>
                                             <constraint firstItem="m9H-U6-yze" firstAttribute="leading" secondItem="7ow-Rw-MY0" secondAttribute="leading" id="2Ip-dP-GVN"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="YwJ-Sz-4kI" secondAttribute="trailing" constant="20" id="2Tb-BI-PE8"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YwJ-Sz-4kI" secondAttribute="trailing" constant="20" id="2Tb-BI-PE8"/>
                                             <constraint firstItem="738-Ig-arR" firstAttribute="leading" secondItem="cl1-JC-BUP" secondAttribute="leading" constant="20" id="5aa-so-m8R"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yNi-1m-Wff" secondAttribute="trailing" constant="20" id="71U-Uc-pID"/>
                                             <constraint firstItem="Gz1-zC-jo9" firstAttribute="leading" secondItem="m9H-U6-yze" secondAttribute="trailing" constant="20" id="8qe-Rw-cWe"/>
                                             <constraint firstAttribute="bottom" secondItem="yNi-1m-Wff" secondAttribute="bottom" id="95j-DF-K67"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vLx-F3-0Mk" secondAttribute="trailing" constant="20" id="FPi-k3-UdM"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vLx-F3-0Mk" secondAttribute="trailing" constant="20" id="FPi-k3-UdM"/>
                                             <constraint firstItem="Qqw-5z-Wc2" firstAttribute="top" secondItem="cl1-JC-BUP" secondAttribute="top" id="Fmb-TM-jjY"/>
                                             <constraint firstItem="738-Ig-arR" firstAttribute="top" secondItem="Qqw-5z-Wc2" secondAttribute="bottom" constant="20" id="HtB-z9-dfJ"/>
                                             <constraint firstItem="m9H-U6-yze" firstAttribute="top" secondItem="vLx-F3-0Mk" secondAttribute="bottom" constant="20" id="NcI-zZ-pgl"/>
@@ -111,7 +111,7 @@
                                             <constraint firstItem="vLx-F3-0Mk" firstAttribute="leading" secondItem="m9H-U6-yze" secondAttribute="trailing" constant="20" id="TCm-XW-4xh"/>
                                             <constraint firstItem="Gz1-zC-jo9" firstAttribute="top" secondItem="738-Ig-arR" secondAttribute="top" id="U9E-NJ-tLt"/>
                                             <constraint firstItem="7ow-Rw-MY0" firstAttribute="top" secondItem="YwJ-Sz-4kI" secondAttribute="bottom" constant="20" id="Wjr-uG-M3i"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Gz1-zC-jo9" secondAttribute="trailing" constant="20" id="d7U-7M-bna"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gz1-zC-jo9" secondAttribute="trailing" constant="20" id="d7U-7M-bna"/>
                                             <constraint firstItem="KyZ-6X-PpL" firstAttribute="top" secondItem="vLx-F3-0Mk" secondAttribute="top" id="fCL-V5-mX9"/>
                                             <constraint firstItem="KyZ-6X-PpL" firstAttribute="top" secondItem="Gz1-zC-jo9" secondAttribute="bottom" constant="20" id="fxF-qF-TmT"/>
                                             <constraint firstItem="KyZ-6X-PpL" firstAttribute="leading" secondItem="738-Ig-arR" secondAttribute="leading" id="mFD-UI-k0M"/>
