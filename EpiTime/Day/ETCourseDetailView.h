@@ -18,7 +18,7 @@
 
 @required
 
-- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle;
+- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle andIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -33,6 +33,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *instructorsLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (strong, nonatomic) NSIndexPath *indexPath;
 
 @property (weak, nonatomic) id<ETCourseDetailViewProtocol> delegate;
 

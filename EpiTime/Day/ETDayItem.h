@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) NSDate *date;
 
-@property (strong, nonatomic) NSArray *courses;
+@property (strong, nonatomic) NSMutableArray *courses;
 
 - (instancetype)initWithid:(NSUInteger)id stringDate:(NSString *)date xmlCourses:(NSArray *)xmlCourses;
 

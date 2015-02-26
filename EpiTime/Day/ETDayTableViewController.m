@@ -146,6 +146,7 @@
     NSString *title = course.title;
 
     ETCourseDetailView *detailView = [[ETCourseDetailView alloc] init];
+    detailView.indexPath = indexPath;
     detailView.delegate = self;
     detailView.titleLabel.text = title;
     detailView.frame = [[UIScreen mainScreen] bounds];
@@ -180,7 +181,10 @@
 
 #pragma mark ETCourseDetailViewProtocol
 
-- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle {
+- (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle andIndexPath:(NSIndexPath *)indexPath {
+    // We should remove the course from the data source before deleting the row
+    [self.day.courses removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [[[UIAlertView alloc] initWithTitle:ignoredTitle message:NSLocalizedString(@"course_ignored", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
     [ETTools addIgnoredData:ignoredTitle];
     [self fetch:nil];

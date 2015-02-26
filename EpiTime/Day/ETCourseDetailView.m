@@ -43,8 +43,8 @@
 }
 
 - (IBAction)didPressIgnore:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(courseDetailView:didPressIgnoreWithTitle:)])
-        [self.delegate courseDetailView:self didPressIgnoreWithTitle:self.titleLabel.text];
+    if ([self.delegate respondsToSelector:@selector(courseDetailView:didPressIgnoreWithTitle:andIndexPath:)])
+        [self.delegate courseDetailView:self didPressIgnoreWithTitle:self.titleLabel.text andIndexPath:self.indexPath];
     [self exitFading];
 }
 

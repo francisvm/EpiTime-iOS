@@ -18,7 +18,7 @@
     {
         self.id = id;
         self.date = [ETTools dateFromString:date];
-        self.courses = [ETCourseItem dumpCoursesFromArray:xmlCourses];
+        self.courses = [[ETCourseItem dumpCoursesFromArray:xmlCourses] mutableCopy];
     }
     return self;
 }
