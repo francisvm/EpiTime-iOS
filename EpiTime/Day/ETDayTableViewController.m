@@ -181,6 +181,7 @@
 #pragma mark ETCourseDetailViewProtocol
 
 - (void)courseDetailView:(ETCourseDetailView *)courseDetailView didPressIgnoreWithTitle:(NSString *)ignoredTitle {
+    [[[UIAlertView alloc] initWithTitle:ignoredTitle message:NSLocalizedString(@"course_ignored", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
     [ETTools addIgnoredData:ignoredTitle];
     [self fetch:nil];
 }

@@ -13,3 +13,5 @@
 "students" = "Students";
 "professors" = "Professors";
 "rooms" = "Rooms";
+"course_ignored" = "Course ignored";
+"ok" = "OK";
