@@ -16,6 +16,8 @@
 
 @interface TodayViewController () <NCWidgetProviding>
 
+@property (strong, nonatomic) NSMutableArray *courses;
+
 @end
 
 @implementation TodayViewController
@@ -24,8 +26,10 @@
     [super viewWillAppear:animated];
     // FIXME: Share the cache
     NSArray *cachedWeekDays = [ETTools cachedWeek:[ETTools currentWeek]].days;
-    if (cachedWeekDays.count)
+    if (cachedWeekDays.count) {
         self.day = cachedWeekDays[[ETTools weekDayIndexFromDate:[NSDate date]]];
+        self.courses = [TodayViewController filterCoursesByDate:self.day.courses];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -33,6 +37,18 @@
         [ETAPI cancelCurrentTask];
 
     [super viewWillDisappear:animated];
+}
+
+// Only show the courses left
++ (NSMutableArray *)filterCoursesByDate:(NSMutableArray *)original {
+    NSMutableArray *filtered = [NSMutableArray array];
+    for (NSInteger i = 0; i < original.count; ++i) { // FIXME : Use NSPredicate
+        ETCourseItem *item = original[i];
+        NSDate *today = [ETTools filterTimeFromDate:[NSDate date]]; // Compare only the time
+        if ([today compare:item.endingDate] == NSOrderedAscending)
+            [filtered addObject:item];
+    }
+    return filtered;
 }
 
 - (void)fetchWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
@@ -48,6 +64,7 @@
                 completionHandler(NCUpdateResultNoData);
             } else {
                 self.day = day;
+                self.courses = [TodayViewController filterCoursesByDate:self.day.courses];
                 [self.tableView reloadData];
                 self.preferredContentSize = self.tableView.contentSize;
                 completionHandler(NCUpdateResultNewData);
@@ -63,7 +80,7 @@
 }
 
 - (BOOL)shouldShowHeader {
-    return self.day && !self.day.courses.count;
+    return !self.courses.count;
 }
     
 #pragma mark UITableView DataSource
@@ -73,17 +90,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.day.courses.count;
+    return self.courses.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = !(indexPath.row % 2) ? kTodayCellCourseIdentifierEven : kTodayCellCourseIdentifierOdd;
     ETCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    ETCourseItem *course = self.day.courses[indexPath.row];
+    ETCourseItem *course = self.courses[indexPath.row];
     cell.nameLabel.text = course.title;
     cell.roomLabel.text = course.rooms[0];
-    cell.startingLabel.text = [ETTools timeStringFromMinutes:course.hour * 15];
-    cell.endingLabel.text = [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15];
+    cell.startingLabel.text = [ETTools timeStringFromDate:course.startingDate];
+    cell.endingLabel.text = [ETTools timeStringFromDate:course.endingDate];
 
     return cell;
 }
@@ -102,7 +119,7 @@
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         label.alpha = 0.5;
-        label.text = NSLocalizedString(@"no_class", nil);
+        label.text = NSLocalizedString(@"no_more_class", nil);
         return label;
     }
     return nil;
