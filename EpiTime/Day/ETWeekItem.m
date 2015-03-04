@@ -15,6 +15,8 @@
 - (instancetype)initWithid:(NSUInteger)id daysArray:(NSArray *)days {
     if ((self = [super init])) {
         self.id = id;
+        if ([days isKindOfClass:[NSDictionary class]])
+            days = @[days];
         self.days = [ETDayItem dumpDaysFromArray:days];
     }
     return self;
