@@ -44,6 +44,17 @@
 
 #pragma mark Convert
 
+// NSDate from Chronos representation of minutes
++ (NSDate *)dateFromMinutes:(NSInteger)minutes {
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.hour = minutes / 60;
+    components.minute = minutes % 60;
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:components];
+    NSDateComponents *timeComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
+
+    return [[NSCalendar currentCalendar] dateFromComponents:timeComponents];
+}
+
 // NSString to NSDate using dd/MM/yyyy hh:mm:ss format
 + (NSDate *)dateFromString:(NSString *)string {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -58,12 +69,25 @@
     return [formatter stringFromDate:date];
 }
 
+// NSString with format like "14h30" from NSDate
++ (NSString *)timeStringFromDate:(NSDate *)date {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+
+    return [NSString stringWithFormat:@"%2.2luh%2.2lu", (unsigned long)components.hour, (unsigned long)components.minute];
+}
+
 // Minutes to HHhMM format
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes {
     NSUInteger hrs = minutes / 60;
     NSUInteger mins = minutes % 60;
 
     return [NSString stringWithFormat:@"%2.2luh%2.2lu", (unsigned long)hrs, (unsigned long)mins];
+}
+
+// Get only the minutes and hours from NSDate
++ (NSDate *)filterTimeFromDate:(NSDate *)date {
+    NSDateComponents *timeComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+    return [[NSCalendar currentCalendar] dateFromComponents:timeComponents];
 }
 
 // NSDate to NSString using long style format

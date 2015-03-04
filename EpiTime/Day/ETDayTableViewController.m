@@ -135,8 +135,8 @@
     ETCourseItem *course = self.day.courses[indexPath.row];
     cell.nameLabel.text = course.title;
     cell.roomLabel.text = course.rooms[0];
-    cell.startingLabel.text = [ETTools timeStringFromMinutes:course.hour * 15];
-    cell.endingLabel.text = [ETTools timeStringFromMinutes:(course.hour + course.duration) * 15];
+    cell.startingLabel.text = [ETTools timeStringFromDate:course.startingDate];
+    cell.endingLabel.text = [ETTools timeStringFromDate:course.endingDate];
 
     return cell;
 }

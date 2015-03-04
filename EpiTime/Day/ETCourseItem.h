@@ -24,6 +24,10 @@
 
 @property (strong, nonatomic) NSArray *trainees;
 
+@property (strong, nonatomic) NSDate *startingDate;
+
+@property (strong, nonatomic) NSDate *endingDate;
+
 @property (assign, atomic) BOOL isIgnored;
 
 - (instancetype)initWithid:(NSUInteger)id

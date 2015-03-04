@@ -25,14 +25,23 @@
 
 #pragma mark Convert
 
+// NSDate from Chronos representation of minutes
++ (NSDate *)dateFromMinutes:(NSInteger)minutes;
+
 // NSString to NSDate using dd/MM/yyyy hh:mm:ss format
 + (NSDate *)dateFromString:(NSString *)string;
 
 // NSDate to NSString using dd/MM/yyyy hh:mm:ss format
 + (NSString *)stringFromDate:(NSDate *)date;
 
+// NSString with format like "14h30" from NSDate
++ (NSString *)timeStringFromDate:(NSDate *)date;
+
 // Minutes to HHhMM format
 + (NSString *)timeStringFromMinutes:(NSUInteger)minutes;
+
+// Get only the minutes and hours from NSDate
++ (NSDate *)filterTimeFromDate:(NSDate *)date;
 
 // NSDate to NSString using long style format
 + (NSString *)humanDateFromDate:(NSDate *)date;

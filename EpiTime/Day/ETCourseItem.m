@@ -37,6 +37,9 @@
             trainees = [NSArray arrayWithObject:trainees];
         self.trainees = trainees;
         self.isIgnored = [[ETTools ignoredData] containsObject:self.title];
+
+        self.startingDate = [ETTools dateFromMinutes:self.hour * 15]; // * 15 because of Chronos
+        self.endingDate = [ETTools dateFromMinutes:(self.hour + self.duration) * 15]; // * 15 because of Chronos
     }
 
     return self;
