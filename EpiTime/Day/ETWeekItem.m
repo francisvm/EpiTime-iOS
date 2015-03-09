@@ -23,6 +23,8 @@
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict {
+    if (!dict)
+        return nil;
     ETWeekItem *week = [[ETWeekItem alloc] initWithid:[dict[@"id"] integerValue]
                                             daysArray:dict[@"day"]];
     return week;

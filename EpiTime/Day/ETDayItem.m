@@ -49,6 +49,7 @@
         [dumpedDays addObject:[[ETDayItem alloc] initWithDictionary:dicDay]];
     }
 
+    // The following is a trick for the corner cases where Chronos sends weeks with less than 7 days
     // Get the last day fetched and added to the days array
     ETDayItem *last = dumpedDays.lastObject;
     NSDate *lastDate = last.date;
@@ -61,8 +62,7 @@
     lastDate = [theCalendar dateByAddingComponents:dayComponent toDate:lastDate options:0];
 
     // Add empty days with the corresponding date until the week is full
-    // Trick for the corner cases where Chronos sends weeks with less than 7 days
-    for (NSInteger i = dumpedDays.count; i <= 7; ++i) {
+    while (dumpedDays.count < 7) {
         [dumpedDays addObject:[ETDayItem emptyDayWithDate:lastDate]];
         lastDate = [theCalendar dateByAddingComponents:dayComponent toDate:lastDate options:0];
     }

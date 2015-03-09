@@ -56,9 +56,9 @@
 
 // Load cached data
 - (void)loadCachedData {
-    NSArray *cachedWeekDays = [ETTools cachedWeek:self.weekIndex].days;
-    if (cachedWeekDays.count)
-        self.day = cachedWeekDays[self.index];
+    ETWeekItem *week = [ETTools cachedWeek:self.weekIndex];
+    if (week.days.count)
+        self.day = week.days[self.index];
     self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];
     if (!self.dateLabel.text)
         self.dateLabel.text = NSLocalizedString(@"loading", nil);

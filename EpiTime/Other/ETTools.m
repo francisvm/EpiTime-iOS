@@ -183,10 +183,10 @@
 + (NSMutableSet *)ignoredData {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSData *data = [userDefaults objectForKey:kIgnoredData];
+    if (!data)
+        return [NSMutableSet set];
+
     NSMutableSet *dataSet = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if (!dataSet) {
-        dataSet = [NSMutableSet set];
-    }
     return dataSet;
 }
 
