@@ -117,7 +117,16 @@
 
 // Display the custom loading activity as a right bar button
 + (void)startLoadingActivity:(UIViewController *)vc {
-    vc.parentViewController.navigationItem.titleView = [UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)];
+    // While being in a transition, showing the loading activity on the title view
+    // of the navigationItem will cause a weird delay of apparition.
+    // WARNING: THIS IS AN UGLY TRICK.
+    // Wait for 0.5 seconds before showing the animation.
+    // FIXME : ASAP
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        vc.parentViewController.navigationItem.titleView = [UIImageView imageViewWithPath:@"loading_" count:10 duration:1.3 frame:CGRectMake(0, 0, 22, 22)];
+    });
 }
 
 // Remove the custom loading activity from the riht bar button
