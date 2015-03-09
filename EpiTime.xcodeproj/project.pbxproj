@@ -85,6 +85,15 @@
 		D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
 		D2EF170019EA067300D95789 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
 		D2EF170119EA067300D95789 /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
+		D2F4071E1AAD0A2000B2257A /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F4071D1AAD0A2000B2257A /* InterfaceController.m */; };
+		D2F407211AAD0A2000B2257A /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F407201AAD0A2000B2257A /* NotificationController.m */; };
+		D2F407241AAD0A2100B2257A /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F407231AAD0A2100B2257A /* GlanceController.m */; };
+		D2F407261AAD0A2100B2257A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F407251AAD0A2100B2257A /* Images.xcassets */; };
+		D2F4072A1AAD0A2100B2257A /* EpiTime WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = D2F407291AAD0A2100B2257A /* EpiTime WatchKit App.app */; };
+		D2F407321AAD0A2100B2257A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F407301AAD0A2100B2257A /* Interface.storyboard */; };
+		D2F407341AAD0A2100B2257A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F407331AAD0A2100B2257A /* Images.xcassets */; };
+		D2F407371AAD0A2100B2257A /* EpiTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2F407171AAD0A2000B2257A /* EpiTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2F407401AAD13CA00B2257A /* ClassRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F4073F1AAD13CA00B2257A /* ClassRow.m */; };
 		D2F7AEB41A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
 		D2F7AEB51A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
 		D2F7AEBC1A9DE74000F750E2 /* ETIgnoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEBB1A9DE74000F750E2 /* ETIgnoreTableViewCell.m */; };
@@ -113,6 +122,20 @@
 			remoteGlobalIDString = D23BED3619E32823000FF210;
 			remoteInfo = EpiTime;
 		};
+		D2F4072B1AAD0A2100B2257A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2F407281AAD0A2100B2257A;
+			remoteInfo = "EpiTime WatchKit App";
+		};
+		D2F407351AAD0A2100B2257A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2F407161AAD0A2000B2257A;
+			remoteInfo = "EpiTime WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -122,6 +145,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				D2F407371AAD0A2100B2257A /* EpiTime WatchKit Extension.appex in Embed App Extensions */,
 				D22839E41A973C44001DEB27 /* EpiTimeWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -201,6 +225,22 @@
 		D2EF16FB19EA065D00D95789 /* ETCourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ETCourseItem.m; path = Day/ETCourseItem.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D2EF16FE19EA067300D95789 /* ETWeekItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETWeekItem.h; path = Day/ETWeekItem.h; sourceTree = "<group>"; };
 		D2EF16FF19EA067300D95789 /* ETWeekItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETWeekItem.m; path = Day/ETWeekItem.m; sourceTree = "<group>"; };
+		D2F407171AAD0A2000B2257A /* EpiTime WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EpiTime WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F4071A1AAD0A2000B2257A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F4071B1AAD0A2000B2257A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D2F4071C1AAD0A2000B2257A /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		D2F4071D1AAD0A2000B2257A /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		D2F4071F1AAD0A2000B2257A /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		D2F407201AAD0A2000B2257A /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		D2F407221AAD0A2100B2257A /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		D2F407231AAD0A2100B2257A /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		D2F407251AAD0A2100B2257A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2F407291AAD0A2100B2257A /* EpiTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EpiTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F4072F1AAD0A2100B2257A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F407311AAD0A2100B2257A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D2F407331AAD0A2100B2257A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2F4073E1AAD13CA00B2257A /* ClassRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassRow.h; sourceTree = "<group>"; };
+		D2F4073F1AAD13CA00B2257A /* ClassRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassRow.m; sourceTree = "<group>"; };
 		D2F7AEB21A9DE5CE00F750E2 /* ETIgnoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETIgnoreViewController.h; path = Ignore/ETIgnoreViewController.h; sourceTree = "<group>"; };
 		D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETIgnoreViewController.m; path = Ignore/ETIgnoreViewController.m; sourceTree = "<group>"; };
 		D2F7AEBA1A9DE74000F750E2 /* ETIgnoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETIgnoreTableViewCell.h; path = Ignore/ETIgnoreTableViewCell.h; sourceTree = "<group>"; };
@@ -246,6 +286,13 @@
 			files = (
 				D2EE37561A894E9200E70651 /* libPods.a in Frameworks */,
 				D2EE373B1A894CC100E70651 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2F407141AAD0A2000B2257A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +343,8 @@
 				D23BED3919E32823000FF210 /* EpiTime */,
 				D23BED5319E32823000FF210 /* EpiTimeTests */,
 				D2EE373C1A894CC100E70651 /* EpiTimeWidget */,
+				D2F407181AAD0A2000B2257A /* EpiTime WatchKit Extension */,
+				D2F4072D1AAD0A2100B2257A /* EpiTime WatchKit App */,
 				D23BED6519E328C7000FF210 /* Frameworks */,
 				D23BED3819E32823000FF210 /* Products */,
 				3DCFF51B0CD397BA1F48C31D /* Pods */,
@@ -310,6 +359,8 @@
 				D23BED8C19E328DA000FF210 /* EpiTime Staging.app */,
 				D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */,
 				D22839F81A973D24001DEB27 /* EpiTimeWidget Staging.appex */,
+				D2F407171AAD0A2000B2257A /* EpiTime WatchKit Extension.appex */,
+				D2F407291AAD0A2100B2257A /* EpiTime WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -437,6 +488,50 @@
 			name = Schedule;
 			sourceTree = "<group>";
 		};
+		D2F407181AAD0A2000B2257A /* EpiTime WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4071C1AAD0A2000B2257A /* InterfaceController.h */,
+				D2F4071D1AAD0A2000B2257A /* InterfaceController.m */,
+				D2F4071F1AAD0A2000B2257A /* NotificationController.h */,
+				D2F407201AAD0A2000B2257A /* NotificationController.m */,
+				D2F407221AAD0A2100B2257A /* GlanceController.h */,
+				D2F407231AAD0A2100B2257A /* GlanceController.m */,
+				D2F4073E1AAD13CA00B2257A /* ClassRow.h */,
+				D2F4073F1AAD13CA00B2257A /* ClassRow.m */,
+				D2F407251AAD0A2100B2257A /* Images.xcassets */,
+				D2F407191AAD0A2000B2257A /* Supporting Files */,
+			);
+			path = "EpiTime WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D2F407191AAD0A2000B2257A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4071A1AAD0A2000B2257A /* Info.plist */,
+				D2F4071B1AAD0A2000B2257A /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2F4072D1AAD0A2100B2257A /* EpiTime WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				D2F407301AAD0A2100B2257A /* Interface.storyboard */,
+				D2F407331AAD0A2100B2257A /* Images.xcassets */,
+				D2F4072E1AAD0A2100B2257A /* Supporting Files */,
+			);
+			path = "EpiTime WatchKit App";
+			sourceTree = "<group>";
+		};
+		D2F4072E1AAD0A2100B2257A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4072F1AAD0A2100B2257A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D2F7AEB11A9DE5B000F750E2 /* Ignore */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +578,7 @@
 			);
 			dependencies = (
 				D22839E31A973C39001DEB27 /* PBXTargetDependency */,
+				D2F407361AAD0A2100B2257A /* PBXTargetDependency */,
 			);
 			name = EpiTime;
 			productName = EpiTime;
@@ -545,6 +641,39 @@
 			productReference = D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		D2F407161AAD0A2000B2257A /* EpiTime WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2F4073D1AAD0A2100B2257A /* Build configuration list for PBXNativeTarget "EpiTime WatchKit Extension" */;
+			buildPhases = (
+				D2F407131AAD0A2000B2257A /* Sources */,
+				D2F407141AAD0A2000B2257A /* Frameworks */,
+				D2F407151AAD0A2000B2257A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2F4072C1AAD0A2100B2257A /* PBXTargetDependency */,
+			);
+			name = "EpiTime WatchKit Extension";
+			productName = "EpiTime WatchKit Extension";
+			productReference = D2F407171AAD0A2000B2257A /* EpiTime WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		D2F407281AAD0A2100B2257A /* EpiTime WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2F4073C1AAD0A2100B2257A /* Build configuration list for PBXNativeTarget "EpiTime WatchKit App" */;
+			buildPhases = (
+				D2F407271AAD0A2100B2257A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EpiTime WatchKit App";
+			productName = "EpiTime WatchKit App";
+			productReference = D2F407291AAD0A2100B2257A /* EpiTime WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -582,6 +711,13 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = E5L7NC8M9T;
 					};
+					D2F407161AAD0A2000B2257A = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = E5L7NC8M9T;
+					};
+					D2F407281AAD0A2100B2257A = {
+						CreatedOnToolsVersion = 6.3;
+					};
 				};
 			};
 			buildConfigurationList = D23BED3219E32823000FF210 /* Build configuration list for PBXProject "EpiTime" */;
@@ -601,6 +737,8 @@
 				D23BED4F19E32823000FF210 /* EpiTimeTests */,
 				D22839E51A973D24001DEB27 /* EpiTimeWidget Staging */,
 				D2EE37391A894CC100E70651 /* EpiTimeWidget */,
+				D2F407161AAD0A2000B2257A /* EpiTime WatchKit Extension */,
+				D2F407281AAD0A2100B2257A /* EpiTime WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -656,6 +794,24 @@
 			files = (
 				D2DD27A61A9A4A5900710562 /* Localizable.strings in Resources */,
 				D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2F407151AAD0A2000B2257A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2F4072A1AAD0A2100B2257A /* EpiTime WatchKit App.app in Resources */,
+				D2F407261AAD0A2100B2257A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2F407271AAD0A2100B2257A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2F407321AAD0A2100B2257A /* Interface.storyboard in Resources */,
+				D2F407341AAD0A2100B2257A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +972,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2F407131AAD0A2000B2257A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2F407211AAD0A2000B2257A /* NotificationController.m in Sources */,
+				D2F4071E1AAD0A2000B2257A /* InterfaceController.m in Sources */,
+				D2F407241AAD0A2100B2257A /* GlanceController.m in Sources */,
+				D2F407401AAD13CA00B2257A /* ClassRow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -833,6 +1000,16 @@
 			isa = PBXTargetDependency;
 			target = D23BED3619E32823000FF210 /* EpiTime */;
 			targetProxy = D23BED5119E32823000FF210 /* PBXContainerItemProxy */;
+		};
+		D2F4072C1AAD0A2100B2257A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2F407281AAD0A2100B2257A /* EpiTime WatchKit App */;
+			targetProxy = D2F4072B1AAD0A2100B2257A /* PBXContainerItemProxy */;
+		};
+		D2F407361AAD0A2100B2257A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2F407161AAD0A2000B2257A /* EpiTime WatchKit Extension */;
+			targetProxy = D2F407351AAD0A2100B2257A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -862,6 +1039,14 @@
 			);
 			name = Localizable.strings;
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2F407301AAD0A2100B2257A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2F407311AAD0A2100B2257A /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1123,6 +1308,82 @@
 			};
 			name = Release;
 		};
+		D2F407381AAD0A2100B2257A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EpiTime WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D2F407391AAD0A2100B2257A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "EpiTime WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D2F4073A1AAD0A2100B2257A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = EpiTime_WatchKit_Extension;
+				INFOPLIST_FILE = "EpiTime WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		D2F4073B1AAD0A2100B2257A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = EpiTime_WatchKit_Extension;
+				INFOPLIST_FILE = "EpiTime WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1179,6 +1440,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D2F4073C1AAD0A2100B2257A /* Build configuration list for PBXNativeTarget "EpiTime WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2F4073A1AAD0A2100B2257A /* Debug */,
+				D2F4073B1AAD0A2100B2257A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2F4073D1AAD0A2100B2257A /* Build configuration list for PBXNativeTarget "EpiTime WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2F407381AAD0A2100B2257A /* Debug */,
+				D2F407391AAD0A2100B2257A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
