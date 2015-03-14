@@ -133,13 +133,6 @@
 			remoteGlobalIDString = D2F407281AAD0A2100B2257A;
 			remoteInfo = "EpiTime WatchKit App";
 		};
-		D2F407351AAD0A2100B2257A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D23BED2F19E32823000FF210 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2F407161AAD0A2000B2257A;
-			remoteInfo = "EpiTime WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -594,7 +587,6 @@
 			);
 			dependencies = (
 				D22839E31A973C39001DEB27 /* PBXTargetDependency */,
-				D2F407361AAD0A2100B2257A /* PBXTargetDependency */,
 			);
 			name = EpiTime;
 			productName = EpiTime;
@@ -1025,11 +1017,6 @@
 			isa = PBXTargetDependency;
 			target = D2F407281AAD0A2100B2257A /* EpiTime WatchKit App */;
 			targetProxy = D2F4072B1AAD0A2100B2257A /* PBXContainerItemProxy */;
-		};
-		D2F407361AAD0A2100B2257A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2F407161AAD0A2000B2257A /* EpiTime WatchKit Extension */;
-			targetProxy = D2F407351AAD0A2100B2257A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
