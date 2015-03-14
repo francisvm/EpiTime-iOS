@@ -13,6 +13,7 @@
 #import "ETGroupItem.h"
 
 #import "XMLDictionary.h"
+#import "XMLDictionaryParser+Escape.h"
 
 @implementation ETAPI
 
@@ -63,7 +64,7 @@ static NSURLSessionDataTask *currentTask = nil;
                                          onErrorCompletion(error);
                                      });
                              } else {
-                                 NSDictionary *recievedData = [NSDictionary dictionaryWithXMLData:data];
+                                 NSDictionary *recievedData = [NSDictionary dictionaryWithEscapedXMLData:data];
                                  ETWeekItem *week = [[ETWeekItem alloc] initWithDictionary:recievedData[@"week"]];
                                  [week save]; // Save to cache
                                  if (onCompletion && recievedData) {

@@ -60,6 +60,10 @@
 		D2E3BDDC1A8B4A00008FE3D9 /* ETCourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */; };
 		D2E3BDDE1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */; };
 		D2E3BDDF1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */; };
+		D2EBC5721AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */; };
+		D2EBC5731AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */; };
+		D2EBC5741AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */; };
+		D2EBC5751AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */; };
 		D2EE373B1A894CC100E70651 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23BED6619E328C7000FF210 /* NotificationCenter.framework */; };
 		D2EE37411A894CC100E70651 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EE37401A894CC100E70651 /* TodayViewController.m */; };
 		D2EE37431A894CC100E70651 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EE37421A894CC100E70651 /* MainInterface.storyboard */; };
@@ -206,6 +210,8 @@
 		D2E3BDD91A8B4A00008FE3D9 /* ETCourseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ETCourseDetailView.h; path = Day/ETCourseDetailView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETCourseDetailView.m; path = Day/ETCourseDetailView.m; sourceTree = "<group>"; };
 		D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ETCourseDetailView.xib; path = Day/ETCourseDetailView.xib; sourceTree = "<group>"; };
+		D2EBC5701AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XMLDictionaryParser+Escape.h"; path = "XMLDictionaryParser+Escape/XMLDictionaryParser+Escape.h"; sourceTree = "<group>"; };
+		D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XMLDictionaryParser+Escape.m"; path = "XMLDictionaryParser+Escape/XMLDictionaryParser+Escape.m"; sourceTree = "<group>"; };
 		D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EpiTimeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EE373E1A894CC100E70651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EE373F1A894CC100E70651 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -377,6 +383,7 @@
 				D2F7AEB11A9DE5B000F750E2 /* Ignore */,
 				D2045FA519EB1EA000F4CEFA /* API */,
 				D23265E919E991A80009334B /* Other */,
+				D2EBC56F1AB4B68700F9BE76 /* XMLDictionaryParser+Escape */,
 				D215B37A1A306CAF007ED4F0 /* UIImageView+Animation */,
 				D23BED9019E32AB1000FF210 /* Resources */,
 				D23BED3A19E32823000FF210 /* Supporting Files */,
@@ -444,6 +451,15 @@
 				D280021D1A44D18F00861E20 /* ETGroupItem.m */,
 			);
 			name = Groups;
+			sourceTree = "<group>";
+		};
+		D2EBC56F1AB4B68700F9BE76 /* XMLDictionaryParser+Escape */ = {
+			isa = PBXGroup;
+			children = (
+				D2EBC5701AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.h */,
+				D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */,
+			);
+			name = "XMLDictionaryParser+Escape";
 			sourceTree = "<group>";
 		};
 		D2EE373C1A894CC100E70651 /* EpiTimeWidget */ = {
@@ -886,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D22839E71A973D24001DEB27 /* ETGroupItem.m in Sources */,
+				D2EBC5741AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */,
 				D22839E81A973D24001DEB27 /* ETCourseTableViewCell.m in Sources */,
 				D22839E91A973D24001DEB27 /* ETWeekItem.m in Sources */,
 				D22839EA1A973D24001DEB27 /* ETDayItem.m in Sources */,
@@ -916,6 +933,7 @@
 				D2EF16FD19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16ED19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
 				D280021F1A44D18F00861E20 /* ETGroupItem.m in Sources */,
+				D2EBC5731AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */,
 				D2045FA919EB200000F4CEFA /* ETConstants.m in Sources */,
 				D2EF16F219E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */,
 				D2045FA019EB0B4500F4CEFA /* ETWeekViewController.m in Sources */,
@@ -950,6 +968,7 @@
 				D2EF16FC19EA065D00D95789 /* ETCourseItem.m in Sources */,
 				D2EF16EC19E9F82500D95789 /* ETDayTableViewController.m in Sources */,
 				D280021E1A44D18F00861E20 /* ETGroupItem.m in Sources */,
+				D2EBC5721AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */,
 				D2045FA819EB200000F4CEFA /* ETConstants.m in Sources */,
 				D2EF16F119E9FDAD00D95789 /* ETCourseTableViewCell.m in Sources */,
 				D2045F9F19EB0B4500F4CEFA /* ETWeekViewController.m in Sources */,
@@ -961,6 +980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2781CA21A8950D30090369F /* ETGroupItem.m in Sources */,
+				D2EBC5751AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m in Sources */,
 				D2EE374C1A894D4700E70651 /* ETCourseTableViewCell.m in Sources */,
 				D2EE374D1A894D4700E70651 /* ETWeekItem.m in Sources */,
 				D2EE374E1A894D4700E70651 /* ETDayItem.m in Sources */,
@@ -1448,6 +1468,7 @@
 				D2F4073B1AAD0A2100B2257A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2F4073D1AAD0A2100B2257A /* Build configuration list for PBXNativeTarget "EpiTime WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1456,6 +1477,7 @@
 				D2F407391AAD0A2100B2257A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
