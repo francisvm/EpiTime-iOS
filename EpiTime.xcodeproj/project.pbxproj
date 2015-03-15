@@ -96,7 +96,6 @@
 		D2F4072A1AAD0A2100B2257A /* EpiTime WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = D2F407291AAD0A2100B2257A /* EpiTime WatchKit App.app */; };
 		D2F407321AAD0A2100B2257A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F407301AAD0A2100B2257A /* Interface.storyboard */; };
 		D2F407341AAD0A2100B2257A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F407331AAD0A2100B2257A /* Images.xcassets */; };
-		D2F407371AAD0A2100B2257A /* EpiTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2F407171AAD0A2000B2257A /* EpiTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2F407401AAD13CA00B2257A /* ClassRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F4073F1AAD13CA00B2257A /* ClassRow.m */; };
 		D2F7AEB41A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
 		D2F7AEB51A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
@@ -142,7 +141,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D2F407371AAD0A2100B2257A /* EpiTime WatchKit Extension.appex in Embed App Extensions */,
 				D22839E41A973C44001DEB27 /* EpiTimeWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
