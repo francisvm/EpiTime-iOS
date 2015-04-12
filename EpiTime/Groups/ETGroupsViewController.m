@@ -153,6 +153,21 @@ typedef NS_ENUM(NSInteger, ETGroupType) {
     [userDefaults synchronize];   // (!!) This is crucial.
 
     [ETTools clearData];
+    
+    UIViewController *vc = [[UIStoryboard storyboardWithName:kMainStoryboard bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+
+    UIWindow *window = self.view.window;
+    [UIView transitionWithView:window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^(void) {
+                        // Transition is wrong: http://stackoverflow.com/questions/8053832/rootviewcontroller-animation-transition-initial-orientation-is-wrong
+                        BOOL oldState = [UIView areAnimationsEnabled];
+                        [UIView setAnimationsEnabled:NO];
+                        window.rootViewController = vc;
+                        [UIView setAnimationsEnabled:oldState];
+                    }
+                    completion:nil];
 }
 
 #pragma mark - UISearchResultsUpdating

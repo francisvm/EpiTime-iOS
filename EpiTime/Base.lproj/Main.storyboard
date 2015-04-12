@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duT-S7-ybu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duT-S7-ybu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Day Table View Controller-->
@@ -298,7 +298,6 @@
                                         <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <outlet property="label" destination="hUM-qH-6Ss" id="KHv-DB-pe2"/>
-                                            <segue destination="duT-S7-ybu" kind="showDetail" id="496-pt-3dD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupIdentifierEven" rowHeight="85" id="t0T-NP-tp2" customClass="ETGroupTableViewCell">
@@ -323,7 +322,6 @@
                                         <color key="backgroundColor" red="0.1474817085" green="0.17548635570000001" blue="0.21467141540000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="label" destination="GDQ-hT-cOF" id="DS0-cU-TTe"/>
-                                            <segue destination="duT-S7-ybu" kind="showDetail" id="Vtq-04-ige"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -451,8 +449,5 @@
     <resources>
         <image name="icon_calendar" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="496-pt-3dD"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
 </document>
