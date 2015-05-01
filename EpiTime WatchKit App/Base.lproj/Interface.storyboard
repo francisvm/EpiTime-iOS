@@ -58,31 +58,60 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="logo" id="CLd-p4-iiX"/>
-                                <label width="94" alignment="left" text="Construction des compilateurs" textAlignment="center" numberOfLines="0" id="adR-m0-IES">
+                                <label width="1" height="1" alignment="left" text="Construction des compilateurs 2" textAlignment="left" numberOfLines="0" minimumScaleFactor="0.30000000000000016" id="adR-m0-IES">
                                     <fontDescription key="font" type="system" pointSize="13"/>
                                 </label>
                             </items>
                         </group>
-                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                        <group alignment="left" layout="vertical" radius="7" spacing="0.0" id="uCw-4Q-Ouw">
                             <items>
-                                <separator alignment="left" id="kJw-E2-Qy3">
-                                    <color key="color" red="0.19215688109397888" green="0.22745099663734436" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
-                                </separator>
-                                <label width="1" alignment="right" text="Amphi 4" textAlignment="left" id="Mub-SV-kMI">
-                                    <color key="textColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
-                                <label width="1" alignment="left" text="8h30 - 11h30" id="bX6-Ef-o6d">
-                                    <color key="textColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
-                                <label width="1" alignment="left" text="Akim Demaille" numberOfLines="0" id="fCc-nz-aSC">
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
-                                <label width="1" alignment="left" text="ING1/GRA1 ING1/GRA2" numberOfLines="0" id="xpE-cZ-21Y">
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
+                                <group width="1" alignment="left" id="LjW-3H-UBa">
+                                    <items>
+                                        <label alignment="left" text="8h30 - 11h30" textAlignment="left" id="bX6-Ef-o6d">
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                    <color key="backgroundColor" red="0.75294125080108643" green="0.22352942824363708" blue="0.16862745583057404" alpha="1" colorSpace="deviceRGB"/>
+                                    <edgeInsets key="margins" left="5" right="5" top="3" bottom="2"/>
+                                </group>
+                                <group width="1" height="1" alignment="left" layout="vertical" id="MGo-Rg-gG9">
+                                    <items>
+                                        <group width="1" alignment="left" spacing="5" id="duB-3Y-NKc">
+                                            <items>
+                                                <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="5t3-9N-gWB">
+                                                    <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                                </imageView>
+                                                <label width="1" alignment="right" text="Amphi 4" textAlignment="left" id="Mub-SV-kMI">
+                                                    <color key="textColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" spacing="5" id="nFV-az-l7o">
+                                            <items>
+                                                <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="LIX-L1-oXa">
+                                                    <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                                </imageView>
+                                                <label width="1" alignment="left" text="Akim Demaille" numberOfLines="0" id="fCc-nz-aSC">
+                                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" spacing="5" id="Sqi-Wc-1CP">
+                                            <items>
+                                                <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="7w1-kD-SZh">
+                                                    <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                                </imageView>
+                                                <label width="1" alignment="left" text="ING1/GRA1 ING1/GRA2 BING" numberOfLines="0" minimumScaleFactor="0.99999999999999989" id="xpE-cZ-21Y">
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                    <color key="backgroundColor" red="0.19215688109397888" green="0.22745099663734436" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
+                                    <edgeInsets key="margins" left="5" right="4" top="4" bottom="4"/>
+                                </group>
                             </items>
                         </group>
                     </items>
@@ -94,11 +123,62 @@
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <notificationController contentMode="scaleAspectFit" id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label alignment="center" text="Construction des compilateurs" textAlignment="left" numberOfLines="0" id="XkS-y5-khE">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </label>
+                        <group width="1" alignment="left" id="28b-tr-pfa">
+                            <items>
+                                <label alignment="left" text="8h30 - 11h30" textAlignment="left" id="8Ir-qN-Tmf">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="3" bottom="2"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="fWZ-6m-hH6">
+                            <items>
+                                <group width="1" alignment="left" spacing="5" id="dIj-D5-zll">
+                                    <items>
+                                        <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="rkd-zp-4UN">
+                                            <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                        </imageView>
+                                        <label width="1" alignment="right" text="Amphi 4" textAlignment="left" id="I2x-gJ-cxX">
+                                            <color key="textColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" spacing="5" id="pPt-Ba-03F">
+                                    <items>
+                                        <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="ydP-EZ-Bni">
+                                            <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                        </imageView>
+                                        <label width="1" alignment="left" text="Akim Demaille" numberOfLines="0" id="743-X6-Jec">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" spacing="5" id="0NL-DL-AUg">
+                                    <items>
+                                        <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="tre-Rg-s4g">
+                                            <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                        </imageView>
+                                        <label width="1" alignment="left" text="ING1/GRA1 ING1/GRA2 BING" numberOfLines="0" minimumScaleFactor="0.99999999999999989" id="SGl-si-xpV">
+                                            <fontDescription key="font" type="system" pointSize="11"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
+                            <edgeInsets key="margins" left="5" right="4" top="4" bottom="4"/>
+                        </group>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                        <color key="sashColor" red="0.75294125080108643" green="0.22352942824363708" blue="0.16862745583057404" alpha="1" colorSpace="deviceRGB"/>
+                    </notificationCategory>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
@@ -115,4 +195,5 @@
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.19215688109397888" green="0.22745099663734436" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
 </document>
