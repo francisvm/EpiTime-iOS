@@ -26,7 +26,7 @@
 #pragma mark Convert
 
 // NSDate from Chronos representation of minutes
-+ (NSDate *)dateFromMinutes:(NSInteger)minutes;
++ (NSDate *)dateFromMinutes:(NSInteger)minutes onDate:(NSDate *)date;
 
 // NSString to NSDate using dd/MM/yyyy hh:mm:ss format
 + (NSDate *)dateFromString:(NSString *)string;

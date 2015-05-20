@@ -8,7 +8,10 @@
 
 #import "GlanceController.h"
 #import "ClassRow.h"
-
+#import "ETAPI.h"
+#import "ETTools.h"
+#import "ETDayItem.h"
+#import "ETCourseItem.h"
 
 @interface GlanceController()
 
@@ -20,42 +23,19 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
-    NSArray *data = @[
-                      @"Mathématiques du signal",
-                      @"Construction des compilateurs 1",
-                      @"Responsabilité Sociétale des Entreprises",
-                      @"Présentation TC3",
-                      @"Présentation Projet BDD"
-                      ];
-    NSArray *room = @[
-                      @"Amphi 3",
-                      @"Amphi 4",
-                      @"Amphi 1",
-                      @"Amphi 1",
-                      @"Amphi 4"
-                      ];
-    NSArray *time = @[
-                      @"08h30 - 11h30",
-                      @"14h00 - 16h00",
-                      @"16h00 - 18h00",
-                      @"19h00 - 22h00",
-                      @"19h00 - 22h00"
-                      ];
-
-    [self.tableView setNumberOfRows:data.count withRowType:@"ClassRow"];
-    for (NSInteger i = 0; i < self.tableView.numberOfRows; ++i) {
-        ClassRow *row = [self.tableView rowControllerAtIndex:i];
-        [row.titleLabel setText:data[i]];
-        [row.roomLabel setText:room[i]];
-        [row.timeLabel setText:time[i]];
-    }
-
+    [self.titleLabel setText:@"Loading..."];
+    [self.timeLabel setText:@" "];
+    [self.roomLabel setText:@" "];
+    [self.instructorLabel setText:@" "];
+    [self.traineesLabel setText:@" "];
     // Configure interface objects here.
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+
+    [self fetch];
 }
 
 - (void)didDeactivate {
@@ -63,7 +43,29 @@
     [super didDeactivate];
 }
 
+- (void)fetch {
+    [ETAPI fetchWeek:[ETTools weekIndex:[NSDate date]] ofGroup:@"ING1/GRA2" viewController:nil
+        completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+            ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
+            ETCourseItem *finalCourse = day.courses[0];
+            for (ETCourseItem *course in day.courses) {
+                NSTimeInterval startInterval = [course.startingDate timeIntervalSinceNow];
+                if (startInterval > 0) {
+                    finalCourse = course;
+                    break;
+                }
+            }
+
+            [self.titleLabel setText:finalCourse.title];
+            [self.roomLabel setText:finalCourse.rooms[0]];
+            [self.instructorLabel setText:[finalCourse.instructors componentsJoinedByString:@" "]];
+            [self.timeLabel setText:[NSString stringWithFormat:@"%@ - %@", [ETTools timeStringFromDate:finalCourse.startingDate], [ETTools timeStringFromDate:finalCourse.endingDate]]];
+            [self.traineesLabel setText:[finalCourse.trainees componentsJoinedByString:@" "]];
+        }
+        errorCompletion:^(NSError *error) {
+
+        }
+     ];
+}
+
 @end
-
-
-

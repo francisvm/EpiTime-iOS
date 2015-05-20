@@ -11,6 +11,10 @@
 
 @interface GlanceController : WKInterfaceController
 
-@property (strong, nonatomic) IBOutlet WKInterfaceTable *tableView;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *timeLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *roomLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *instructorLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *traineesLabel;
 
 @end

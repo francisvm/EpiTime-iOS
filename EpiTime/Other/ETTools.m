@@ -45,14 +45,11 @@
 #pragma mark Convert
 
 // NSDate from Chronos representation of minutes
-+ (NSDate *)dateFromMinutes:(NSInteger)minutes {
-    NSDateComponents *components = [[NSDateComponents alloc] init];
++ (NSDate *)dateFromMinutes:(NSInteger)minutes onDate:(NSDate *)date {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute fromDate:date];
     components.hour = minutes / 60;
     components.minute = minutes % 60;
-    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:components];
-    NSDateComponents *timeComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
-
-    return [[NSCalendar currentCalendar] dateFromComponents:timeComponents];
+    return [[NSCalendar currentCalendar] dateFromComponents:components];
 }
 
 // NSString to NSDate using dd/MM/yyyy hh:mm:ss format

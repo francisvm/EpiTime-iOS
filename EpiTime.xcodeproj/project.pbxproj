@@ -54,6 +54,15 @@
 		D280021E1A44D18F00861E20 /* ETGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETGroupItem.m */; };
 		D280021F1A44D18F00861E20 /* ETGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETGroupItem.m */; };
 		D2B24E5F1AF2F90F00948883 /* ClassRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B24E5E1AF2F90F00948883 /* ClassRow.m */; };
+		D2BAE0971B0C7D68003D990E /* ETAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA219EB1E9600F4CEFA /* ETAPI.m */; };
+		D2BAE0991B0C7D7B003D990E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAE0981B0C7D7B003D990E /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		D2BAE09C1B0C8024003D990E /* ETGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETGroupItem.m */; };
+		D2BAE09D1B0C8032003D990E /* ETTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D23265E419E991A50009334B /* ETTools.m */; };
+		D2BAE09E1B0C803B003D990E /* ETWeekItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FF19EA067300D95789 /* ETWeekItem.m */; };
+		D2BAE09F1B0C804F003D990E /* ETConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA719EB200000F4CEFA /* ETConstants.m */; };
+		D2BAE0A01B0C8058003D990E /* ETDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16F719EA05D200D95789 /* ETDayItem.m */; };
+		D2BAE0A11B0C8062003D990E /* ETCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF16FB19EA065D00D95789 /* ETCourseItem.m */; };
+		D2BAE0A21B0C8188003D990E /* XMLDictionaryParser+Escape.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC5711AB4B6C800F9BE76 /* XMLDictionaryParser+Escape.m */; };
 		D2DD27A31A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
 		D2DD27A41A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
 		D2DD27A51A9A4A5900710562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DD27A81A9A4A5900710562 /* Localizable.strings */; };
@@ -207,6 +216,8 @@
 		D280021D1A44D18F00861E20 /* ETGroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupItem.m; path = Groups/ETGroupItem.m; sourceTree = "<group>"; };
 		D2B24E5D1AF2F90F00948883 /* ClassRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassRow.h; sourceTree = "<group>"; };
 		D2B24E5E1AF2F90F00948883 /* ClassRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassRow.m; sourceTree = "<group>"; };
+		D2BAE0981B0C7D7B003D990E /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		D2BAE09A1B0C7EE0003D990E /* libPods-XMLDictionary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-XMLDictionary.a"; path = "Pods/build/Debug-iphoneos/libPods-XMLDictionary.a"; sourceTree = "<group>"; };
 		D2DD27A11A9A49E600710562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D2DD27A21A9A49E600710562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D2DD27A71A9A4A5900710562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -291,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BAE0991B0C7D7B003D990E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +434,8 @@
 		D23BED6519E328C7000FF210 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2BAE09A1B0C7EE0003D990E /* libPods-XMLDictionary.a */,
+				D2BAE0981B0C7D7B003D990E /* libPods.a */,
 				D2EE37591A894EA000E70651 /* libPods.a */,
 				D2EE37571A894E9A00E70651 /* libPods.a */,
 				D2EE37551A894E9200E70651 /* libPods.a */,
@@ -982,6 +996,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BAE0A21B0C8188003D990E /* XMLDictionaryParser+Escape.m in Sources */,
+				D2BAE0A11B0C8062003D990E /* ETCourseItem.m in Sources */,
+				D2BAE0A01B0C8058003D990E /* ETDayItem.m in Sources */,
+				D2BAE09F1B0C804F003D990E /* ETConstants.m in Sources */,
+				D2BAE09E1B0C803B003D990E /* ETWeekItem.m in Sources */,
+				D2BAE09D1B0C8032003D990E /* ETTools.m in Sources */,
+				D2BAE09C1B0C8024003D990E /* ETGroupItem.m in Sources */,
+				D2BAE0971B0C7D68003D990E /* ETAPI.m in Sources */,
 				D2DDA8691AF2F8860094BC02 /* NotificationController.m in Sources */,
 				D2DDA8661AF2F8860094BC02 /* InterfaceController.m in Sources */,
 				D2DDA86C1AF2F8860094BC02 /* GlanceController.m in Sources */,
@@ -1338,6 +1360,7 @@
 		};
 		D2DDA8841AF2F8870094BC02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F193E0234C88AF8757E8AB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1351,6 +1374,10 @@
 				INFOPLIST_FILE = "EpiTime WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 			};
@@ -1358,6 +1385,7 @@
 		};
 		D2DDA8851AF2F8870094BC02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90738772E0B42BB0F4E3E2A4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1368,6 +1396,10 @@
 				INFOPLIST_FILE = "EpiTime WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 			};

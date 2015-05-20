@@ -8,6 +8,10 @@
 
 #import "InterfaceController.h"
 #import "ClassRow.h"
+#import "ETAPI.h"
+#import "ETDayItem.h"
+#import "ETCourseItem.h"
+#import "ETTools.h"
 
 @interface InterfaceController()
 
@@ -18,47 +22,40 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
-    NSArray *data = @[
-                      @"Mathématiques du signal",
-                      @"Construction des compilateurs 1",
-                      @"Responsabilité Sociétale des Entreprises",
-                      @"Présentation TC3",
-                      @"Présentation Projet BDD"
-                      ];
-    NSArray *room = @[
-                      @"Amphi 3",
-                      @"Amphi 4",
-                      @"Amphi 1",
-                      @"Amphi 1",
-                      @"Amphi 4"
-                      ];
-    NSArray *time = @[
-                      @"08h30 - 11h30",
-                      @"14h00 - 16h00",
-                      @"16h00 - 18h00",
-                      @"19h00 - 22h00",
-                      @"19h00 - 22h00"
-                      ];
-
-    [self.tableView setNumberOfRows:data.count withRowType:@"ClassRow"];
-    for (NSInteger i = 0; i < self.tableView.numberOfRows; ++i) {
-        ClassRow *row = [self.tableView rowControllerAtIndex:i];
-        [row.titleLabel setText:data[i]];
-        [row.roomLabel setText:room[i]];
-        [row.timeLabel setText:time[i]];
-    }
     // Configure interface objects here.
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
+
+    // FIXME : Use some cache
+    [self fetch]; // Fetch data of the week
+
     [super willActivate];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (void)fetch {
+    [ETAPI fetchWeek:[ETTools weekIndex:[NSDate date]] ofGroup:@"ING1/GRA2" viewController:nil
+        completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+            ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
+            [self.tableView setNumberOfRows:day.courses.count withRowType:@"ClassRow"];
+            for (NSInteger i = 0; i < self.tableView.numberOfRows; ++i) {
+                ClassRow *row = [self.tableView rowControllerAtIndex:i];
+                ETCourseItem *course = day.courses[i];
+                [row.titleLabel setText:course.title];
+                [row.roomLabel setText:course.rooms[0]]; // Display only the first room
+                [row.timeLabel setText:[NSString stringWithFormat:@"%@ - %@", [ETTools timeStringFromDate:course.startingDate], [ETTools timeStringFromDate:course.endingDate]]];
+            }
+        }
+        errorCompletion:^(NSError *error) {
+
+        }
+     ];
 }
 
 @end

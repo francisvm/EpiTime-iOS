@@ -93,7 +93,7 @@
                                                 <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="LIX-L1-oXa">
                                                     <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                                 </imageView>
-                                                <label width="1" alignment="left" text="Akim Demaille" numberOfLines="0" id="fCc-nz-aSC">
+                                                <label width="1" alignment="left" text="Akim Demaille" id="fCc-nz-aSC">
                                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                 </label>
                                             </items>
@@ -103,7 +103,7 @@
                                                 <imageView width="3" height="3" alignment="left" verticalAlignment="center" image="dot" id="7w1-kD-SZh">
                                                     <color key="tintColor" red="0.1098039299" green="0.50196081400000003" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                                 </imageView>
-                                                <label width="1" alignment="left" text="ING1/GRA1 ING1/GRA2 BING" numberOfLines="0" minimumScaleFactor="0.99999999999999989" id="xpE-cZ-21Y">
+                                                <label width="1" alignment="left" text="ING1/GRA1 ING1/GRA2 BING" numberOfLines="3" minimumScaleFactor="0.99999999999999989" id="xpE-cZ-21Y">
                                                     <fontDescription key="font" type="system" pointSize="11"/>
                                                 </label>
                                             </items>
@@ -116,6 +116,13 @@
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="instructorLabel" destination="fCc-nz-aSC" id="GDa-Fn-cz6"/>
+                        <outlet property="roomLabel" destination="Mub-SV-kMI" id="Wmf-Ii-k6P"/>
+                        <outlet property="timeLabel" destination="bX6-Ef-o6d" id="Rca-sQ-kSY"/>
+                        <outlet property="titleLabel" destination="adR-m0-IES" id="OEu-ZE-hzR"/>
+                        <outlet property="traineesLabel" destination="xpE-cZ-21Y" id="ztP-lg-FCU"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
