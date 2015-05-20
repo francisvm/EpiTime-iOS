@@ -71,6 +71,9 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                         </label>
+                                        <dateLabel alignment="right" verticalAlignment="center" alpha="0.5" format="hh:mm" id="Cou-2b-eBn">
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                        </dateLabel>
                                     </items>
                                     <color key="backgroundColor" red="0.75294125080108643" green="0.22352942824363708" blue="0.16862745583057404" alpha="1" colorSpace="deviceRGB"/>
                                     <edgeInsets key="margins" left="5" right="5" top="3" bottom="2"/>
