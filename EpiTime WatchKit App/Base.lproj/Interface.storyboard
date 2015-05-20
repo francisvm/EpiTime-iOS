@@ -187,7 +187,7 @@
                         </group>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
-                        <color key="sashColor" red="0.75294125080108643" green="0.22352942824363708" blue="0.16862745583057404" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sashColor" red="0.19215688110000001" green="0.22745099660000001" blue="0.270588249" alpha="1" colorSpace="deviceRGB"/>
                     </notificationCategory>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
