@@ -18,6 +18,7 @@
                instructors:(NSArray *)instructors
                      rooms:(NSArray *)rooms
                   trainees:(NSArray *)trainees
+                    onDate:(NSDate *)date
 {
     if ((self = [super init])) {
         self.id = id;
@@ -38,30 +39,31 @@
         self.trainees = trainees;
         self.isIgnored = [[ETTools ignoredData] containsObject:self.title];
 
-        self.startingDate = [ETTools dateFromMinutes:self.hour * 15]; // * 15 because of Chronos
-        self.endingDate = [ETTools dateFromMinutes:(self.hour + self.duration) * 15]; // * 15 because of Chronos
+        self.startingDate = [ETTools dateFromMinutes:self.hour * 15 onDate:date]; // * 15 because of Chronos
+        self.endingDate = [ETTools dateFromMinutes:(self.hour + self.duration) * 15 onDate:date]; // * 15 because of Chronos
     }
 
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dicCourse {
+- (instancetype)initWithDictionary:(NSDictionary *)dicCourse onDate:(NSDate *)date {
     ETCourseItem *course = [[ETCourseItem alloc] initWithid:[dicCourse[@"id"] integerValue]
                                                       title:dicCourse[@"title"]
                                                        hour:[dicCourse[@"hour"] integerValue]
                                                    duration:[dicCourse[@"duration"] integerValue]
                                                 instructors:dicCourse[@"instructor"]
                                                       rooms:dicCourse[@"room"]
-                                                   trainees:dicCourse[@"trainee"]];
+                                                   trainees:dicCourse[@"trainee"]
+                                                     onDate:date];
 
     return course;
 }
 
-+ (NSArray *)dumpCoursesFromArray:(NSArray *)courses {
++ (NSArray *)dumpCoursesFromArray:(NSArray *)courses onDate:(NSDate *)date {
     NSMutableArray *dumpedCourses = [NSMutableArray array];
 
     for (NSDictionary *dicCourse in courses) {
-        ETCourseItem * course = [[ETCourseItem alloc] initWithDictionary:dicCourse];
+        ETCourseItem * course = [[ETCourseItem alloc] initWithDictionary:dicCourse onDate:date];
         if (!course.isIgnored)
             [dumpedCourses addObject:course];
     }

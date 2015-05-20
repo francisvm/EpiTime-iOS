@@ -21,11 +21,10 @@
 
 - (instancetype)initWithid:(NSUInteger)id stringDate:(NSString *)date xmlCourses:(NSArray *)xmlCourses
 {
-    if ((self = [super init]))
-    {
+    if ((self = [super init])) {
         self.id = id;
         self.date = [ETTools dateFromString:date];
-        self.courses = [[ETCourseItem dumpCoursesFromArray:xmlCourses] mutableCopy];
+        self.courses = [[ETCourseItem dumpCoursesFromArray:xmlCourses onDate:self.date] mutableCopy];
     }
     return self;
 }

@@ -36,11 +36,12 @@
                   duration:(NSUInteger)duration
                 instructors:(NSArray *)instructors
                      rooms:(NSArray *)rooms
-                  trainees:(NSArray *)trainees;
+                  trainees:(NSArray *)trainees
+                    onDate:(NSDate *)date;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dicCourse;
+- (instancetype)initWithDictionary:(NSDictionary *)dicCourse onDate:(NSDate *)date;
 
-+ (NSArray *)dumpCoursesFromArray:(NSArray *)courses;
++ (NSArray *)dumpCoursesFromArray:(NSArray *)courses onDate:(NSDate *)date;
 
 - (NSDictionary *)toDictionary;
 
