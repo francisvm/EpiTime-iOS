@@ -1,5 +1,5 @@
 language: objective-c
 xcode_workspace: EpiTime.xcworkspace
 xcode_scheme: EpiTime
-xcode_sdk: iphonesimulator8.3
+xcode_sdk: iphonesimulator8.1
 env: CODE_SIGNING_REQUIRED=NO
