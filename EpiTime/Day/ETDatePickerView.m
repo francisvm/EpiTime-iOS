@@ -7,15 +7,25 @@
 //
 
 #import "ETDatePickerView.h"
+#import "ETTools.h"
 
 @implementation ETDatePickerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)init {
+    NSArray *bundles = [[NSBundle mainBundle] loadNibNamed:@"ETDatePickerView"
+                                                     owner:self
+                                                   options:nil];
+    ETDatePickerView *view = bundles[0];
+    if ((self = view))
+    {
+        // Initialization is done in the XIB. Add more logic here. (Maybe the size?)
+        self.alpha = 0.0f;
+        [ETTools fadeInView:self completion:nil];
+    }
+    return self;
 }
-*/
 
+- (IBAction)didPressDone:(id)sender {
+    [self.delegate datePickerView:self didPickDate:self.datePicker.date];
+}
 @end

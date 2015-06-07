@@ -54,6 +54,10 @@
 		D280021F1A44D18F00861E20 /* ETGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETGroupItem.m */; };
 		D29AF9C31B0E876F00D22A48 /* EpiTimeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2EE373A1A894CC100E70651 /* EpiTimeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D29AF9C51B0E885300D22A48 /* EpiTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2DDA85F1AF2F8860094BC02 /* EpiTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2A222971B24FA2B00B12AC1 /* ETDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A222961B24FA2B00B12AC1 /* ETDatePickerView.xib */; };
+		D2A222981B24FA2B00B12AC1 /* ETDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A222961B24FA2B00B12AC1 /* ETDatePickerView.xib */; };
+		D2A2229B1B24FAF500B12AC1 /* ETDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A2229A1B24FAF500B12AC1 /* ETDatePickerView.m */; };
+		D2A2229C1B24FAF500B12AC1 /* ETDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A2229A1B24FAF500B12AC1 /* ETDatePickerView.m */; };
 		D2B24E5F1AF2F90F00948883 /* ClassRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B24E5E1AF2F90F00948883 /* ClassRow.m */; };
 		D2BAE0971B0C7D68003D990E /* ETAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D2045FA219EB1E9600F4CEFA /* ETAPI.m */; };
 		D2BAE09C1B0C8024003D990E /* ETGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D280021D1A44D18F00861E20 /* ETGroupItem.m */; };
@@ -214,6 +218,9 @@
 		D28002191A443FF900861E20 /* ETGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupTableViewCell.m; path = Groups/ETGroupTableViewCell.m; sourceTree = "<group>"; };
 		D280021C1A44D18F00861E20 /* ETGroupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGroupItem.h; path = Groups/ETGroupItem.h; sourceTree = "<group>"; };
 		D280021D1A44D18F00861E20 /* ETGroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGroupItem.m; path = Groups/ETGroupItem.m; sourceTree = "<group>"; };
+		D2A222961B24FA2B00B12AC1 /* ETDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ETDatePickerView.xib; path = Day/ETDatePickerView.xib; sourceTree = "<group>"; };
+		D2A222991B24FAF500B12AC1 /* ETDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETDatePickerView.h; path = Day/ETDatePickerView.h; sourceTree = "<group>"; };
+		D2A2229A1B24FAF500B12AC1 /* ETDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETDatePickerView.m; path = Day/ETDatePickerView.m; sourceTree = "<group>"; };
 		D2B24E5D1AF2F90F00948883 /* ClassRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassRow.h; sourceTree = "<group>"; };
 		D2B24E5E1AF2F90F00948883 /* ClassRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassRow.m; sourceTree = "<group>"; };
 		D2BAE0981B0C7D7B003D990E /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -561,6 +568,9 @@
 				D2E3BDD91A8B4A00008FE3D9 /* ETCourseDetailView.h */,
 				D2E3BDDA1A8B4A00008FE3D9 /* ETCourseDetailView.m */,
 				D2E3BDDD1A8B4A1C008FE3D9 /* ETCourseDetailView.xib */,
+				D2A222991B24FAF500B12AC1 /* ETDatePickerView.h */,
+				D2A2229A1B24FAF500B12AC1 /* ETDatePickerView.m */,
+				D2A222961B24FA2B00B12AC1 /* ETDatePickerView.xib */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -796,6 +806,7 @@
 				D23BED4619E32823000FF210 /* Main.storyboard in Resources */,
 				D23BED4B19E32823000FF210 /* LaunchScreen.xib in Resources */,
 				D2E3BDDF1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */,
+				D2A222981B24FA2B00B12AC1 /* ETDatePickerView.xib in Resources */,
 				D2EF16F519EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED4819E32823000FF210 /* Images.xcassets in Resources */,
 			);
@@ -817,6 +828,7 @@
 				D23BED8419E328DA000FF210 /* Main.storyboard in Resources */,
 				D23BED8519E328DA000FF210 /* LaunchScreen.xib in Resources */,
 				D2E3BDDE1A8B4A1C008FE3D9 /* ETCourseDetailView.xib in Resources */,
+				D2A222971B24FA2B00B12AC1 /* ETDatePickerView.xib in Resources */,
 				D2EF16F419EA031000D95789 /* Day.xcassets in Resources */,
 				D23BED8619E328DA000FF210 /* Images.xcassets in Resources */,
 			);
@@ -938,6 +950,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F7AEB51A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */,
+				D2A2229C1B24FAF500B12AC1 /* ETDatePickerView.m in Sources */,
 				D23BED4019E32823000FF210 /* ETAppDelegate.m in Sources */,
 				D215B37E1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
 				D280021B1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */,
@@ -973,6 +986,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F7AEB41A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */,
+				D2A2229B1B24FAF500B12AC1 /* ETDatePickerView.m in Sources */,
 				D23BED8019E328DA000FF210 /* ETAppDelegate.m in Sources */,
 				D215B37D1A306CAF007ED4F0 /* UIImageView+Animation.m in Sources */,
 				D280021A1A443FF900861E20 /* ETGroupTableViewCell.m in Sources */,

@@ -31,30 +31,63 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ1-2e-lR8">
-                                        <rect key="frame" x="289" y="61" width="24" height="24"/>
-                                        <state key="normal" image="icon_calendar">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressToday:" destination="F2x-Rc-brw" eventType="touchUpInside" id="JMN-he-4g6"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsH-2R-wI1">
+                                        <rect key="frame" x="269" y="61" width="70" height="24"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ1-2e-lR8">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="TCt-Rj-q2w"/>
+                                                </constraints>
+                                                <state key="normal" image="icon_calendar">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressCalendar:" destination="F2x-Rc-brw" eventType="touchUpInside" id="s2j-3v-hcB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-cl-yeM">
+                                                <rect key="frame" x="46" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="GRc-Nr-FPe"/>
+                                                </constraints>
+                                                <state key="normal" image="icon_today">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressToday:" destination="F2x-Rc-brw" eventType="touchUpInside" id="Ghn-1g-vKA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="prZ-cl-yeM" secondAttribute="trailing" id="A0S-Sw-W5K"/>
+                                            <constraint firstItem="prZ-cl-yeM" firstAttribute="top" secondItem="rsH-2R-wI1" secondAttribute="top" id="DFB-jz-bDn"/>
+                                            <constraint firstAttribute="centerY" secondItem="prZ-cl-yeM" secondAttribute="centerY" id="JPa-Tc-5Pg"/>
+                                            <constraint firstAttribute="bottom" secondItem="XJ1-2e-lR8" secondAttribute="bottom" id="T46-Jn-TMZ"/>
+                                            <constraint firstItem="XJ1-2e-lR8" firstAttribute="leading" secondItem="rsH-2R-wI1" secondAttribute="leading" id="Wyf-aE-cAi"/>
+                                            <constraint firstItem="XJ1-2e-lR8" firstAttribute="leading" secondItem="rsH-2R-wI1" secondAttribute="leading" id="XjC-yx-AFh"/>
+                                            <constraint firstItem="prZ-cl-yeM" firstAttribute="leading" secondItem="XJ1-2e-lR8" secondAttribute="trailing" constant="22" id="hU5-t3-mZC"/>
+                                            <constraint firstAttribute="bottom" secondItem="prZ-cl-yeM" secondAttribute="bottom" id="ol7-V3-G0y"/>
+                                            <constraint firstItem="XJ1-2e-lR8" firstAttribute="top" secondItem="rsH-2R-wI1" secondAttribute="top" id="pOY-Nq-2vP"/>
+                                            <constraint firstAttribute="centerY" secondItem="XJ1-2e-lR8" secondAttribute="centerY" id="uNo-mq-hDp"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="MYx-2A-tPF" firstAttribute="centerX" secondItem="XJ1-2e-lR8" secondAttribute="centerX" id="2pw-WO-FOT"/>
-                                    <constraint firstAttribute="bottom" secondItem="XJ1-2e-lR8" secondAttribute="bottom" constant="5" id="9Hf-VG-uT4"/>
+                                    <constraint firstItem="rsH-2R-wI1" firstAttribute="top" secondItem="MYx-2A-tPF" secondAttribute="bottom" constant="5" id="1wf-RX-YSi"/>
                                     <constraint firstItem="kvY-ES-i2U" firstAttribute="top" secondItem="IQK-7G-hvm" secondAttribute="top" constant="8" id="AjU-FC-jg9"/>
-                                    <constraint firstItem="XJ1-2e-lR8" firstAttribute="top" secondItem="MYx-2A-tPF" secondAttribute="bottom" constant="5" id="CdV-6D-Gnm"/>
-                                    <constraint firstAttribute="height" constant="100" id="QOJ-KL-6EH"/>
+                                    <constraint firstAttribute="bottom" secondItem="rsH-2R-wI1" secondAttribute="bottom" constant="5" id="Ijc-YL-xfY"/>
                                     <constraint firstItem="MYx-2A-tPF" firstAttribute="top" secondItem="kvY-ES-i2U" secondAttribute="bottom" constant="8" id="dHM-LB-DPi"/>
                                     <constraint firstAttribute="centerX" secondItem="kvY-ES-i2U" secondAttribute="centerX" id="pTS-TR-Ytb"/>
+                                    <constraint firstItem="rsH-2R-wI1" firstAttribute="centerX" secondItem="MYx-2A-tPF" secondAttribute="centerX" constant="3.5" id="tlm-B0-dia"/>
                                     <constraint firstItem="MYx-2A-tPF" firstAttribute="centerX" secondItem="kvY-ES-i2U" secondAttribute="centerX" id="u6a-iq-DVS"/>
+                                    <constraint firstItem="rsH-2R-wI1" firstAttribute="centerY" secondItem="MYx-2A-tPF" secondAttribute="centerY" id="z69-J1-l0w"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="QOJ-KL-6EH"/>
+                                        <exclude reference="z69-J1-l0w"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -448,6 +481,7 @@
     </scenes>
     <resources>
         <image name="icon_calendar" width="24" height="24"/>
+        <image name="icon_today" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.75294125079999996" green="0.22352942819999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
 </document>

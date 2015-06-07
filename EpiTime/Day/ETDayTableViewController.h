@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ETCourseDetailView.h"
 #import "ETDayItem.h"
+#import "ETDatePickerView.h"
 
-@interface ETDayTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ETCourseDetailViewProtocol>
+@interface ETDayTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ETCourseDetailViewProtocol, ETDatePickerViewProtocol>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

@@ -105,17 +105,25 @@
     [self loadCachedData]; // Load cached data if it exist
     [self.tableView reloadData];
     [self fetch:nil];
-}
-
-// User pressed the TODAY icon
-- (IBAction)didPressToday:(id)sender {
-    [self switchToDate:[NSDate date]];
 
     // https://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style/12939384#12939384
     // We want to update the before and after cached view controller here. We can set the page's view controller to an array containing this view.
     // The bug in iOS doesn't update the 'before' view.
     ETWeekViewController *week = (ETWeekViewController *)self.parentViewController;
     [week setViewControllers:@[self] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+}
+
+- (IBAction)didPressToday:(id)sender {
+    [self switchToDate:[NSDate date]];
+}
+
+// User pressed the TODAY icon
+- (IBAction)didPressCalendar:(id)sender {
+    ETDatePickerView *datePicker = [[ETDatePickerView alloc] init];
+    datePicker.delegate = self;
+    datePicker.datePicker.date = self.day.date;
+
+    [FVCustomAlertView showAlertOnView:self.view withTitle:@"Pick a date" titleColor:[UIColor blackColor] width:300 height:300 blur:YES backgroundImage:nil backgroundColor:GREEN cornerRadius:15.0 shadowAlpha:0.1 alpha:1 contentView:datePicker type:FVAlertTypeCustom allowTap:YES];
 }
 
 #pragma mark - Table view data source
@@ -188,6 +196,13 @@
     [[[UIAlertView alloc] initWithTitle:ignoredTitle message:NSLocalizedString(@"course_ignored", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
     [ETTools addIgnoredData:ignoredTitle];
     [self fetch:nil];
+}
+
+#pragma mark ETDatePickerViewProtocol
+
+- (void)datePickerView:(ETDatePickerView *)datePicker didPickDate:(NSDate *)newDate {
+    [self switchToDate:newDate];
+    [FVCustomAlertView hideAlertFromView:self.view fading:YES];
 }
 
 @end
