@@ -120,6 +120,7 @@
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
+                        <outlet property="dataGroup" destination="uCw-4Q-Ouw" id="fge-zH-9dS"/>
                         <outlet property="instructorLabel" destination="fCc-nz-aSC" id="GDa-Fn-cz6"/>
                         <outlet property="roomLabel" destination="Mub-SV-kMI" id="Wmf-Ii-k6P"/>
                         <outlet property="timeLabel" destination="bX6-Ef-o6d" id="Rca-sQ-kSY"/>

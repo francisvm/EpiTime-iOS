@@ -17,4 +17,6 @@
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *instructorLabel;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *traineesLabel;
 
+@property (strong, nonatomic) IBOutlet WKInterfaceGroup *dataGroup;
+
 @end

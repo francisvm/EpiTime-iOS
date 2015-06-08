@@ -47,6 +47,14 @@
     [ETAPI fetchWeek:[ETTools weekIndex:[NSDate date]] ofGroup:@"ING1/GRA2" viewController:nil
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
             ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
+
+            // Handle the case where there are no classes that day
+            if (day.courses.count == 0) {
+                [self.titleLabel setText:@"No classes"];
+                [self.dataGroup setHidden:YES];
+                return;
+            }
+
             ETCourseItem *finalCourse = day.courses[0];
             for (ETCourseItem *course in day.courses) {
                 NSTimeInterval startInterval = [course.startingDate timeIntervalSinceNow];
