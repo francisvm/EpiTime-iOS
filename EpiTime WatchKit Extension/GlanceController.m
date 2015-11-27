@@ -44,7 +44,7 @@
 }
 
 - (void)fetch {
-    [ETAPI fetchWeek:[ETTools weekIndex:[NSDate date]] ofGroup:@"ING1/GRA2" viewController:nil
+    [ETAPI fetchWeek:[ETTools weekIndex:[NSDate date]] ofGroup:@"ING1/GRA2"
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
             ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
 

@@ -14,9 +14,6 @@
 
 #pragma mark Setup
 
-// Setup the global appearance
-+ (void)setupAppearance;
-
 // Create an empty dictionary if there is no data
 + (void)setupData;
 
@@ -52,14 +49,6 @@
 // NSDate to week day NSUInteger (index)
 + (NSUInteger)weekDayIndexFromDate:(NSDate *)date;
 
-#pragma mark Loading activity
-
-// Display the custom loading activity as a right bar button
-+ (void)startLoadingActivity:(UIViewController *)vc;
-
-// Remove the custom loading activity from the riht bar button
-+ (void)stopLoadingActivity:(UIViewController *)vc error:(BOOL)error;
-
 #pragma mark Group functions
 
 // Get current group NSString
@@ -89,13 +78,5 @@
 
 // Remove ignored data from the cache
 + (void)removeIgnoredData:(NSUInteger)index;
-
-#pragma mark View functions
-
-// Fade in a view
-+ (void)fadeInView:(UIView *)view completion:(void (^)(BOOL finished))completion;
-
-// Fade out a view
-+ (void)fadeOutView:(UIView *)view completion:(void (^)(BOOL finished))completion;
 
 @end

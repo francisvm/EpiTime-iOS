@@ -13,6 +13,15 @@
 
 @interface ETAPI : NSObject
 
+// Current task holder
+extern NSURLSessionDataTask *currentTask;
+
+// Fetch a specific week from a group
++ (void)fetchWeek:(NSInteger)week
+          ofGroup:(NSString *)group
+       completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
+  errorCompletion:(void (^)(NSError *error))onErrorCompletion;
+
 // Get the current task going on
 + (NSURLSessionDataTask *)currentTask;
 
@@ -21,21 +30,6 @@
 
 // Cancel and remove the current task
 + (void)cancelCurrentTask;
-
-#pragma mark Week Schedule
-
-// Fetch a specific week from a group
-+ (void)fetchWeek:(NSInteger)week
-                  ofGroup:(NSString *)group
-           viewController:(UIViewController *)viewController
-               completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
-          errorCompletion:(void (^)(NSError *error))onErrorCompletion;
-
-// Fetch the current week from a group
-+ (void)fetchCurrentWeek:(NSString *)group
-          viewController:(UIViewController *)viewController
-              completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
-         errorCompletion:(void (^)(NSError *error))onErrorCompletion;
 
 #pragma mark Groups
 

@@ -17,43 +17,14 @@
 
 @implementation ETAPI
 
-
-#pragma mark Current Task methods
-
-// Current task holder
-static NSURLSessionDataTask *currentTask = nil;
-
-// Get the current task going on
-+ (NSURLSessionDataTask *)currentTask {
-    return currentTask;
-}
-
-// Remove the current task
-+ (void)removeCurrentTask {
-    currentTask = nil;
-}
-
-// Cancel and remove the current task
-+ (void)cancelCurrentTask {
-    NSLog(@"canceling");
-    [currentTask cancel];
-    [self removeCurrentTask];
-}
-
-#pragma mark Weeks
-
 // Fetch a specific week from a group
 + (void)fetchWeek:(NSInteger)week
           ofGroup:(NSString *)group
-   viewController:(UIViewController *)viewController
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
-       errorCompletion:(void (^)(NSError *error))onErrorCompletion
+  errorCompletion:(void (^)(NSError *error))onErrorCompletion
 {
     NSString *urlString = [NSString stringWithFormat:kBaseUrlWeeks, 1, week, [group stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
     NSURL *url = [NSURL URLWithString:urlString];
-    
-    if (viewController) // Start the loading activity
-        [ETTools startLoadingActivity:viewController];
 
     NSURLSession *session = [NSURLSession sharedSession];
     currentTask = [session dataTaskWithURL:url
@@ -74,25 +45,32 @@ static NSURLSessionDataTask *currentTask = nil;
                                      });
                                  }
                              }
-                             dispatch_async(dispatch_get_main_queue(), ^{
-                                 // if cancelled, let the cancel trigger stop the activity loader
-                                 if (viewController && ![error.localizedDescription isEqualToString:@"cancelled"])
-                                     [ETTools stopLoadingActivity:viewController error:YES];
-                             });
                              [ETAPI removeCurrentTask]; // Remove the task after finishing
                          }];
 
     [currentTask resume]; // Start the task
 }
 
-// Fetch the current week from a group
-+ (void)fetchCurrentWeek:(NSString *)group
-          viewController:(UIViewController *)viewController
-              completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
-         errorCompletion:(void (^)(NSError *error))onErrorCompletion
-{
-    // -1 is the current week for Chronos
-    [self fetchWeek:-1 ofGroup:group viewController:viewController completion:onCompletion errorCompletion:onErrorCompletion];
+#pragma mark Current Task methods
+
+// Current task holder
+NSURLSessionDataTask *currentTask = nil;
+
+// Get the current task going on
++ (NSURLSessionDataTask *)currentTask {
+    return currentTask;
+}
+
+// Remove the current task
++ (void)removeCurrentTask {
+    currentTask = nil;
+}
+
+// Cancel and remove the current task
++ (void)cancelCurrentTask {
+    NSLog(@"canceling");
+    [currentTask cancel];
+    [self removeCurrentTask];
 }
 
 #pragma mark Groups

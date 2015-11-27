@@ -1,5 +1,7 @@
 language: objective-c
-xcode_workspace: EpiTime.xcworkspace
-xcode_scheme: EpiTime
-xcode_sdk: iphonesimulator8.3
+osx_image: xcode7.1
 env: CODE_SIGNING_REQUIRED=NO
+script:
+  - xctool -workspace EpiTime.xcworkspace -scheme EpiTime build build-tests run-tests -test-sdk iphonesimulator -destination "name=iPhone 6 Plus"
+  - xctool -workspace EpiTime.xcworkspace -scheme 'EpiTimeWidget' build build-tests run-tests -test-sdk iphonesimulator -destination "name=iPhone 6 Plus"
+  - xctool -workspace EpiTime.xcworkspace -scheme 'EpiTime WatchKit App' -sdk watchsimulator2.0 build build-tests run-tests -test-sdk watchsimulator2.0

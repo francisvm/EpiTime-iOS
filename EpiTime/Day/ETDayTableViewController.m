@@ -10,7 +10,9 @@
 #import "ETCourseTableViewCell.h"
 #import "ETCourseItem.h"
 #import "ETTools.h"
+#import "ETUIKitTools.h"
 #import "ETAPI.h"
+#import "ETUIKitAPI.h"
 #import "ETConstants.h"
 #import "ETWeekViewController.h"
 
@@ -50,7 +52,7 @@
 - (void)cancelCurrentTask {
     if ([ETAPI currentTask]) {
         [ETAPI cancelCurrentTask];
-        [ETTools stopLoadingActivity:self error:YES]; // stop the loading activity here, don't wait for the error block to be called
+        [ETUIKitTools stopLoadingActivity:self error:YES]; // stop the loading activity here, don't wait for the error block to be called
     }
 }
 
@@ -68,7 +70,7 @@
 }
 
 - (void)fetch:(UIRefreshControl *)refreshControl {
-    [ETAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self
+    [ETUIKitAPI fetchWeek:self.weekIndex ofGroup:[[ETTools currentGroup] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] viewController:self
         completion:^(NSDictionary *recievedData, ETWeekItem *week) {
             self.day = week.days[self.index];
             self.dateLabel.text = [ETTools humanDateFromDate:self.day.date];

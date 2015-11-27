@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0710"
-   wasCreatedForAppExtension = "YES"
-   version = "2.0">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -15,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7BCBA1FA05647A1EC2694D96BA7D3CFC"
-               BuildableName = "libPods-EpiTimeWidget.a"
-               BlueprintName = "Pods-EpiTimeWidget"
+               BlueprintIdentifier = "BFB786C22F9E2DCC784DAA499EE1D323"
+               BuildableName = "libPods-EpiTime WatchKit App.a"
+               BlueprintName = "Pods-EpiTime WatchKit App"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE6187DDD0B46691118DB6CDDF8DF01D"
-               BuildableName = "libPods-EpiTimeWidget-XMLDictionary.a"
-               BlueprintName = "Pods-EpiTimeWidget-XMLDictionary"
+               BlueprintIdentifier = "04B3AC08C051F5AFA24FF88E75D39FAE"
+               BuildableName = "libPods-EpiTime WatchKit App-XMLDictionary.a"
+               BlueprintName = "Pods-EpiTime WatchKit App-XMLDictionary"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,9 +42,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2EE37391A894CC100E70651"
-               BuildableName = "EpiTimeWidget.appex"
-               BlueprintName = "EpiTimeWidget"
+               BlueprintIdentifier = "D2DDA8701AF2F8860094BC02"
+               BuildableName = "EpiTime WatchKit App.app"
+               BlueprintName = "EpiTime WatchKit App"
                ReferencedContainer = "container:EpiTime.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,9 +56,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D23BED3619E32823000FF210"
-               BuildableName = "EpiTime.app"
-               BlueprintName = "EpiTime"
+               BlueprintIdentifier = "D2DDA85E1AF2F8860094BC02"
+               BuildableName = "EpiTime WatchKit Extension.appex"
+               BlueprintName = "EpiTime WatchKit Extension"
                ReferencedContainer = "container:EpiTime.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -75,9 +74,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D23BED3619E32823000FF210"
-            BuildableName = "EpiTime.app"
-            BlueprintName = "EpiTime"
+            BlueprintIdentifier = "D2DDA8701AF2F8860094BC02"
+            BuildableName = "EpiTime WatchKit App.app"
+            BlueprintName = "EpiTime WatchKit App"
             ReferencedContainer = "container:EpiTime.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -86,25 +85,35 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/EpiTime">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D23BED3619E32823000FF210"
-            BuildableName = "EpiTime.app"
-            BlueprintName = "EpiTime"
+            BlueprintIdentifier = "D2DDA8701AF2F8860094BC02"
+            BuildableName = "EpiTime WatchKit App.app"
+            BlueprintName = "EpiTime WatchKit App"
             ReferencedContainer = "container:EpiTime.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D2DDA8701AF2F8860094BC02"
+            BuildableName = "EpiTime WatchKit App.app"
+            BlueprintName = "EpiTime WatchKit App"
+            ReferencedContainer = "container:EpiTime.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -113,18 +122,28 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      debugDocumentVersioning = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/EpiTime">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D23BED3619E32823000FF210"
-            BuildableName = "EpiTime.app"
-            BlueprintName = "EpiTime"
+            BlueprintIdentifier = "D2DDA8701AF2F8860094BC02"
+            BuildableName = "EpiTime WatchKit App.app"
+            BlueprintName = "EpiTime WatchKit App"
             ReferencedContainer = "container:EpiTime.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D2DDA8701AF2F8860094BC02"
+            BuildableName = "EpiTime WatchKit App.app"
+            BlueprintName = "EpiTime WatchKit App"
+            ReferencedContainer = "container:EpiTime.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

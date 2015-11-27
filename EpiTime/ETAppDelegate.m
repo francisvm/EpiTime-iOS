@@ -8,6 +8,7 @@
 
 #import "ETAppDelegate.h"
 #import "ETTools.h"
+#import "ETUIKitTools.h"
 #import "ETConstants.h"
 
 @interface ETAppDelegate ()
@@ -18,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ETTools setupAppearance];
+    [ETUIKitTools setupAppearance];
     [ETTools setupData]; // Setup the data containing all weeks
     if (![ETTools currentGroup])
     {

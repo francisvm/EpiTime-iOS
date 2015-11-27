@@ -1,6 +1,35 @@
-# Uncomment this line to define a global platform for your project
-link_with 'EpiTime', 'EpiTime Staging', 'EpiTimeWidget', 'EpiTimeWidget Staging', 'EpiTime WatchKit Extension'
-platform :ios, "8.0"
+def shared_pods
+  pod 'XMLDictionary', :git => 'https://github.com/nicklockwood/XMLDictionary.git'
+end
 
-pod 'XMLDictionary', '~> 1.4'
-pod 'FVCustomAlertView', '~> 0.3.3'
+def iphone
+  platform :ios, "9.0"
+  shared_pods
+  pod 'FVCustomAlertView', '~> 0.3.3'
+end
+
+def watch
+  platform :watchos, '2.0'
+  shared_pods
+end
+
+target 'EpiTime' do
+  iphone
+end
+
+target 'EpiTimeTests' do
+  iphone
+end
+
+target 'EpiTimeWidget' do
+  platform :ios, "9.0"
+  shared_pods
+end
+
+target 'EpiTime WatchKit Extension' do
+  watch
+end
+
+target 'EpiTime WatchKit App' do
+  watch
+end

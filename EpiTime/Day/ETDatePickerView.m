@@ -7,7 +7,7 @@
 //
 
 #import "ETDatePickerView.h"
-#import "ETTools.h"
+#import "ETUIKitTools.h"
 
 @implementation ETDatePickerView
 
@@ -20,7 +20,7 @@
     {
         // Initialization is done in the XIB. Add more logic here. (Maybe the size?)
         self.alpha = 0.0f;
-        [ETTools fadeInView:self completion:nil];
+        [ETUIKitTools fadeInView:self completion:nil];
     }
     return self;
 }

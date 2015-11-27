@@ -9,6 +9,7 @@
 #import "TodayViewController.h"
 #import "ETCourseTableViewCell.h"
 #import "ETAPI.h"
+#import "ETUIKitAPI.h"
 #import "ETCourseItem.h"
 #import "ETTools.h"
 #import "ETConstants.h"
@@ -52,37 +53,37 @@
 }
 
 - (void)fetchWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    [ETAPI fetchWeek:[ETTools currentWeek] ofGroup:@"ING1/GRA2" viewController:nil // FIXME : Current group
-        completion:^(NSDictionary *recievedData, ETWeekItem *week) {
+    [ETAPI fetchWeek:[ETTools currentWeek] ofGroup:@"GISTRE" // FIXME : Current group
+          completion:^(NSDictionary *recievedData, ETWeekItem *week) {
 
-            // If an error is encountered, use NCUpdateResultFailed
-            // If there's no update required, use NCUpdateResultNoData
-            // If there's an update, use NCUpdateResultNewData
+              // If an error is encountered, use NCUpdateResultFailed
+              // If there's no update required, use NCUpdateResultNoData
+              // If there's an update, use NCUpdateResultNewData
 
-            ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
-            if (false && [self.day isEqualToDayItem:day]) { // FIXME: Wait for shared cache
-                completionHandler(NCUpdateResultNoData);
-            } else {
-                self.day = day;
-                self.courses = [TodayViewController filterCoursesByDate:self.day.courses];
-                [self.tableView reloadData];
-                self.preferredContentSize = self.tableView.contentSize;
-                completionHandler(NCUpdateResultNewData);
-            }
-        }
-        errorCompletion:^(NSError *error) {
-            if (self.day)
-                completionHandler(NCUpdateResultNoData);
-            else
-                completionHandler(NCUpdateResultFailed);
-        }
+              ETDayItem *day = week.days[[ETTools weekDayIndexFromDate:[NSDate date]]];
+              if (false && [self.day isEqualToDayItem:day]) { // FIXME: Wait for shared cache
+                  completionHandler(NCUpdateResultNoData);
+              } else {
+                  self.day = day;
+                  self.courses = [TodayViewController filterCoursesByDate:self.day.courses];
+                  [self.tableView reloadData];
+                  self.preferredContentSize = self.tableView.contentSize;
+                  completionHandler(NCUpdateResultNewData);
+              }
+          }
+     errorCompletion:^(NSError *error) {
+         if (self.day)
+             completionHandler(NCUpdateResultNoData);
+         else
+             completionHandler(NCUpdateResultFailed);
+     }
      ];
 }
 
 - (BOOL)shouldShowHeader {
     return !self.courses.count;
 }
-    
+
 #pragma mark UITableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -9,6 +9,7 @@
 #import "ETCourseDetailView.h"
 
 #import "ETTools.h"
+#import "ETUIKitTools.h"
 #import "ETConstants.h"
 
 @implementation ETCourseDetailView
@@ -23,13 +24,13 @@
     {
         // Initialization is done in the XIB. Add more logic here. (Maybe the size?)
         self.alpha = 0.0f;
-        [ETTools fadeInView:self completion:nil];
+        [ETUIKitTools fadeInView:self completion:nil];
     }
     return self;
 }
 
 - (void)exitFading {
-    [ETTools fadeOutView:self completion:^(BOOL finished) {
+    [ETUIKitTools fadeOutView:self completion:^(BOOL finished) {
         if (finished) {
             if ([self.delegate respondsToSelector:@selector(courseDetailView:didExitViewWithTitle:)])
                 [self.delegate courseDetailView:self didExitViewWithTitle:self.titleLabel.text];
