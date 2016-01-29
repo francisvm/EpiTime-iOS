@@ -129,7 +129,7 @@
 
     NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitWeekOfYear fromDate:date];
 
-    return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 1;
+    return currentDateComponents.weekOfYear + (currentDateComponents.year - firstComponents.year) * kWeeksPerYear - firstComponents.weekOfYear + 2;
 }
 
 // Get current week NSInteger
