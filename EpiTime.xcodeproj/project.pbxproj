@@ -83,7 +83,7 @@
 		D2F55AAF1C09AAF500DA2EE7 /* EpiTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D2DDA8711AF2F8860094BC02 /* EpiTime WatchKit App.app */; };
 		D2F7AEB51A9DE5CE00F750E2 /* ETIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEB31A9DE5CE00F750E2 /* ETIgnoreViewController.m */; };
 		D2F7AEBD1A9DE74000F750E2 /* ETIgnoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F7AEBB1A9DE74000F750E2 /* ETIgnoreTableViewCell.m */; };
-		F1D90A8C3D983D2C449AB5E4 /* libPods-EpiTime WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 119EC71C0052AD429B446976 /* libPods-EpiTime WatchKit App.a */; };
+		F1D90A8C3D983D2C449AB5E4 /* libPods-EpiTime WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 119EC71C0052AD429B446976 /* libPods-EpiTime WatchKit App.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -681,7 +681,7 @@
 		D23BED2F19E32823000FF210 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = EpiTime;
 				TargetAttributes = {
 					D23BED3619E32823000FF210 = {
@@ -1307,6 +1307,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1377,6 +1378,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1454,6 +1456,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;

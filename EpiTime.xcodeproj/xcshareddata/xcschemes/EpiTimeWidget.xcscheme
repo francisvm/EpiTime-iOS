@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7BCBA1FA05647A1EC2694D96BA7D3CFC"
+               BlueprintIdentifier = "0CB3A9CF239454169A97874C6F3F0259"
                BuildableName = "libPods-EpiTimeWidget.a"
                BlueprintName = "Pods-EpiTimeWidget"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -29,7 +29,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE6187DDD0B46691118DB6CDDF8DF01D"
+               BlueprintIdentifier = "74FA2470DB78363D90B4EF394BA46871"
                BuildableName = "libPods-EpiTimeWidget-XMLDictionary.a"
                BlueprintName = "Pods-EpiTimeWidget-XMLDictionary"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -43,7 +43,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2EE37391A894CC100E70651"
+               BlueprintIdentifier = "D2808C2F1C09B4760024F943"
                BuildableName = "EpiTimeWidget.appex"
                BlueprintName = "EpiTimeWidget"
                ReferencedContainer = "container:EpiTime.xcodeproj">

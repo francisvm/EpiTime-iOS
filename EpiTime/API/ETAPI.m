@@ -23,7 +23,7 @@
        completion:(void (^)(NSDictionary *recievedData, ETWeekItem *week))onCompletion
   errorCompletion:(void (^)(NSError *error))onErrorCompletion
 {
-    NSString *urlString = [NSString stringWithFormat:kBaseUrlWeeks, 1, week, [group stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
+    NSString *urlString = [NSString stringWithFormat:kBaseUrlWeeks, 1, week, [group stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     NSURL *url = [NSURL URLWithString:urlString];
 
     NSURLSession *session = [NSURLSession sharedSession];
